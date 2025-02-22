@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Blog</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        h1, h2 {
+            color: #444;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #333;
+            color: #fff;
+        }
+        .form-container {
+            margin-top: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input, textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #444;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        .login {
+            text-align: right;
+            margin-top: 10px;
+        }
+        .hidden {
+            display: none;
+        }
+        
+        .chapter p {text-align: justify;}
+    </style>
+    <!-- Bagian tombol pengganti chapter -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novel Another Side</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function showChapter(chapterId) {
+            // Sembunyikan semua chapter
+            const chapters = document.querySelectorAll('.chapter');
+            chapters.forEach(chapter => {
+                chapter.classList.add('hidden');
+            });
+
+            // Tampilkan chapter yang dipilih
+            document.getElementById(chapterId).classList.remove('hidden');
+        }
+    </script>
+ <!-- Batas bagian tombol pengganti,atas-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load Another Side</title>
+   <script>
+        function loadAnotherSideContent() {
+            fetch('Novel/AnotherSide.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('another-side-content').innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+        }
+    </script>
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to REMIRAINDA personal bloG</h1>
+    </header>
+    <nav>
+        <a href="#" onclick="showSection('Blog')">Blog</a>
+        <a href="#" onclick="showSection('novel')">Novel</a>
+        <a href="#" onclick="showSection('lyrics')">Lyrics</a>
+        <a href="#" onclick="showSection('gallery')">Gallery</a>
+        <a href="#" onclick="showSection('contact')">Contact</a>
+        <a href="#" onclick="showSection('about')">About</a> <!-- Added About button -->
+    </nav>
+
+    <main>
+        <section id="Blog">
+            <h2>Blog</h2>
+            
+            <!-- Add Blog entries here -->
+            <div class="blog-entry">
+                <h3>Greetings</h3>
+                <p>Welcome to my personal blog. Here you will find my thoughts, stories, and projects. I am passionate about writing and sharing my experiences with the world. Thank you for visiting!</p>
+            </div>
+            <div class="blog-entry">
+                <h3>Fisrt Post</h3>
+                <p><strong>Novel pertama "Another side" sudah ditambahkan, silahkan dibaca. Note: Karakter hanyalah perspective.</strong></p>
+                <p>Kalau dirasa tidak cocok dengan genrenya, silahkan contact/hubungi Author untuk membuat genre yang lain.</p>
+            </div>
+            <style>
+                .blog-entry {
+                    margin-bottom: 20px; /* Add margin to create distance between blog entries */
+                    padding: 10px;
+                    border-bottom: 1px solid #ccc; /* Add a bottom border to create a boundary */
+                }
+            </style>
+        </section>
+<!--DATA MILIK CHAPTER STYLE-->        
+<!-- Data untuk bagian Novel -->
+<section id="novel" class="hidden">
+    <h2>Novel</h2>
+    <p>Discover my novel projects and stories.</p>
+
+    <!-- Tombol untuk Novel Another -->
+<p><button onclick="toggleAnotherSideContent()">Another Side</button></p>
+
+
+<!-- Chapter Content -->
+<div id="another-side-section" style="display: none;">
+
+    <div class="sidebar">
+        <h3>Chapters</h3>
+        <ul class="chapter-list">
+            <li><button onclick="showChapter('prologue')">Prologue</button></li>
+            <li><button onclick="showChapter('chapter1')">Chapter 1</button></li>
+            <li><button onclick="showChapter('chapter2')">Chapter 2</button></li>
+            <li><button onclick="showChapter('chapter3')">Chapter 3</button></li>
+            <li><button onclick="showChapter('chapter4')">Chapter 4</button></li>
+            <li><button onclick="showChapter('chapter5')">Chapter 5</button></li>
+            <li><button onclick="showChapter('Chapter5.5')">Chapter 5.5</button></li>
+            <li><button onclick="showChapter('Chapter6')">Chapter 6</button></li>
+            <li><button onclick="showChapter('Chapter7')">Chapter 7</button></li>
+            <li><button onclick="showChapter('Epilogue')">Epilogue</button></li>
+        </ul>
+    </div>
+
+
+    <!-- Chapter Content -->
+    <div class="chapter-content">
+        <div id="prologue" class="chapter">
+            <h2>Prologue</h2>
+            <p>Gadis: Gadis minsterius tak bernama.</p>
+            <p>Rama: MC. Tinggi: 178 cm, berat badan: 63 kg</p>
+            <p>Jihan Putri Deona: Tinggi: 160 cm, berat badan 55 kg. <strong>Bermata hitam kehijauan, rambut panjang berwarna hitam.</strong> Sahabat masa kecil tokoh utama. Selalu ada ketika dibutuhkan temannya. Terkadang susah dimengerti, tidak bisa mengutarakan perasaannya. Selalu membuat dirinya kehilangan kesempatan.</p>
+            <p>Mira Aditiasa /Tias: Tinggi 159 cm, berat badan: 57 kg. Sahabat kecil MC. Rambut keriting berwarna hitam kebiruan terkuncir</p>
+            <p>Siska Anita Harumi: Tinggi 159 cm, berat badan 54 kg. <strong>Mata berwarna coklat kemerahan, sama seperti rambutnya.</strong> Gadis yang ikut terbawa ketika kepindahan kami ke restoran baru ini, Menyukai MC.</p>
+            <p>Reza Angga: Tinggi: 180 cm, berat badan: 69 kg. Orang paling cool dari kami semua, sangat elegan tapi memiliki masalah Obsessive-Compulsive Disorder (OCD). Bos memberinya kepercayaan untuk membuat segalanya terlihat rapi dan tetap dapat dijangkau.</p>
+            <p>Rihal Kuranji: Tinggi: 177 cm, berat badan: 63 kg. Orang yang paling lucu diantara kami, semua yang ada pada dirinya seharusnya lucu.</p>
+            <p>Dita Aninda: Tinggi: 178 cm, berat badan 57 kg. Saudari kembar dari Dito, teman baik Siska. Meski terkadang mereka seperti Tom & Jerry. Orangnya tegas, tapi juga kadang terlalu baik. Dia 1 menit lebih tua dari Dito.</p>
+            <p>Dito Ananda: Tinggi: 178 cm, berat badan 58 kg. Saudara kembar dari Dita. Dia juga merupakan teman baik MC. Selalu memeriahkan suasana dengan leluconnya. </p>
+            <p>Mas Adit: Tinggi: 177 cm, berat badan: 82 kg</p>
+            <p>Mas Adrian: Tinggi: 176 cm, berat badan: 73 kg</p>
+            <p>Angga Rehan Bantara: Tinggi: 181 cm, berat badan: 78 kg. Bos paduka.</p>
+            <p></p>
+            <p></p>
+
+            
+        </div>
+    
+        <div id="chapter1" class="chapter hidden">
+            <h2>Chapter 1 - Sepotong Roti</h2>
+            <p>"Apa ini?", "Oh yaa, ingatan waktu itu kah"</p>
+            <p>"Aku tak terlalu ingat kejadian waktu itu", "Ingatanku sudah mulai terkikis secara perlahan". "Jadi sebisa mungkin, aku akan mengingatnya".</p>
+            <p>Meskipun aku tidak yakin, tapi. Aku menulis cerita ini agar aku selalu dapat mengingatnya sampai kapanpun, selamanya.</p>
+            <p><strong>PERTEMUAN PERTAMA</strong></p>
+            <p>Aku menyukai senyuman itu. Penuh warna bagaikan bunga yang bermekaran di sungai. Aku sangat menyukai senyuman gadis itu.</p>
+            <p>Pagi itu, tanggal 4 april 2018. Aku sedang berjalan menuju rumah nenekku. Setelah turun dari Bemo yang kunaiki, aku harus melewati jalan kecil yang cukup melelahkan untuk sampai ke sana. Aku jadi teringat masa kecilku ketika kembali ke jalan itu. Saat tiba di rumah, aku langsung merapikan barang-barang yang aku perlukan selama kurang lebih dua minggu atau lebih untuk menginap.</p>
+            <p>Saat itu, aku melihat seorang Gadis yang pakaiannya kotor sedang duduk sambil menunduk di sebuah gang sempit. Dia terlihat kesakitan dan menangis. Sepertinya dia sudah ada disana dari sebelum aku datang, dan tak sempat kuperhatikan. Aku menghampirinya.</p>
+            <p>Kesan pertamaku pada gadis itu, dia adalah orang yang tidak ingin tersenyum. Itu membuatku sedikit segan, tapi aku mengerti.</p>
+            <p>"Hey, kamu kenapa?" tanyaku.</p>
+            <p>"Aku..." katanya dengan suara kecil. Dia memegang perutnya, sambil terus menunduk.</p>
+            <p>"Kamu lapar?" tanyaku lagi sambil memegang lututnya. Rasa dingin ditanganku ini, berasal darinya.</p>
+            <p>Dia tidak menjawabku. Aku segera pergi meninggalkannya.</p>
+            <p>"Tunggu disini yaa, nanti aku balik lagi" kataku.</p>
+            <p>Gadis itu terlihat sangat lesu dan tidak bersemangat, ia juga terlihat putih pucat pikirku.</p>
+            <p>Aku mempercepat lariku. Saat sampai di minimarket, aku langsung membeli yogurt, roti dan sekantung coklat mungkin saja dia suka. Aku segera membayarnya dan kembali ke Gadis tadi.</p>
+            <p>Saat sampai di gang kecil tadi, Gadis itu sudah tidak ada. Aku berpikir untuk masuk ke dalam gang kecil itu, terdapat sebuah rumah tua yang tak miliki pintu. Aku berpikir untuk mencarinya disana, dan aku melihatnya sedang duduk seperti saat pertama kali aku melihatnya.</p>
+            <p>"Hey, kamu disini. Aku kira kamu pergi tadi" kataku.</p>
+            <p>Dia menjawab, "Mmm" gumamnya menggeleng, "ini rumahku" katanya dengan dingin.</p>
+            <p>"Hmm, ini rumah kamu. Ehh, ini aku bawain Roti, kamu makan yaa" ucapku memberikan roti yang tadi kubeli.</p>
+            <p>"Mmm, " Gadis itu meraih roti yang kuberikan, lalu dia kembali menunduk. Aku tidak berharap ia berterimakasih, aku hanya ingin dia kenyang.</p>
+            <p>Rumah yang ia tinggali, begitu gelap. Tak ada penerangan sama sekali, bahkan cahaya matahari tidak bisa masuk kedalam rumah karena terhalangi oleh dinding rumah di depannya. Didalamnya hanya terdapat tungku api dan beberapa korek. Sisanya tak ada, hanya lantai bata berpasir dan kasur tua yang sudak koyak.</p>
+            <p>Ia menawariku sepotong dari roti yang tadi kubelikan untuknya, karena aku hanya membeli satu.</p>
+            <p>"Mmm," dengan malu ia menyodori sepotong rotinya.</p>
+            <p>"Kamu aja yang makan ya" ucapku.</p>
+            <p>Ia menggeleng, "Hmm..." sambil terus menyodori sepotong rotinya.</p>
+            <p>Aku tak ingin menyakiti hatinya, karena itu aku menerima sepotong roti pemberiannya</p>
+            <p>"Oiya, aku lupa beli nasi. Kamu pasti laper kan?" ucapku menawarinya makan, ia hanya menunduk dan terdiam. Aku menganggap itu sebagai 'Ya'.</p>
+            <p>"Kamu tunggu disini sebentar yaa, jangan kemana-mana" lanjutku.</p>
+            <p>Saat beranjak pergi, aku menoleh kebelakang. Dia melihatku dengan tatapan menyedihkan, seperti ingin menangis. Aku memalingkan wajahku.</p>
+            <p>Saat keluar gang, aku pergi mencari penjual nasi. Aku melihat warung nasi dari kejauhan, aku segera berlari ke sana. Karena harganya murah, jadi aku membeli dua bungkus dan tentu saja air minum. </p>
+            <p>"Air sama nasinya dua bungkus ya, Bu"</p>
+            <p>"Iya, Nak"</p>
+            <p>Setelah membayarnya, aku langsung pergi ke Gadis tadi.</p>
+            <p>Saat sampai di tempat si Gadis, aku melihat dia sedang menangis. Aku tak ingin mengejutkannya, jadi aku menunggu sampai dia tidak lagi menangis. Saat dia berhenti menangis, aku menghampirinya.</p>
+            <p>"Aku datang" kataku.</p>
+            <p>Dia dengan segera menghapus air matanya.</p>
+            <p>"Mmm" gumamnya.</p>
+            <p>Akupun dengan segera duduk di dekatnya, dan membuka tas pelastik yang berisi makanan tadi. Saat itu juga, aku melihat ada seorang anak kecil yang sedang mengintip dari jendela.</p>
+            <p>"Itu siapa?" tanyaku pada si Gadis.</p>
+            <p>"Adikku" jawabnya dengan suara kecil.</p>
+            <p>Aku menghampiri anak kecil itu, "Kamu udah makan belum?" tanyaku padanya.</p>
+            <p>Dengan malu-malu ia menjawab, "Belum kak."</p>
+            <p>Akhirnya aku mengajaknya untuk makan bersama.</p>
+            <p>"Ini kakak ada makanan, kamu makan ya" kataku pada Adiknya.</p>
+            <p>"Yeey, makan" ucap adiknya kegirangan.</p>
+            <p>"Terus, kamu gimana?" tanya si Gadis dengan suara pelan.</p>
+            <p>"Aku ga apa-apa kok, aku udah makan tadi di rumah" jawabku berbohong. "Ini memang aku belikan buat kamu sama Adik kamu, ga apa-apa kamu makan aja ya" lanjutku.</p>
+            <p>Gadis itu membuka semua bungkusan nasi yang kubeli dan menyatukannya. Aku tak menyangka ia melakukannya, agar aku bisa ikut makan bersamanya. Tapi tentu saja aku tidak bisa mendominasi untuk menghabiskan nasi itu, aku hanya makan sedikit.</p>
+            <p>Aku melihat adiknya sangat senang, dan dengan lahapnya memakan nasi bungkus itu. Aku juga ikut senang melihatnya. Gadis itu juga terlihat sangat menikmati makanannya.</p>
+            <p><strong>PERPISAHAN SEMENTARA</strong></p>
+            <p>Dalam sekejap, aku merasa akrab dengan mereka berdua. Meskipun gadis itu tidak terlihat begitu. Tapi rasanya seperti mendapat keluarga baru.</p>
+            <p>Setelah selesai makan, aku pamit pulang.</p>
+            <p>"Baiklah, aku pulang dulu ya" kataku.</p>
+            <p>"Kakak mau pergi?" tanya adinya.</p>
+            <p>"Iyaa kakak mau kerja dulu, tapi nanti kakak kesini lagi kok" kataku sambil mengelus rambutnya.</p>
+            <p>"Klo gitu, aku pulang dulu ya" kataku lagi.</p>
+            <p>Adiknya melambaikan tangan dengan semangat, sementara gadis itu terlihat hanya menatap kepergianku.</p>
+            <p><strong>BEST FRIENDS</strong></p>
+            <p>Aku segera pergi pulang, untuk melanjutkan merapikan barang-barangku. Saat sampai di rumah, aku melupakan barang yang akan ku beli.</p>
+            <p>"Aaaduh, aku lupa beli sabun lagi!" kataku.</p>
+            <p>"Haah, nanti ajalah"</p>
+            <p>"Sekarang? ... mandi!? " kataku sambil mencium ketiakku.<p>
+            <p>"Ga perlu mandi deh, masih harum" ucapku. "Beruntung tadi aku bawa parfum" kataku berbicara sendiri.</p>
+            <p>Setelah itu aku mengganti pakaianku, aku juga menggunakan parfum agar bajuku harum. Akhirnya selesai berpakaian, aku membawa tas berisi sepatu kerjaku.</p>
+            <p>Aku segera keluar, dan pergi menuju ke tempat kerja. Aku berjalan kaki ke sana, karena uangku tidak cukup untuk membayar kendaraan umum. Sebenarnya, satu-satunya alasanku menginap di rumah nenekku hanya agar jarakku ke tempat kerja lebih dekat.</p>
+            <p>Aku bekerja disebuah restoran keluarga, yang secara kebetulan terus melibatkanku dalam hal yang tidak bisa aku bayangkan.</p> Restoran keluarga ini cukup besar untuk menampung seribu orang, tapi dibagian luar restoran juga terdapat kursi santai yang disediakan untuk pelanggan yang ingin bersantai diluar. Aku bekerja bersama teman-teman terbaikku, teman terbaik sepanjang masa.</P>
+            <p>Setelah menempuh jalan yang sangat panjang akhirnya aku pun sampai di restoran tempatku bekerja. Saatku lihat, Bos sudah berdiri menungguku di depan pintu masuk karyawan.</p>
+            <p>"Bos.."  ucapku.</p>
+            <p>"Tumben kamu telat Ram?!"</p>
+            <p>"Dari mana kamu jam segini baru datang?!" Tanya Bosku lagi.</p>
+            <p>"Iya,Bos. Soalnya tadi, saya jalan kaki kesini. Jadi, butuh waktu lama buat sampai. Habis pindahan juga tadi" kataku menjelaskan pada Bos. 
+            <p>Mendengar penjelasanku, Bos pun terkejut dan memaklumi keterlambatanku.</p>
+            <p>"Yasudah kalau begitu, udah ditungguin sama yang lain tuh didalam"</p>
+            <p>"Jangan lupa, makan dulu sebelum kerja"</p>
+            <p>"Baik, Bos" ucapku</p>
+            <p>"Oiya, nanti kamu gantikan saya wawancara"</p>
+            <p>"Kenapa tiba-tiba? Bos aja ga bisa?" ucapku terkejut</p>
+            <p>"Ga bisa, nanti saya mau  ke kantor polisi" ucapnya.</p>
+            <p>Aku yang memiliki skill public speaking dibawah rata-rata berpikir dua kali, "Mmm, iyaa deh. Nanti saya gantikan"</p>
+            <p>"Tolong yaa"</p>
+            <p>Bos adalah orang yang baik, kami para pekerjanya sangat diperhatikannya. Dan kami semua sangat dekat dengannya, seperti sebuah keluarga. Tapi sama denganku, dia orang yang cukup dingin.</p>
+            <p>Aku masuk dan segera mengganti pakaianku. Setelah itu, aku ke dapur mengambil beberapa roti untuk kumakan. Saat masuk dapur, para juru masak terkejut melihatmu. Nama masing-masing dari mereka adalah Tias, Mas Adit, dan Mas Adrian.</p>
+            <p>"Ram, koe baru dateng?" kata Mas Adit.</p>
+            <p>"Tadi tak telpon, sampean ga diangkat-angkat, Ram" keluh Mas Adrian.</p>
+            <p>"Hehe, maaf tadi aku pindahan, makanya baru dateng. Aku juga ga tau kalo Mas Adrian nelpon, aku ga bawa hp soalnya"</p>
+            <p>"Kenapa ga panggil kita aja tai buat bantu-bantu, Ram?" ucap mas Adit.</p>
+            <p>"Aku ga mau ngerepotin" balasku.</p>
+            <p>"Hmm, pantesan. Ditelpon ga dijawab" Mas Adrian tertawa.</p>
+            <p>"Terus, tadi Bos bilang apa sama kamu Ram? Dia marah ga" kata Tias berbisik padaku.</p>
+            <p>"Ngga, Bos ga marah. Udah aku jelasin tadi"</p>
+            <p>"Huh, syukur deh" sahut Tias</p>
+            <p>"Kenapa emang?" tanyaku.</p>
+            <p>"Tadi ada pelanggan yang komplain karna ada tusuk gigi dimakanannya" jelas mas Adit</p>
+            <p>"Keliatan banget pengen makan gratis itu" sahut Mas Adrian.</p>
+            <p>"Iyaa, padahal kan kita ga nyediain tusuk gigi." Ucap Tias meremas sapu tangan yang ia pegang.</p>
+            <p>"Terus Bos gimana?" tanyaku.</p>
+            <p>"Yaa dia ngamuk didepan pelanggan yang lain, gara-gara pengacau sialan itu" balas mas Adit. "Pelanggan yang lain juga nolongin tadi" lanjutnya.</p>
+            <p>"Tapi untungnya ada CCTV, jadi  kita punya bukti" timpal Tias</p>
+            <p>"fyuh, syukur kalo gitu." uccapku lega. "Ga kebayang gimana pucatnya pelanggan yang kena marah Bos" lanjutku tertawa.</p>
+            <p>Semua tertawa membayangkannya, "Udah pasti ngompol tuh,"</p>
+            <p>"Yaudah, koe mau makan apa hari ini, Ram" Mas Adit menawariku.</p>
+            <p>"Ada roti kah?"</p>
+            <p>"Ada, tak buatin sandwich?" ucap Mas Adit</p>
+            <p>"Mmm, boleh deh"</p>
+            <p>"Sampean dari kemaren makan sandwich terus lho, Ram, Ram. Ga mau makan yang lain?" ejek mas Adrian</p>
+            <p>"Iya, Ram, kamu ga bosen?" sahut Tias.</p> 
+            <p>"Mmm, ngga. Enak soalnya, mana mungkinlah aku bosen Mas, Tia"</p>
+            <p>"Haha, seleramu bagus banget lho, Ram" sahut Mas Adit yang sedang membuatkanku sandwich.</p>
+            <p>"Hahaha" kami semua tertawa.</p>
+            <p>"Yaudah, aku buatin minum yang biasa ya, Ram" kata Tias.</p>
+            <p>"Mmm, boleh"</p>
+            <p>Tiba-tiba Dita datang dan terkejut melihatku. Dia baru saja selesai mengantarkan pesanan pelanggan.<p>
+            <p>"Loh, Ram. Kamu baru dateng?"<p>
+            <p>"Iya, soalnya aku tadi jalan kaki ke sini"<p>
+            <p>Mendengar ucapanku Mas Adit, Mas Adrian dan Tias terkejut. Lalu Dito dan Deon yang juga baru saja mengantarkan pesanan tidak sengaja mendengar percakapan kami langsung masuk ke dapur.<p>
+            <p>"Kamu jalan kaki?" ucap Tias.<p>
+            <p>"Lho kok Bisa Ram?" tanya mas Adit<p>
+            <p>"Kamu jalan kaki, Ram?" sahut Dito terkejut.<p>
+            <p>"Kok kamu bisa jalan kaki, sepeda kamu mana?" lanjut Deon.<p>
+            <p>Dan Rihal yang baru saja dari kamar mandi, mendengar keributan di dapur. Dia segera masuk ke dalam dapur.<p>
+            <p>"Ada apa nih?" tanya Rihal<p>
+            <p>"Ini si Ram, jalan kaki lho ke sini" kata Dito. <p>
+            <p>"Anjir, yang bener aja lu, Ram. Lu kok jalan kaki sih?"  ujar Rihal terkejut.<p> 
+            <p>"Iyaa, soalnya tadi gw ke sini jalan kaki, sepeda gw juga lagi di bengkel"<p>
+            <p>"Pantes" ucap Dito dan Deon serentak. Kami tertawa karenanya. <p>
+            <p>"Eh, terus tadi Bos marah ga sama kamu?" bisik Deon. <p>
+            <p>"Ngga, Bos ga marah"<p>
+            <p>Tidak lama setelah itu, suara Bos terdengar memanggil mereka semua. <p>
+            <p>"Deon, Reza, Dito, Dita bantu saya sebentar, biarkan Rama makan!" <p>
+            <p>"Mati kalian, Bos manggil tuh" ucapku tertawa. <p>
+            <p>"klo gitu kita kesana dulu ya Ram" kata Deon<p>
+            <p>"Duluan, Ram" ucap Reza.<p>
+            <p>"Emm" kataku mengangkat jempol.<p>
+            <p>"Semangat Ram! " sahut Rihal<p>
+            <p>"Yaa, kalian juga"<p>
+            <p>"Osss" ucap Deon, Dito, Dita, dan Rihal tertawa<p>
+            <p>"OK, ini dia Sandwich Sepesial khusus untuk Ram" mas Adit memberikan sandwich yang sudah matang padaku.<p> 
+            <p>"Ini juga, Red Honey Water Sepesial khusus untuk Ram" Tias memberikan minuman padaku. Air merah yang dia maksud adalah es teh manis, hanya saja ia mengganti gulanyaa dengan madu sebagai pemanis. <p>
+            <p>Setelah itu aku berterima kasih karena mereka telah membuatkan makanan untukku. <p>
+            <p>"Terimakasih, sudah membuatkan makanan"<p>
+            <p>"Iya, sama-sama" ucap Tias dan mas Adit serempak.<p>
+            <p>"Ayo mas Adrian" kataku melihatnya<p>
+            <p>"Yoo Ram" sahut mas Adrian mengangkat jempolnya<p>
+            <p>"Kalo gitu, aku ke ruangan dulu ya" <p>
+            <p>Lalu aku ke ruangan pegawai, duduk sambil bersiap melahap makan malamku. <p>
+            <p>Tidak lama setelah itu tiba-tiba Siska yang barusan membuang sampah di luar. Dita mengikutinya<p>
+            <p>"Remiii!!!" Siska melompat kearahku, dan kami berdua terjatuh. Beruntung aku bisa menangkapnya<p>
+            <p>GDUBRAAKK!! <p>
+            <p>Dita hanya diam dan tertawa melihat kami jatuh<p>
+            <p>"kamu kok jalan kaki sih ke sini?? Kenapa ga telpon aja, kan aku bisa jemput!? " tanya Siska sambil memelukku.<p>
+            <p>"Mmm, iyaa aku ga bawa Hp soalnya, Siska"<p>
+            <p>"Kamu ga apa-apa?? " tanyaku<p>
+            <p>"Hehe, aku ga apa-apa"<p>
+            <p>"Kamu ga apa-apa Ram??" tanya Dita.<p>
+            <p>"Aku ga apa-apa kok"<p>
+            <p>"Kamu jangan kayak tadi lagi Siska, BAHAYAA!! " kataku menyentak kepalanya<p>
+            <p>"Aduuhh. Hehe, iyaa maaf deh" ucap Siska tertawa<p>
+            <p>"Dan lagi, bisa berhenti panggil aku Remi?" ucapku.<p>
+            <p>"Heee, kenapa? Itu kan panggilan sayangku ke kamu" balas Siska.<p>
+            <p>"Emm, Yasudah, ga apa-apa" ucapku.<p>
+            <p>"Terus nanti kamu pulang sama siapa Ram?? " tanya Dita<p>
+            <p>"Kayaknya aku jalan deh"<p>
+            <p>"Ehhhhhh, jangan dong. Yaudah sama aku aja nanti pulangnya, aku bawa motor" ucap Siska.<p>
+            <p>"Emang kamu bisa bonceng aku? " kataku mengejeknya<p>
+            <p>"Mmm, ngga bisa sih" katanya tersipu<p>
+            <p>"Yaudah nanti aku aja yang bawa motornya"<p>
+            <p>"beneran??"<p>
+            <p>"Iyaa beneran"<p>
+            <p>"Horeeee!! Dibonceng, Remi!! " teriaknya memelukku.<p>
+            <p>"ehh, jangan berisik dong Siska" <p>
+            <p>"ups, hehe maaf"<p>
+            <p>Lalu Dita mengajak Siska keluar untuk melanjutkan pekerjaannya<p>
+            <p>"Yaudah Ram, kamu lanjutin aja makannya" ucapnya. "Siska, keluar yuk" ajak Dita tersenyum pada Siska.<p>
+            <p>"Emm..." angguk Siska<p>
+            <p><em>Bukan, terlihat seperti diseret. Dia menyeretnya.</em> Ucapku dalam hati</p>
+            <p>"Yaudah kamu makan yang kenyang yaa Ram"<p>
+            <p>"Mmuach" lanjutnya <p>
+            <p>"Iyaa Mughee" ucapku<p>
+            <p>Siska memang selalu begini, bahkan sebelum kami semua bekerja disini. Dulu kami bekerja direstoran yang sama, dengan bos yang sama, bahkan dengan dengan gaji yang sama. Di Bandung tepatnya, banyak hal yang terjadi yang menyebabkan kami semua dipindahkan kesini.<p>
+            <p>Siska tersenyum lalu keluar bersama Dita. Aku melanjutkan makanku, setelah itu mulai bekerja bersama dengan yang lain.<p>
+            <p>Tidak ada hal yang menarik terjadi, hanya hal-hal biasa yang dialami para waiters kebanyakan. Tapi dengan mereka bersamaku, terasa lebih memeriahkan kehidupanku yang suram ini.<p>
+            <p><strong>PROMISE</strong></p>
+            <p>Dan akhirnya waktu kerja berakhir dengan cepat. Aku bergegas untuk  menemui gadis itu, tadinya. Tapi setelah bersiap untuk pulang, diluar restoran sudah ada Siska yang menunggu. Aku lupa tentang pulang bersamanya, dan mau tidak mau aku harus pulang bersamanya.</p>
+            <p>"Hai Rem," ucap Siska, "Aku tunggu dari tadi, aku kira kamu udah pulang duluan".</p>
+            <p>"Ngga, aku masih ada kerjaan tadi sebentar, lama yaa nunggunya?" tanyaku.</p>
+            <p>"Ngga kok, yang lain udah duluan tadi"</p>
+            <p>"Yaudah kita pulang juga yuk" kataku"</p>
+            <p>Dengan semangat Siska berkata, "Ayoo! kamu depan yaa"</p>
+            <p>Kami akhirnya pulang bersama. Selama perjalanan Siska bercerita banyak hal, tapi aku tidak fokus mendengarkan ceritanya. Tapi sesekali aku bertanya untuk ceritanya agar terus berlanjut. Tapi yang dipikiranku hanya gadis itu, kira-kira sedang apa dia sekarang. Apakah dia sudah makan, atau sedang tidur pikirku. Aku berpikir untuk mengunjunginnya nanti.</p>
+            <p>Tak lama kami akhirnya sampai, aku menyuruh Siska untuk pulang karena hari sudah dangat larut.</p>
+            <p>"Aku langsung pulang yaa Rem"</p>
+            <p>"Iyaa, hati-hati yaa"</p>
+            <p>"Umm, sampe ketemu besok ya" ucapnya</p>
+            <p>"yaa, hati-hati" ucapku melambaikan tangan.</p>
+            <p>Aku kemudian pergi untuk menemui gadis itu. Diperjalanan aku membeli makanan dan beberapa lilin, tak ku sangka masih ada toko yang buka dijam selarut ini.</p>
+            <p>Sesampainya disana, ternyata gadis itu masih terbangun. Dia terlihat duduk memeluk lututnya didepan pintu. Aku menghabiskan beberapa  saat untuk melihatnya dari kejauhan, sampai aku menghampirinya.</p>
+            <p>"Hai" ucapku</p>
+            <p>"Mmm" dia terkejut dan terlihat tersenyum</p>
+            <p>Kemudia dia berdiri, dia hampir terjatuh karena lemas. Jadi aku membantunya berdiri. Dia mengajakku masuk kedalam rumah, aku merasa disambut. Rumahnya yang gelap dengan cahanya bulan yang redup, terasa seperti kamarku. Aku mengeluarkan beberapa lilin yang tadi sempat kubeli, membeli lampu mungkin tidak akan berfunsi karena aliran listrik dirumah ini sudah sangat lama terputus.</p>
+            <p>Dan akhirnya makan bersama lagi, rasanya sangat menyenangkan bisa makan dengan mereka. Terasa seperti sebuah keluarga.</p>
+            <p>Aku belum memiliki pertanyaan penting untuk ditanyakan padanya, karena kami baru sehari bertemu. Yang lebih penting sekarang, dia bisa makan dengan kenyang setiap hari.</p>
+            <p>Kami pun tidak banyak bercerita, belum banyak kisah yang kami alami. Mau bagaimana lagi, kami belum saling mengenal satu sama lain. Tapi adiknya sangat periang, aku tak pernah tenang mendengar ceritanya yang sangat banyak, meskipun tidak sebanyak Siska.</p>
+            <p>Dan untuk hari ini, hanya sampai disini pertemuan kami. Aku berharap semoga besok dan seterusnya bisa terus menemuinya, tentu saja aku juga berharap bisa akrab dengannya.</p>
+            <p>"Kalo gitu, kakak pamit yaa" ucapku.</p>
+            <p>Adiknya menjawab dengan semangat, "Umm, besok kakak pasti dateng lagi kan?"</p>
+            <p>"Iyaa, kakak pasti dateng dong" ucapku mengelus kepalanya, "besok kakak bawain makanan lagi yaa"</p>
+            <p>"Umm" adiknya tersenyum.</p>
+            <p>Aku pulang dengan perasaan senang bercampur dengan khawatir tentang mereka. Tapi aku akan memastikan mereka bisa makan 3 kali sehari mulai sekarang pikirku.</p>
+            <p><strong>2019-06-18</strong></p>
+            <p></p>
+        </div>
+    
+        <div id="chapter2" class="chapter hidden">
+            <h2>Chapter 2 - Responsibility</h2>
+            <p><strong>A NEW DAY</strong></p>
+            <p>Hari baru dimulai, aku terbangun terlalu pagi, ingin tidur lagi pun tak bisa meski memaksa. Jadi aku putuskan untuk jalan-jalan sekaligus berolah raga.</p>
+            <p>Aku memakai jaket dan sepatu lariku dengan rapih, membuka pintu untuk memulai hari yang terlalu pagi dengan menghabiskan udara segar sendirian. Aku berpikir untuk berlari ke lapangan yang biasa aku kunjungi, karena biasanya di jam sepagi ini tidak akan ada orang. </p>
+            <p>Sesampainnya disana, aku melihat Deon disana. Aku tak pernah tau kalau dia suka keluar dijam sepagi ini. </p>
+            <p>Aku berlari kearahnya, "Ehh, Yon. Kamu olah raga juga?" tanyaku. </p>
+            <p>"Lho, Ram. Kamu olah raga juga?" balik bertanya. "Tumben kamu olah raga, setau aku kamu mageran" ucapnya mengejekku. </p>
+            <p>"Aku olah raga kalo ga ada kerjaan aja sih, tapi kebanyakan....." </p>
+            <p>"Karna ga ada yang dikerjain sih" ucap Deon meniruku. </p>
+            <p>"Yaa, mau gimana lagi" ucapku. "Kamu sendiri?" </p>
+            <p>"Aku olah raga karna terpaksa aja sih" ucapnya mengeluh. </p>
+            <p>Aku penasaran dan bertanya, "Terpaksa kenapa?" </p>
+            <p>"Yaudah kita olah raga bareng aja dulu, nanti aku cerita"  ucap Deon. </p>
+            <p>"Yaudah kita mau kemana nih? Kesana aja ga sih?" kataku menunjuk arah. </p>
+            <p>"Boleh deh, let's gooo" ucapnya semangat. </p>
+            <p>Kami menghabiskan waktu pagi dengan berlari bersama. Udara dingin yang masuk ke paru-paru begitu menyegarkan, angin yang sesekali meniup pohon yang kami lalui. Kami akhirnya kehabisan tenaga dan memutuskan untuk beristirahat sebentar. Angin yang meniup pipiku, mengingatkanku pada gadis itu. </p>
+            <p>"Ram, kita istirahat sebentar" ucap Deon kelelahan</p>
+            <p>"Ehh, katanya sering olah raga. Masa kalah sama orang yang olah raga kalo lagi gabut" ucapku meledeknnya. </p>
+            <p>"Hee, kamu juga kan pasti" ucapnya</p>
+            <p>"Yaudah kita istirahat dulu deh"</p>
+            <p>"Eh, tadi mau cerita apa" tanyaku lagi penasaran. </p>
+            <p>"Oiya. Aku terpaksa olah raga, soalnya kalo aku ga pergi, kamu pasti sendirian. Takutnya diculik nanti" ucapnya. Awalnya memang membuat penasaran, tapi mau bagaimana lagi pikirku. Aku tertawa mendengar ucapannya. </p>
+            <p>"Astaga, kirain apa. Kamu ini, bikin penasaran aja kampret" ucapku sambil tertawa. </p>
+            <p>"Hehe..." </p>
+            <p>Kami beristirahat ditempat kami bertemu sebelumnya. Kami berakhir menghabiskan waktu pagi  dengan bercerita, maksudku mengahabiskan waktu dengan mendengar Deon bercerita. Aku sama sekali tak memiliki cerita untuk dikatakan. </p>
+            <p>Dan akhirnya sinar matahari mulai terlihat terbit, kami memutuskan untuk pulang. </p>
+            <p>"Ehh, matahari udah terbit" ucapku</p>
+            <p>"Mau pulang aja?" tanya Deon</p>
+            <p>"Iyaa, aku mau pergi juga habis ini" balasku. Aku memikirkan tentang Gadis itu. </p>
+            <p>"Yaudah kalo gitu, nanti ketemu pas kerja lagi yaa" ucapnya</p>
+            <p>"Pasti dong, dahhh, sampe ketemu nanti yaa" ucapku melambai. </p>
+            <p>"Daaaah" Deon membalas lambaianku</p>
+            <p>Aku pun pulang, beristirahat sebentar, kemudian mandi. Aku menyiapkan makanan untuk dibawa ke tempat Gadis itu, aku memasak makanan yang menurutku sangat enak. Kebetulan ini adalah makanan kesukaanku. Aku juga menyiapkan beberapa selimut untuk ditukar dengan milinya, dan pakaian perempuan yang tidak sengaja terbawa dikoperku. Mungkin cocok untuknya, pikirku. </p>
+            <p>Aku segera berangkat ke tempat Gadis itu, berjalan kaki seperti biasa. Aku membeli beberapa roti dan minuman juga pastinnya untuk dia simpan beberapa waktu. </p>
+            <p>Aku akhirnya sampai disana, dari kejauhan gadis itu terlihat duduk memeluk kakinya seperti biasa. Entah apa yang dia pikirkan sekarang, meski aku tak pernah tau apa yang selalu ia pikirkan, dan aku juga sedikit penasaran. Aku sangat menantikan waktu dimana dia mau bercerita dengan terbuka bersamaku, tapi itu mungkin membutuhkan waktu lebih lama. </p>
+            <p>"Selamat pagi" ucapku menyapanya. </p>
+            <p>"Emm" gumamnya seperti biasa. Rasanya pertemuan pertama kali kami lebih memiliki arah daripada saat ini, pikirku. </p>
+            <p>Tapi aku tetap menanggapinya dengan tenang dan sabar. Meskipun aku tak pernah membuka cerita dengannya, justru adiknya yang selalu bercerita denganku. </p>
+            <p>Sedaritadi aku tak melihat adiknya, "Adik kamu kemana?" tanyaku rindu padanya. </p>
+            <p>"Emm, ga tau" ucapnya lirih. </p>
+            <p>"Mau tunggu adik kamu atau kita makan dulu?" ucapku memberi pilihan. </p>
+            <p>Dia tidak berkata apapun, melainkan hanya mengangkat jari telunjuknya. Kupikir dia ingin bilang kalau dia memilih yang pertama. Jadi yaa kami menunggu kepulangan si adik. </p>
+            <p>"Yaudah kita tunggu adik kamu dulu" ucapku. Aku mendekati gadis itu dan </p>
+            <p>mengeluarkan handuk dan air. </p>
+            <p>"Emmh.." ucapnya lirih. Awalnya dia enggan, tapi akhirnya menerimanya. </p>
+            <p>"Udah, biar aku bersihin dulu" ucapku memaksanya. </p>
+            <p>Aku membersihkan kakinya yang penuh lumpur dan debu yang menghitam. Kaki bagian atasnya penuh dengan luka, mungkin itu alasan dia selalu memeluk kakinya, untuk menyembunyikan lukanya. Tapi aku yang orang asing malah memaksa dia untuk memperlihatkannya. Yaa lebih baik dari pada lukanya terinfeksi. </p>
+            <p>Sekalian saja aku membersihkan wajahnya. Dan ternyata memang benar, wajahnya begitu menawan. Hanya tertutupi debu dan kotoran. Aku heran, kenapa adiknya terlihat lebih bersih dibandingkan denganya. </p>
+            <p>1 jam berlalu, tidak ada tanda dari kepulangan adiknya. Aku berpikir untuk mencarinya saja. </p>
+            <p>"Adik kamu kok lama yaa?" ucapku, "Mungkin aku pergi cari dulu yaa"</p>
+            <p>Akhirnya aku memutuskan untuk mencarinya saja, daripada makanan yang kubawa menjadi dingin. </p>
+            <p><strong>TENGGELAM</strong></p>
+            <p>Sebenanrnya aku bingung ingin mencarinya kemana, jadi aku hanya terus berjalan sambil memikirkan kemungkinan dimana tempat anak seusianya suka bermain. Pertama aku mencari ke bukit, namun tidak menemukannnya. Aku melanjutkan mencarinya ke sawah dan pasar, namun tetap tak menemuukannya. </p>
+            <p>Dan untuk yang terkahir aku memutuskan untuk  mencarinya ke jembatan di kali. Sesampainya disana, aku sangat terkejut, karena melihat dia terbaring ditepi kali dalam keadaan basah. Aku segera mengahampirinya, aku berpikir dia pingsan karena tenggelam. </p>
+            <p>"OI, OI, kok bisa begini" ucapkku panik. Aku beberapa kali mencoba menekan dadanya, namun tak berhasil. Terakhir aku coba memberinya nafas buatan, dan akhirnnya berhasil. Dia terbangun menangis. Aku mencoba menenangkannya, dia terus memelukku dengan menangis. </p>
+            <p>Akhirnnya aku membawanya pulang ke si Gadis. Dia yang melihat adiknya tentu saja terkejut. </p>
+            <p>"Adik kamu habis tenggelam" ucapku memberitahunya. </p>
+            <p>Wajahnya mulai panik, dan akhirnya ikut menangis. "Kok bisa?" ucapnya lirih. </p>
+            <p>"Gantiin bajunya, trus kasih dia selimut" ucapku padanya, sementara itu aku keluar untuk membeli minyak angin dan minuman hangat</p>
+            <p>Setelah kembali dari membeli yang dibutuhkan, aku melihat pemandangan yang begitu memilukan. Seandainya adiknya tidak ditemukan saat tenggelam, entah akan jadi seperti apa dia nantinya, pikirku. Tapi aku bersyukur masih sempat menemukannya. </p>
+            <p>Gadis itu duduk disamping adiknya sembari menangis karena khawatir dengannya. Aku memberikannya barang yang kubeli barusan, dia segeran mengoleskan minyak angin itu, agar adiknya menghangat. </p>
+            <p>Kami menunggu sampai dia terbangun, untuk mendengar apa yang sebenarnya terjadi padanya. </p>
+            <p>Beberapa lama kemudian, akhirnya dia terbangun. Gadis itu terlihat sangat khawatir, dia tidak membiarkan adiknya bangun karena khawatir. "Kamu jangan bagun dulu, baring aja" ucapnya sambil meneteskan air mata. </p>
+            <p>Aku memberikannya minuman hangat untuk menghangatkan tubuhnya. setelah itu Gadis itu mulai menanyainya. </p>
+            <p>Dengan air mata yang masih mengalir, "Kamu kok bisa tenggelam?" tanya Gadis itu pada adiknya. </p>
+            <p>Aku juga penasaran dengan apa yang terjadi. </p>
+            <p>Adik itu menangis, "Aku tadi didorong" ucapnya terisak. </p>
+            <p>Gadis itu terkejut mendengarnya, "Didorong siapa?" ucapnya geram. </p>
+            <p>Aku juga yang mendengarnya merasa sangat geram, siapa yang tega mendorong gadis sekecil ini untuk bahan lelucon. </p>
+            <p>"Cowo, lebih tinggi dari aku" lanjutnya bercerita. </p>
+            <p>"Kamu tau ga siapa?" tanyaku</p>
+            <p>"Aku ga kenal, tapi temennya manggil dia Doklo".</p>
+            <p>Mendengar nama itu, aku merasa sangat tidak terkejut. Aku mengenal orang yang memiliki nama sialan itu. Aku memikirkan hal yang cukup berkesan untuk membalasnya.</p>
+            <p>"Yaudah kamu makan dulu yaa" kataku pada si adik, "Kamu juga" lanjutku pada si gadis. </p>
+            <p>Aku menyiapkan makanan mereka berdua, mereka terlihat sangat menyukai makanan yang kumasak untuk mereka. Aku merasa sangat senang, dan tentu saja merasa ingin membalas perbuatan orang yang sudah melakukan ini padanya. </p>
+            <p>Setelah mereka selesai makan aku pamit untuk pulang, karena sebentar lagi aku harus bekerja. </p>
+            <p>"Kalo gitu aku pamit dulu yaa" ucapku</p>
+            <p>"Ehh, kakak mau pulang?" tanya si adik</p>
+            <p>"Iyaa, tapi nanti kakak kesini lagi kok. Kamu istirahat aja dulu yaa" ucapku menenangkannya. </p>
+            <p>"Aku pulang dulu yaa" ucapku mengelus kepala si gadis, dan beranjak  pergi. </p>
+            <p>-------------------------------------------------------------------------------------------------------</p>
+            <p><strong>MEMULAI HARI BARU</strong></p>
+            <p>Aku bersiap untuk berangkat bekerja, hari ini sama seperti hari sebelumnya. Namun aku berharap ada hal baru yang terjadi, memang benar terjadi hal baru. Tapi bukan hal baru seperti itu yang kuinginkan. </p>
+            <p>Ditempat kerja aku mendapat jam siang bersama yang lain, sama sekali tidak ada bedanya seperti sebelumnya. Aku sampai disana tepat waktu, bahkan sebelum restoran itu buka. </p>
+            <p>Kemudian disusul oleh mas Adit dan mas Adrian, kami semua mempercayai mereka berdua yang membawa kunci restoran. Kemudia aku merapikan meja dan menata kursi. Skarang seharusnya Dita, Dito, dan Rihal datang, dan benar sesuai dugaanku mereka datang. Dita sedang ada urusan, jadi yang datang hanya Dito dan Rihal. </p>
+            <p>"Ada yang bisa saya bantu?" ucapku bercanda</p>
+            <p>"Tolong es kopi, daging Daynesso nya satu yaa" ucap Dito</p>
+            <p>Aku membalas leluconnya, "Ehh, maaf. daging Daynesso nya belum datang", beberapa saat mas Adit, mas Adrian dan Deona datang, aku membukakan pintu karena msereka terlihat mambawa banyak barang, "Nah ini daging Daynesso nya udah sampe" ucapku. </p>
+            <p>Dita, Dito dan Rihal tertawa terbahak-bahak melihat mas Adit, mas Adrian dan Deona datang dengan memakai topi dinosaurus, Deona juga benar-benar membawa boneka disaurus yang kusuruh bawa. Rihal tidak kuat menahan tawanya hingga tejatuh. Kami semua akhirnya tertawa semua. <p>Awal yang bagus untuk memulai hari bukan? </p>
+            <p>Kalian seharusnya melihat ekspresi mereka. </p>
+            <p>"Daynesso ape tuh" ucap Mas Adit yang membuat tawa semakin meriah. </p>
+            <p>Kami semua memulai kerja pagi itu dengan penuh tawa, kami tidak selalu bisa tertawa seperti ini. Tapi kami semua ingi tertawa seperti ini bersama, selalu. Itu juga yang ingin kami bagi ke para pelanggan yang mendatangi restoran ini. </p>
+            <p>Orang-orang ramai sudah terlihat berdatangan untuk sarapan. Pelanggan pertama datang dengan membawa tunangannya. Dia adalah pelanggan setia disini, semua yang berkerja sini sudah mengenalnya, yaa meskipun semua orang yang berkunjung pasti mengenal kami. Sebelumnya dia adalah gadis penyendiri yang selalu datang sendiri, kami tidak menyangka dia akan segera menikah. </p>
+            <p>Semua orang disini sudah seperti kelurga, tertulis jelas dengan nama restorannya. Terkadang orang datamg kesini untuk menghindari masalah keluarga mereka sendiri, ada yang ingin mencari solusi untuk masalah keluarga mereka. Kami sudah mendengar begitu banyak cerita sejak pertama kali membuka restoran ini, dan kami senang mendengarnya. Pelanggan lain juga berbagi cerita pengalamannya yang bisa menjadi pelajaran bagi semua orang. </p>
+            <p>Bos selalu memikirkan pelanggannya, tentu kami juga. Menjadi pemilik restoran ini adalah tanggung jawab yang sangat besar, karena hadiah yang didapat pun sangat besar. Hari ini Ia tidak bisa ikut menemani kami bekerja, karena urusan lain. </p>
+            <p>Saat berada di dapur, aku dan yang lain sedang sibuk menyiapkan makanan untuk pelanggan. Deona mengampiriku dan bertanya, </p>
+            <p>"Ram, bos kemana?" tanyanya. </p>
+            <p>Aku seperti biasa menjawab, "Tadi katanya ada urusan penting", Deon langsung mengerti dan tidak bertanya lagi. </p>
+            <p>Dia terlihat seperti ingin mengatakan hal lain, namun tidak kutanyakan karena tidak terlalu memperhatikannya dan terjebak dengan hal yang lebih penting. </p>
+            <p>"Reeeeem, aku kangen banget" ucap Siska yang memelukku dari belakang. Aku terkejut karena tidak mendengar kedatangannya, yang membuatku hampir membakar tanganku. </p>
+            <p>"Ehhh, Siska. Kaget banget aku, minta sleding anak ini" kataku bercanda.</p>
+            <p>"Ehh, jangan dong. Nanti yang jadi masa depan kamu siapa?" Ucapnya mengelak.</p>
+            <p>Yang lain yang melihat kejadian itu hanya bisa tersenyum gemas, tanpa membantuku.</p>
+            <p>Dita yang baru saja sampai tersenyum, dan menyeret Siska ke depan untuk melayani pelanggan. "Siska bantu aku didepan yuk" ucapnya menarik siska, tentu saja tanpa menyakitinya.</p>
+            <p>Mereka berdua sudah seperti batu dan kertas. Siska hanya bisa terdiam mendapati dirinya diseret oleh Dita, "Nanti kita ketemu lagi Remm, mhuah" ucap Siska.</p>
+            <p>"Siska, Siska"</p>
+            <p><em>Pekerjaan ini adalah yang terbaik, bersama mereka semua.</em></p>
+
+        </div>
+    
+        <div id="chapter3" class="chapter hidden">
+            <h2>Chapter 3 - Your Name?</h2>
+            <p>Akhirnya jam kerja usai, kami semua pulang. Aku pulang dengan berjalan kaki, aku sengaja beralasan agar aku bisa pulang lebih dulu, jadi aku memiliki waktu untuk memikirkan rencana yang akan kulakukan padannya.</p>
+            <p>Setelah urusanku selesai, aku mendatangi mereka berdua. Aku meminta maaf karena datang sangat terlambat.</p>
+            <p>Pintu rumah mereka masih terbuka, dan lilin masih menyala terang. Aku mendapati diriku sangat ditunggu oleh mereka berdua.</p>
+            <p>"Aku datang" ucapku. Mereka tampak senang karena kedatangnanku, terutama si adik.</p>
+            <p>"Kakak!!!" ucapnya penuh semangat, "kok kakak telat banget hari ini?" tanyanya.</p>
+            <p>"Maaf yaa, kakak tadi ada urusan," ucapku memberitahunya, "Kamu pasti laperkan, ini kakak bawa makanan" ucapku sambil mengeluarkan makanan dari plastik.</p>
+            <p><strong>THE FATHER</strong></p>
+            <p>Kami mendengarkan cerita si adik yang tak bisa diam, hingga makanannya habis sebelum ceritanya usai. Dia memiliki banyak cerita didalam kepalanya, tentu aku dengan senang hati ingin mendengar semuanya.</p>
+            <p>Namun, aku memperhatikan gadis itu tampak murung. Dia tak banyak berbicara, memang sama seperti biasa. Tapi kali ini dia tampak gelisah dan terdapat rasa takut diwajahnya. Aku terpikir untuk menanyakan apa yang terjadi.</p>
+            <p>"Hey, kamu kenapa?" tanyaku.</p>
+            <p>"Mmmm" dia hanya menggelengkan kepala.</p>
+            <p>"Apa yang terjadi hari ini" tanyaku lagi.</p>
+            <p>Jawabanya sama seperti tadi, "Mmm" gumamnya sambil menggeleng.</p>
+            <p>Lalu si adik angkat bicara.</p>
+            <p>"Kakak tau, tadi ayah dateng jenguk kami" katanya senang. "Ayah bawain kami makanan yang enak juga tadi" lanjutnya.</p>
+            <p>Aku sangat terkejut, ternyata mereka memiliki ayah. Tadi siang, aku memang lupa untuk mengunjungi mereka untuk membawakan makanan. Tapi syukurlah ayah mereka datang untuk memberikan makanan.</p>
+            <p>"Ayah juga bawa oleh-oleh. Tapi katanya kita harus ikut sama dia" ucap si adik melanjutkan cerita.</p>
+            <p>Gadis itu terdiam dan gemetar.</p>
+            <p>"Tapi mbak ga mau ikut, jadi oleh-olehnya diambil lagi"</p>
+            <p>Gadis itu hanya menunduk mendengar perkataan adiknya. Terdiam tak bisa berkata-kata. Aku memegan kepalanya, dia sangat terkejut. Awalnya dia menghindar, tapi perlahan dia menerima tanganku. Gadis itu menangis, rasa takut, kecewa dan marah bercampur jadi satu. Aku langsung memahami, dia sedang mengalami masalah yang sangat berat.</p>
+            <p>Aku juga tak bisa mengatakan apa yang baru saja aku lakukan. Itu mungkin akan menambah beban pikirannya. Aku pikir akan memberitahunya nanti saja, menunggu waktu yang tepat.</p>
+            <p>Setelah mereka selesai, aku pamit pulang. Dia juga sudah terlihat tidak menangis lagi. Aku terpikir untuk mencari tau apa yang sebenarnya terjadi.</p>
+            <p>Dan untuk kesekian kalinya aku meninggalkan mereka disini, ditempat gelap dan kotor ini. Apa yang bisa aku lakukan? Aku hanya bisa memberi mereka makanan yang biasa saja, terkadang enak, terkadang hanya untuk mengenyangkan perut.</p>
+            <p>Aku berharap kehidupanku dengan mereka tidak pernah berakhir.</p>
+            <p><strong>THE TRUTH</strong></p>
+            <p>Aku akhirnya mengetahui kebenarannya, apa yang terjadi padanya. Setelah mengetahuinya, aku berharap tidak mengetahuinya sama sekali.</p>
+            <p>Gadis itu memberanikan diri untuk bercerita tentang apa yang terjadi padanya.</p>
+            <p>"Sakit..."</p>
+            <p>"A-Aku, merasakan r-rasa...sakit", ucapnya. Ini adalah kali pertama aku mendengar suaranya. "Aku, takut" ucapnya tiba-tiba menangis.</p>
+            <p>Aku mencoba untuk menenangkannya, aku mengelus kepalanya. Dia tiba-tiba memelukku. Aku merasakan tubuhnya yang dingin, seperti angin malam yang bertiup. Beruntung aku masih memiliki sedikit kehangatan.</p>
+            <p>"A..yahku,...Bajingan!" mendengar ucapan itu, aku langsung memahami apa yang sebenarnya terjadi.</p>
+            <p>Kenapa mereka dibuang kesini, karena mereka adalah anak hasil hubungan terlarang. Bajingan itu membuang mereka disini, untuk menyembunyikan mereka dari hukum. Namun si Bajingan itu, bukannya meninggalkan mereka, ia malah menggunakan anaknya sendiri untuk memuaskan nafsunya.</p>
+            <p>Aku berpikir, itu semua yang menyebabkan Gadis ini terlihat murung sejak pertama kali kami bertemu.</p>
+            <p>Hatiku terasa sangat sakit mendengar kenyataan ini, padahal mereka bukan orang yang aku kenal. Tapi entah kenapa rasa sakit dihatiku, sangat terasa begitu menyakitkan.</p>
+            <p>Entah sudah sebanyak apa air mata yang kuhabiskan untuk menulis kisah ini. Setiap kata dari cerita ini, adalah bentuk rasa sakit yang terus menghantuiku selama ini.</p>
+            <p>Aku memeluk gadis itu dengan erat, sambil menahan air mataku yang pada akhirnya menetes juga. Aku berharap bisa mengambil rasa sakit yang dialaminya, rasa takut, hancur, yang membuatmu merasa mati adalah satu-satunya yang kau inginkan.</p>
+            <p>Satu hal yang kubenci dari diriku adalah, aku dengan mudah membayangkan perkataan yang masuk ketelingaku. Benar, aku membayangkan perlakuan Bajingan itu pada gadis malang ini.</p>
+            <p><em>"Aku bersumpah akan membalaskan dendam gadis ini".</em></p>
+            <p>-------------------------------------------------------------------------------------------------------</p>
+            <p><strong>RECOVERY</strong></p>
+            <p>Aku mencoba menghibur gadis itu, agar dia bisa ceria kembali. Dengan bercerita seperti itu, jelas sudah kalau dia mempercayaiku. Aku tidak ingin mengecewakannya, aku melakukan sebisaku.</p>
+            <p>Membuatnya tertawa adalah hal yang hampir mustahil, ia bahkan tak pernah terlihat tersenyum. Tapi aku tak ingin menyerah, tidak sedikitpun.</p>
+            <p>Aku melakukan banyak hal untuk menarik perhatiannya, bercerita, bahkan melakukan hal konyol untuk membuat dia setidaknya tersenyum. Namun tidak ada satupun usahaku yang berhasil, hingga pada akhirnya aku ingin menyerah. Tanpa sadar aku mengatakan,</p>
+            <p>"Kamu ini maunya apa sih?" ucapku dengan suara serak yang rendah.</p>
+            <p>Dan akhirnya dia tersenyum, dia bahkan hampir tertawa karena mendengar suaraku. Aku akhirnya mengetahui apa yang bisa membuatnya tersenyum kembali. Kupikir dia ingin aku melakukan ini untuknya, bukan, aku yang ingin melakukan ini untuknya. Akhirnya aku sering berbicara dengan suara itu dengannya, karena aku suka melihatnya tersenyum. Meski kadang ini menyakitiku.</p>
+            <p>Aku pergi untuk membelikannya makanan sekalian lilin dan korek. Karena hari ini aku mengambil cuti, aku menemaninya dan si adik hingga petang.</p>
+            <p>"Hore, makan" ucap si adik senang, seperti biasa. Aku bertanya-tanya, sebelum bertemu denganku apa yang mereka makan? Itu hanya menjadi pertanyaanku, tak pernah kutanyakan kepada mereka.</p>
+            <p>Gadis itu terlihat masih tersenyum, menikmati makanannya. Berbeda dengan sebelumnya yang hanya melamunkan makanannya lalu memakannya beberapa saat kemudian.</p>
+            <p>Setelah selesai, aku tadinya ingin pulang. Tapi gadis itu menarik bajuku, menahanku untuk tidak pergi.</p>
+            <p>"Takut.." ucapnya menahanku.</p>
+            <p>"Kakak ga nginap aja, buat hari ini?" kata si adik.</p>
+            <p>Akhirnya aku mengiyakan permintaan mereka, "Emm".</p>
+            <p>Kedekatan di antara kami mulai terbangun. Akhirnya usahaku tidak sia-sia, aku merasa sangat senang melihat dia sudah mulai tersenyum lagi. Dia bercerita tentang cita-citanya semalaman, apa yang ingin dia lakukan, dan ingin menjadi apa dia di hari esok. Kupikir aku yang akan memastikan semua itu terjadi.</p>
+            <p>Aku pikir aku mulai menaruh hati padanya, aku menyukainya. Bukan, aku mencintainya. Tapi aku tak memiliki keberanian untuk mengutarakan perasaanku padanya, dan akhirnya perasaanku hanya menjadi milikku seorang.</p>
+            <p>Aku berharap bisa mengajaknya ke suatu tempat suatu hari nanti, mungkin taman yang indah, hanya untuk menghiburnya.</p>
+            <p>Tapi lagi-lagi aku tak mengatakannya, aku tak ingin membuatnya tak nyaman. Aku hanya harus menunggu hingga dia mengatakannya sendiri ingin ke mana.</p>
+            <p>Saat itu dia sedang duduk sendiri dengan gelap sinar bulan, bersandar di dinding. Aku memberanikan diri untuk bertanya kali ini. Aku duduk di sampingnya,</p>
+            <p>"Kamu suka tempat yang gimana?"</p>
+            <p>"Mmm.." dia terdiam sejenak.</p>
+            <p>Dia mendekatkan duduknya denganku, dan bersandar di bahuku.</p>
+            <p>"Aku, suka di sini, sama kamu" ucapnya.</p>
+            <p>Mendengar itu, aku merasa sangat senang. Entah sudah berapa lama aku menunggu ucapan itu. Aku hanya tersenyum sambil menggenggam tangannya. Aku berharap ini tak pernah berakhir.</p>
+            <p>"Mmm, kalau gitu kita bisa habisin waktu di sini sama-sama" ucapku padanya.</p>
+            <p>Dengan segan dia memelukku, "Aku, suka pelukan" ucapnya tersenyum.</p>
+            <p>Saat kulitnya menyentuhku, rasa dingin tubuhnya menembus pakaianku. Rasa dingin yang ia rasakan, terasa sangat menyakitkan pastinya. Aku memeluknya, berharap bisa membagi kehangatanku.</p>
+            <p>"Yaah, sebaiknya aku harus terbiasa."</p>
+            <p>____________________________________________________________</p>
+            <p><strong>PERPISAHAN</strong></p>
+            <p>Setelah beberapa hari tak melihatnya, aku memutuskan untuk mengunjunginya. Sebelumnya aku sakit selama beberapa hari yang membuatku tak bisa menemuinya, aku tak ingin menularkan penyakitku padanya.</p>
+            <p>Aku merasa sangat merindukannya, aku ingin menemuinya. Menemui senyuman yang kusukai itu.</p>
+            <p>Aku pikir hari ini aku akan mengutarakan perasaanku. Aku ingin dia memiliki rumah yang layak. Aku ingin melamarnya, tapi mungkin itu terlalu cepat. Mungkin mengatakan perasaanku saja sudah cukup.</p>
+            <p>Aku membeli beberapa makanan yang bisa disimpan untuk waktu yang lama, tentu aku sudah membeli itu untuk mereka sebelumnya, sebelum sakit. Aku membeli banyak hal untuknya dan juga si adik. Aku tak sabar menemuinya. Dia sedang apa pikirku.</p>
+            <p>Saat tiba di sana aku mendengar tangisan, suaranya berasal dari rumah gadis itu. Aku segera berlari ke sana.</p>
+            <p>Aku sangat terkejut melihat gadis itu tak sadarkan diri. Si adik yang duduk di sampingnya terus menangis, berharap dia membuka matanya.</p>
+            <p>"Kenapa ini?", "Heyy, heeyyy" teriakku gemetar.</p>
+            <p>"Bangun!!"</p>
+            <p>"Dia kenapa dek?" tanyaku.</p>
+            <p>Dengan wajah takut, si adik bercerita, "Tadi, pas aku lagi tidur, aku dengar suara kakak kayak kesakitan gitu" ucapnya menangis, "Pas aku lihat, ternyata ada ayah lagi... aku ga tahu bilangnya."</p>
+            <p>Aku mengerti perkataan itu. Aku melihat di paha gadis itu, ada bekas darah dan basah. Bajingan itu ke sini hanya untuk memuaskan dirinya.</p>
+            <p>Air mataku tak mau berhenti mengalir, aku putuskan untuk membiarkannya menangis saja. Putus asa dengan harapanku sendiri.</p>
+            <p>"Hey" ucap gadis itu tersadar, "Jangan menangis, aku bersyukur pernah menemuimu", "Kamu adalah alasanku terus bertahan hidup selama ini".</p>
+            <p>Aku hanya bisa menangis menatap matanya.</p>
+            <p>"Kumohon bertahan.." ucapku.</p>
+            <p>"Aku bahkan belum tahu namamu" kata terakhir yang diucapkannya.</p>
+            <p>"Heyy, jangan..."</p>
+            <p>Aku segera membawanya ke rumah sakit, namun sudah terlambat. Dia tak bisa diselamatkan. Infeksi yang terlambat dibersihkan sudah menginfeksi bagian bawah tubuhnya.</p>
+            <p>Itu adalah hari yang paling menyakitkan di hidupku. Hari di mana aku berharap ingin membuatnya bahagia, malah menjadi hari terakhirku melihat dirinya.</p>
+            <p>Aku hanya terdiam menerima kenyataan pahit ini. Si adik, di umurnya yang masih sekecil ini sudah menerima terlalu banyak cobaan.</p>
+            <p>Entah kenapa, saat itu otakku mengingat semua kenanganku bersamanya, memutarnya ulang berkali-kali. Menghantuiku. Aku penuh penyesalan.</p>
+            <p>"Aku bahkan belum mengetahui namanya."</p>
+            <p>____________________________________________________________</p>
+            <p><strong>EPILOGUE</strong></p>
+            <p>Aku menunggunya, sangat lama. Operasinya berlangsung selama 2 jam, tapi itu tetap tidak bisa menjamin keselamatannya.</p>
+            <p>Dokter keluar membawa kabar, "Maaf, kami tak bisa menyelamatkannya. Kotoran di luar area kewanitaannya sudah menginfeksi bagian dalam."</p>
+            <p>Ucapan dokter seolah merobek hatiku, aku terduduk diam tak bisa berpikir apa pun.</p>
+            <p>Samar-samar kudengar ucapan dokter, "Dan janin di perutnya, tidak bisa ikut terselamatkan."</p>
+            <p>"Janin? Bayi?"</p>
+            <p>Rupanya begitu, dia sedang hamil mengandung anak dari bajingan itu. Kemungkinan besar itu juga yang membuatnya tidak pernah selera makan, dan sakit perut. Berarti sebelum kedatanganku, keparat itu sudah lebih dulu ada untuk menghancurkan hidupnya.</p>
+
+            
+        </div>
+        <div id="chapter4" class="chapter hidden">
+            <h2>Chapter 4 - My Best Friend</h2>
+            <p>Aku sangat menyukai senyuman itu. Meski aku tak bisa sering melihatnya. Tapi, aku sangat menyukai senyuman gadis itu. Sekali saja, tolong satu kesempatan saja.</p>
+
+            <p><strong>DEJECTED</strong></p>
+            <p>Sudah beberapa bulan semenjak aku bertemu dia, aku merasa lebih dekat dengannya, tapi dia tidak terlihat begitu. Meskipun aku belum pernah melihatnya tersenyum, aku masih terus berharap. Jarak di antara kami memang masih terlihat begitu jelas jauhnya.</p>
+            <p>Aku tak terlalu mengingat kejadian itu. Aku bertemu dengannya secara tidak sengaja. Wajah gadis itu tertutupi oleh lumpur dan kotoran yang membuat wajahnya sulit untuk dikenali. Dia adalah orang asing pertama yang aku perdulikan, seumur hidupku. Dan sekarang, wajahnya mulai menghilang dari ingatanku.</p>
+
+            <p><strong>2019-09-12 FLASHBACK</strong></p>
+            <p>Saat itu, aku baru saja mendapat masalah yang membuatku harus pindah. Aku memiliki masalah di rumah, yang memaksaku pergi untuk sementara. Sebenarnya ini juga menguntungkanku, karena memperpendek jarakku ke tempat kerja.</p>
+            <p>Sebenarnya aku sangat ingin terlibat, namun orang tuaku tidak mengizinkannya. Padahal umurku sudah sangat cukup. Orang tuaku tak pernah membiarkanku terlibat dalam percakapan, sedari dulu aku tak pernah didengarkan. Itu terbawa hingga hari ini, membuatku tidak memiliki kemampuan berkomunikasi yang cukup.</p>
+            <p>Setiap melangkah, aku tak pernah mengingat pernah menerima kebaikan saat aku kecil. Bahkan aku tak ingat pernah tersenyum.</p>
+            <p>Orang tuaku adalah orang yang keras, terutama ibuku. Dia tak pernah memiliki perkataan baik saat aku kecil, berbeda dengan sekarang, dia sudah lebih baik daripada yang dulu. Ayahku, dia orang yang pendiam dan juga baik. Sifatku mengambil darinya, dan juga sedikit perubahan yang diberikan ibuku. Hingga sekarang aku menjadi orang yang tidak pandai berbicara, tidak menyukai keramaian, lebih memilih kesepian dibandingkan dengan orang ramai.</p>
+
+            <p><strong>BEST FRIEND</strong></p>
+            <p>Saat aku berbicara dengan orang lain, tanganku bergetar. Lidahku terasa berat mengucapkan kata, terkadang tidak jelas terdengar oleh orang lain. Itu menjadi satu dari banyak alasan aku tak banyak berbicara. Lidahku juga tidak bisa menyeimbangi kata yang diproses otakku.</p>
+            <p>Rasa takut saat bertemu dengan orang banyak, adalah yang ingin aku obati. Aku ingin teman dan sahabatku bisa merasakan kedekatan denganku. Aku bersyukur bisa bertemu dengan mereka. Mereka adalah perubahan awal yang membuatku merasa lebih baik.</p>
+
+            <p><strong>Deona</strong></p>
+            <p>Deona adalah orang pertama yang menjadi temanku, dan menjadi sahabatku. Awal kami bertemu saat itu adalah awal pertemanan masa kecil kami terjadi, kami menghabiskan banyak waktu bersama. Bahkan banyak orang yang berpikir kalau kami berpacaran, tapi anak berumur 7 tahun mana yang mengerti hal itu.</p>
+            <p>Kami tumbuh bersama, dengan rasa sakit yang masing-masing kami bagi. Aku dan Deona memiliki banyak kesamaan. Kesamaan yang paling terlihat di antaranya tidak pandai berkomunikasi, tak memiliki tempat dalam keluarga, dibully oleh teman, tidak diterima masyarakat. Kesamaan itu yang membuat hubungan kami terjalin erat. Kami tak pernah banyak menghabiskan kata satu sama lain, kebanyakan kami... entah apa yang membuat kami lama berteman tanpa banyak berbicara.</p>
+            <p>Mengingat semua itu membuatku ingin membalas dendam pada mereka semua, akan kulakukan suatu saat nanti. Tapi untuk sekarang, aku hanya akan mengingat perbuatan kejam yang mereka lakukan.</p>
+
+            <p><strong>Dita & Dito</strong></p>
+            <p>Dita dan Dito, si kembar yang memiliki sifat yang berlawanan, tapi terkadang juga tak ada bedanya. Mereka berdua tak pernah memiliki masalah satu sama lain. Mereka saling mendukung jika salah satunya memiliki masalah.</p>
+            <p>Aku berteman dengan mereka sejak sekolah menengah, mereka adalah teman pertama yang aku miliki di sekolah itu, tentu selain Deona. Kebanyakan murid di sana memiliki temannya masing-masing, dan aku memiliki temanku sendiri.</p>
+
+            <p><strong>Tias</strong></p>
+            <p>Tias adalah sahabatku sejak dulu, dia adalah sahabat kampung halamanku. Aku berteman dengannya sejak kecil, sebelum aku pindah ke rumahku saat ini.</p>
+            <p>Berteman dengannya adalah sebuah keberuntungan. Aku tidak terlalu ingat kami menghabiskan waktu untuk apa. Intinya kami adalah sahabat dekat. Meski aku sudah lama tidak menemuinya. Karena pindah rumah membuat hubungan kami sedikit renggang.</p>
+
+            <p><strong>Reza dan Rihal</strong></p>
+            <p>Aku bertemu dengan mereka saat memasuki bangku SMA. Kami berkenalan saat masa ospek dulu, hal itu membuat kami tertawa saat mengingat kejadian itu. Aku dan Rihal memiliki kelas yang berbeda. Aku malah bersama dengan Reza, tahu sendiri dia seperti apa.</p>
+            <p>Rihal adalah orang yang lucu, dia selalu membuat suasana hidup. Banyak orang yang menyukai sifatnya itu. Bersyukur aku menjadi sahabatnya, kami hampir tak pernah memiliki masalah. Tapi terkadang dia memang terlalu berisik.</p>
+
+            <p><strong>TOGETHER</strong></p>
+            <p>Meskipun aku, teman SD dan SMP ku sudah berpisah, tapi aku tetap berteman dengan mereka dan kami menjalin hubungan yang baik. Aku pernah berpikiran hal bodoh untuk mempertemukan mereka semua.</p>
+            <p>Awalnya kupikir menyatukan mereka adalah hal yang bodoh dan terasa mustahil, tapi kenyataannya berbeda. Menyatukan mereka semua adalah hal terbaik yang pernah kulakukan, manfaatnya kurasakan hingga sekarang. Kami semua tidak memiliki teman baik yang benar-benar melebihi kedekatan di antara kami, tapi tetap saja teman selain kami memang ada.</p>
+            <p>Kami banyak menghabiskan waktu bersama, selama ini waktu kami dihabiskan untuk bermain dan mendengarkan cerita satu sama lain. Kami tak pernah bosan mendengar cerita satu sama lain yang memiliki sensasi, genre dan gayanya masing-masing.</p>
+
+            <p>___________________________________________________________</p>
+            <p>Aku sangat senang mendengar cerita Rihal yang selalu humoris, tak pernah ada rasa sedih bersamanya.</p>
+            <p>Aku rindu mendengar cerita Dita yang penuh dengan kasih sayang, terasa seperti ibu yang bercerita untuk anaknya yang tak bisa tidur.</p>
+            <p>Aku sangat menanti cerita Deona yang penuh dengan misteri yang membuatku penasaran, selalu tak seperti yang kupikirkan, tapi memang begitu seharusnya.</p>
+            <p>Aku tak terlalu suka dengan cerita Reza, penuh dengan nuansa horor. Tapi Deona terlihat sangat menyukai ceritanya.</p>
+            <p>___________________________________________________________</p>
+
+            <p>By the way, Tias tidak bisa datang karena ada urusan pribadi. Aku pernah mengenalkannya dengan Deona, mereka langsung akrab setelah sekali bertemu. Kekuatan empati perempuan memang tak ada tandingannya.</p>
+
+        </div>
+        <div id="chapter5" class="chapter hidden">
+            <h2>Chapter 5 - I don't remember Her's Name</h2>
+            <p>Aku sangat menyukai senyuman itu. Selalu membuatmu ingin mempertahankannya untuk terus tersenyum. Aku sangat menyukai senyuman gadis itu.</p>
+            <p><strong>FORGOTTEN</strong></p>
+            <p>Aku tak terlalu ingat kejadian itu. Senyuman? Tawa seperti apa yang ia buat? Aku tak terlalu ingat mengenai itu.</p>
+            <p>Hari ini adalah hari yang sama seperti sebelumnya, tidak ada yang menarik seperti biasa. Aku melakukan sesuatu karena hanya harus menyelesaikannya, bukan karena aku ingin melakukannya. Bekerja dan makan hanya untuk membuat tubuh ini hidup untuk hari esok. Tapi hatiku sudah mati bersamanya.</p>
+            <p>2019-11-21</p>
+            <p>Besok adalah hari ulang tahunku. Entah karena beruntung atau dia sedang baik hati, Bos memberikan kami cuti untuk beberapa hari. Bos mengajak kami untuk berkemah sambil menikmati hari libur. Kami membicarakannya di tempat kerja.</p>
+            <p>"Rencannya kita mau kemana?" tanya Bos.</p>
+            <p>Dengan exited Siska menyarankan, "Kita ke pantai aja".</p>
+            <p>"Aku setuju" sahut Tias. Dia memang seorang peselancar.</p>
+            <p>"Jangan di pantai deh, terlalu ramai" keluh Deon.</p>
+            <p>"Gimana kalau kemah di hutan aja" ucap Rihal.</p>
+            <p>Dita menjawab, "Boleh, tapi emang Reza sanggup?" Reza terlihat terdiam membayangkannya. "Hutan kotor lho" lanjut Dita, "Gimana kalo tempat yang lebih bersih dan yang ga banyak nyamuk juga".</p>
+            <p>"Yaudah, kita muncak aja gimana" ucap bang Adrian.</p>
+            <p>"Nah itu boleh juga" ucap Deon setuju.</p>
+            <p>"Ide bagus bang" ucap Rihal.</p>
+            <p>"Oke, setuju yaa Muncak" ucap Bos. "Persiapkan barang kalian hari ini, kita pergi besok. Hari ini kalian istirahat dulu" lanjutnya.</p>
+            <p>"Ehh, Mas Adit kemana btw" ucap Tias.</p>
+            <p>"Oiya, Adit kemana?" ucap Bos.</p>
+            <p>Mas Adrian menyahut, "Adit lagi sakit Bos, tadi dia chat saya katanya ga bisa ikut"</p>
+            <p>"Ouu, yaudah nanti kita sekalian belikan dia obat sama oleh-oleh pulang kita" ucap Bos, "Kita ketemu disini besok, jam 7"</p>
+            <p>"Siap Bos" serentak semua orang.</p>
+            <p>Dirumah, aku mempersiapkan barang bawaanku. Semua yang dibutuhkan untuk mendaki gunung, kurasa. Aku tak banyak membawa barang, karena sangat merepotkan. Malamnya Deona mengirimiku pesan,</p>
+            <p>"Ram, barang kamu udah siap?"</p>
+            <p>"Udah, kamu?" balasku</p>
+            <p>"Udah juga, baru selesai kusiapin" lanjutnya, "besok kamu jalan sama siapa?" tanyanya.</p>
+            <p>"Sendiri"</p>
+            <p>"Sama aku aja besok kalo gitu, besok aku bawa motor yaa"</p>
+            <p>"Okey"</p>
+            <p>"Sampai ketemu besok"</p>
+            <p>"K"</p>
+            <p>-------------------------------------------------------------------------------------------------------</p>
+            <p>Keesokan harinya Deon datang, dia terlihat sangat tidak sabar. Aku bersiap dan mengemas barangku yang hanya sedikit. Aku merasa tak perlu membawa banyak barang. Saat semua dirasa sudah siap, aku keluar menemui Deona.</p>
+            <p>"Ready?"</p>
+            <p>"Ready" balasku.</p>
+            <p>"Yosh, berangkat"</p>
+            <p>Rasa dingin yang meniup pipiku, terasa seperti suhu tubuhnya yang dingin waktu itu. Aku masih merasakan dingin tubuhnya yang tak terasa sudah menjadi bagian dari diriku. Rasanya seperti di peluk olehnya.</p>
+            <p>Kami akhirnya sampai di restoran, disana sudah ada yang lain. Hanya mas Adit tidak bisa ikut karena sakitnya masih berlanjut.</p>
+            <p>"Semua sudah sampai?" tanya Bos.</p>
+            <p>"Sudah Bos" ucap semua serentak.</p>
+            <p>"Baik, karena semua sudah sampai. Kita langsung berangkat"</p>
+            <p>"Siap" ucap semua serentak.</p>
+            <p>"Ehh, kalian mau kemana?" tanya Bos.</p>
+            <p>"Mau ke motor Bos" ucap Rihal</p>
+            <p>"Motornya tinggal aja, kita pake mobil Van"</p>
+            <p>"Yheeeaayy" ucap semua lagi. Kecuali Deon yang terlihat kecewa.</p>
+            <p>"Syukurlah, tanganku ga pegel pegang gas terus" ucap Tias.</p>
+            <p>"Sama, haha.." balas Siska</p>
+            <p>"Yaudah, semua masuk yuk" ucap Reza.</p>
+            <p>"Ram" ucap Siska, memintaku duduk disebelahnya. Dia ditengah dan Deon yang nampak berawan disebelahnya.</p>
+            <p>Kami akhirnya berangkat ke gunung. Perjalanan yang kami tempuh sangat jauh. Kami berangkat jam 7 pagi, jam 11 baru akan sampai jika kendaraan tidak terlalu ramai.</p>
+            <p>Kami sampai 4 jam kemudian, jalanan tidak terlalu ramai seperti biasanya. Kami semua turun untuk bersiap-siap mendaftar. Aku membangunkan Siska yang tertidur karena perjalanan panjang. Rihal ternyata tidak suka mengendarai mobil, dia mabuk perjalanan dan kalian pasti tau apa yang terjadi padanya. Selain itu semua baik-baik saja.</p>
+            <p>Bos segera mendaftar, karena hari sudah terlalu panas. Kami bersiap untuk mendaki.</p>
+            <p>"Siapa yang baru pertama kali mendaki?" tanya Bos.</p>
+            <p>Aku, Siska, Tias dan Reza mengangkat tangan.</p>
+            <p>"Kalau begitu ini akan menjadi pengalaman yang bagus untuk kalian", "Yang lain bersikap baiklah pada junior kalian".</p>
+            <p>Kami semua berangkat mendaki gunung yang sudah didepan mata, mau kembali pun rasanya tidak mungkin. Lebih baik aku sakit daripada harus mendaki gunung setinggi ini, tapi mau bagaimana lagi. Kami akan mendapat ancaman jika tidak mengikuti liburan ini.</p>
+            <p>Saat semuanya terlihat menikmati hari, saling bercengkrama. Hanya aku yang sendiri yang sama sekali tidak menikmati keseruan ini, aku masih merasa sedih, masih merasa kehilangan sesuatu yang bahkan bukan milikku. Terlihat seperti mereka menjauhiku, tapi sebenarnya aku yang menjauhi mereka.</p>
+            <p>Kami akhirnya sampai di atas gunung 3 jam lebih, ternyata terdapat danau yang lumayan besar juga di sini. Aku yakin air terjun yang kami lihat di bawah sebelumnya, pasti berasal dari sini.</p>
+            <p>Kami mempersiapkan semua keperluan, mulai dari persediaan makanan dan perlengkapan berkemah. Saat menjelang sore, kami mulai membangun tenda dan mencari kayu bakar untuk menghangatkan diri.</p>
+            <p>Aku, Deona, dan Siska ditugaskan untuk mencari kayu bakar di hutan. Sedangkan Bos dan yang lain membangun tenda dan mempersiapkan keperluan lainnya.</p>
+            <p>Entah apa yang dipikirkan Bos, sampai menjebakku dengan dua orang ini. Akhirnya aku, Deona, dan Siska segera berangkat mencari kayu bakar, dengan ditemani senter yang masing-masing kami bawa.</p>
+            <p><strong>UNGKAPAN</strong></p>
+            <p>Sekitar dua puluh menit kami mencari, kayu yang kami dapatkan lebih dari cukup banyak. Akhirnya kami memutuskan untuk kembali, karena matahari juga sudah mulai tenggelam. Siska berada di depan memimpin dengan keceriaannya yang membuat seisi hutan terasa hidup, dia bahkan lupa kalau dia takut gelap dan kupikir dia tidak ingat kita sedang berada di mana. Sedangkan Deona terlihat seperti kebingungan, aku lama memperhatikannya.</p>
+            <p>"Ram," ucapnya gugup.</p>
+            <p>Dengan dingin aku menjawab, "Emm?"</p>
+            <p>"Ram..." Deona menahan bajuku, "..Aku"</p>
+            <p>"Kenapa? Siska udah jauh tuh," ucapku.</p>
+            <p>"Aku suka sama kamu," katanya.</p>
+            <p>"Hou? Aku tau."</p>
+            <p>"Ngga, kamu ga tau. Selama ini kamu ga pernah lihat aku sebagai perempuan. Semakin lama aku tahan, semakin terasa sakit."</p>
+            <p>"Mau gimana lagi, kita kan sahabat," balasku.</p>
+            <p>"Aku mau kita lebih dari itu," lanjut Deona menunduk. "Kamu kelihatan menjauh selama ini. Ga bisa kah kita lebih dekat?" lanjutnya.</p>
+            <p>"Aku punya masalah pribadi," balasku.</p>
+            <p>"Aku ingin berbagi cerita sama kamu, bukan sebagai teman," ucap Deona lirih. "Tolong ngertiin perasaan aku." Deona mulai menangis.</p>
+            <p>Selama ini Deona memang selalu ada untukku, entah itu dalam keadaan senang atau sedih. Namun aku tak ingin berbagi kesedihanku dengannya, itu akan menyakitinya. Tapi justru, tidak melibatkannya akan lebih menyakitinya.</p>
+            <p>Aku memeluknya, "Aku terlalu sibuk menderita, sampai lupa ada kamu." "Mungkin lain kali, aku ga bisa berbagi yang satu ini." Akhirnya setelah dia tenang, "Nanti aja bahasnya, kita balik ke tenda aja dulu," ucapku.</p>
+            <p>"Emm," ucapnya.</p>
+            <p>Kami menyusul Siska yang berada jauh di depan. Dia terlihat terduduk menangis ketakutan, bingung, lupa entah berada di mana. Kami menghampirinya.</p>
+            <p>"Siska," ucap Deona.</p>
+            <p>"Reemiiii!!" teriaknya memelukku, "Aku takut. Aku nyasar. Kalian kemana ajaa!!?" ucapnya merengek.</p>
+            <p>"Tadi aku..."</p>
+            <p>"Kalian jahat, ninggalin aku. Jahat, jahat, jahaaat," lanjutnya menangis.</p>
+            <p>Cukup lama usaha untuk menenangkannya kembali, "Yosh, yosh. Yaudah kita balik aja yuk."</p>
+            <p>"Emm, tapi Rem. Gendong," ucapnya. Kakinya lemas karena ketakutan. Mau tidak mau aku menggendongnya kembali ke kemah.</p>
+            <p>Aku menggendong Siska, sambil membawa kayu bakar di tangan kiriku. Dua beban ini, sama beratnya jika dibawa lama-lama. Kami berjalan menuju kemah.</p>
+            <p>Selama perjalanan Siska tertidur pulas, mungkin lelah karena ketakutan.</p>
+            <p>Deona mengambil kesempatan untuk berbicara "Bulannya indah yaa," ucap Deona.</p>
+            <p>Aku melihat ke arah bulan, "Yaa," ucapku memperhatikannya.</p>
+            <p>Kami akhirnya sampai setelah hari gelap. Bos dan yang lain sudah menyiapkan makan malam yang kami semua menyukainya. Buah, sayuran, dan daging untuk dijadikan barbeque. Siapa yang tidak suka barbeque? Kalian pasti tidak waras.</p>
+            <p>"Wahh Ram, beban yang kamu bawa banyak banget. Mau aku bantu ga?"</p>
+            <p>"Berisik," balas Siska.</p>
+            <p>"Mau aku bantu ga Ram?" lanjut Rihal.</p>
+            <p>"Ambilin nih beban di belakang," ucapku.</p>
+            <p>"Aaaa, ga mau. Aku maunya sama kamu," ucap Siska merengek.</p>
+            <p>Aku meletakkan kayu bakar di dekat api unggun, dan Siska di tempat duduk yang sudah disediakan. Aku juga memberikannya selimut untuk menghangatkan diri, tentu aku juga mengambilkan untuk Deona.</p>
+            <p>Aku menghangatkan tanganku yang sudah mulai mendingin di dekat api unggun. Bos juga memberikan kami semua makanan untuk menghangatkan tubuh. Suhu di sini berada di angka 18 derajat, cukup dingin untuk menyimpan makanan agar awet.</p>
+            <p>Kami menghabiskan malam dengan bermain truth or dare, permainan lama yang terasa cukup membosankan untuk diulangi oleh orang seperti kami. Tapi permainan ini berakhir dengan segera, terasa membosankan juga, akhirnya kami beralih ke permainan cerita dan dongeng. Permainan itu dimenangkan oleh Deona dengan cerita romance misteriusnya, diikuti oleh Rihal dan Reza yang menggabungkan genre horror dan comedy.</p>
+            <p>"Kurasa merasa seperti bermain sambung kata."</p>
+            <p><strong>KEPUTUSAN</strong></p>
+            <p>Setelah menghabiskan waktu bersenang-senang, kami memutuskan untuk tidur. Jam menunjukkan pukul 23:36, aku masih belum bisa tertidur. Aku mencoba membayangkan hal-hal yang bisa membuat mengantuk, menghitung domba, bahkan berpura-pura tidur tidak bisa membantu. Aku memutuskan untuk membuka tendaku dan diam saja menunggu saatku mengantuk.</p>
+            <p>Deona mendatangi tendaku, untuk melanjutkan pembahasan kami sebelumnya. Dia masih merasa bingung dengan dirinya, apa yang ia inginkan. Hingga pada akhirnya, percakapan kami sampai di...</p>
+            <p>"Ram, sekarang kamu tau kalo aku suka sama kamu."</p>
+            <p>"Yaa, mau gimana lagi," balasku.</p>
+            <p>"Aku mau kamu tutup mata," ucapnya.</p>
+            <p>Deona menggenggam tanganku dan mendekatkan wajahnya. Jantungku mulai berdetak kencang.</p>
+            <p>"Apa yang akan terjadi," tanyaku dalam hati.</p>
+            <p>Tiba-tiba Siska datang dengan pakaian tidur dan jaket yang tebal, dia juga membawa bantal dan selimut.</p>
+            <p>"Reemii" ucapnya, "Aku boleh tidur... eh ada Deon." Deona menunduk. "Aku boleh tidur sama kamu ga, aku takut tidur sendiri" lanjutnya. Kami terkejut, aku tak tau apa yang terjadi jika Siska tidak datang.</p>
+            <p>"Boleh" ucapku.</p>
+            <p>"Yeeayy"</p>
+            <p>"A-Aku...boleh, ikut tidur juga ga" ucap Deon malu.</p>
+            <p>"Boleh"</p>
+            <p>Kami tidur bersama, meski terasa sempit. Setidaknya kami tidak sendiri untuk malam ini. Kami berbagi kehangatan. Siska memelukku, aku mengelus kepalanya agar dia bisa tertidur dan melupakan kejadian di hutan tadi. Aku sudah menganggap Siska seperti adikku sendiri, manjanya masih bisa kutangani. Deona merasa cemburu, dia ikutan memelukku. Aku tak bisa tidur mendengar mereka berebutan untuk dipeluk. Yaah, jarang bisa melihat mereka seperti ini. Jadi, aku membiarkannya. Akhirnya mereka tenang sendiri.</p>
+            <p>"Sempit"</p>
+            <p>-------------------------------------------------------------------------------------------------------</p>
+            <p>"Ram... Jadi, apa jawaban kamu?" tanya Deona.</p>
+            <p>"Yaa, setidaknya kita harus mencoba" balasku.</p>
+            <p>Meski malam begitu gelap, aku yakin melihat wajahnya memerah.</p>
+            <p>Dia menciumku mendengar balasanku, memelukku dengan erat. Aku berpikir menangani dua orang yang sedang jatuh cinta tidak ada susahnya, aku hanya harus mengikuti alur yang mereka buat.</p>
+            <p>Dia juga dulu pernah mengatakan perasaannya padaku, waktu kami kecil kurasa. Tapi itu sudah lama sekali, aku tak menyangka ia akan melakukannya lagi. Tak ada salahnya menghormati perasaannya itu.</p>
+            <p>Akhirnya Deona tertidur, Siska? Kupikir dia sudah menganggap ini adalah rumahnya, tidurnya sangat lelap hingga mendengkur cukup keras.</p>
+            <p>Aku tak bisa tidur mendengar suara berisik dengkuran Siska, ditambah suara aneh dari luar.</p>
+            <p><strong>TRAGEDI</strong></p>
+            <p>Entah itu yang terjadi atau ada sesuatu yang kulupakan, aku tak mengerti.</p>
+            <p>Keesokan harinya, aku terbangun di jam 5 pagi. Aku sama sekali tak bisa tidur karena mereka berdua mengganggu tidurku, mereka seperti ulat yang tak bisa diam saat tidur. Kurasa ulat pun bisa diam saat tidur. Aku memutuskan pergi menyalakan api unggun untuk menghangatkan diri.</p>
+            <p>Suhu terasa sangat dingin dibandingkan malam tadi, terasa seperti 16 derajat. Deona datang menghampiriku dan memelukku, dia berbagi kehangatannya denganku. Aku memeluknya dengan erat. Aku masih tak menyangka bisa berpacaran dengan sahabatku sendiri, yang mengerti diriku. Yaa, lebih baik daripada dengan orang yang tak mengenalmu sama sekali.</p>
+            <p>Setelah matahari terbit dan yang lain sudah terbangun, kami berkemas untuk pulang. Sampah yang sudah dibereskan oleh Reza, kami bisa tenang jika bersamanya kalau masalah sampah. Anak itu (Reza) tak banyak berbicara, mungkin karena dia terlalu cool jadi dia sendiri merasa kedinginan dengan dirinya, ditambah lagi dengan suhu gunung yang juga sama dinginnya.</p>
+            <p>Aku yang masih lelah karena mengantuk dan Rihal yang terlihat sangat bugar mengemas tenda dan hanya menyisakan dua tenda yang paling besar dan yang ada Siska di dalamnya, Deona juga membantuku. Sedangkan Siska yang masih mengantuk, memaksa dirinya untuk terbangun. Bos dan Dita & Dito, membuatkan kami sarapan sebelum kami pulang.</p>
+            <p>Mas Adrian membuatkan kami cokelat panas yang sangat enak untuk menghangatkan tubuh di pagi hari. Suhu pagi ini naik, terasa seperti 20 derajat, lumayan dingin tapi tidak terlalu dingin.</p>
+            <p>Setelah semua persiapan untuk menuruni gunung selesai bersamaan dengan habisnya sarapan, kami memutuskan untuk menuruni gunung sebelum suhu mulai naik. Bos di depan, di belakangnya ada Tias dan Reza, di belakang mereka ada Dita dan Rihal. Aku di belakang mereka bersama Deona dan Siska di sisi kanan dan kiriku. Mas Adrian dan Dito berada di belakang membawa banyak barang.</p>
+            <p>Setelah 2 jam berjalan menuruni gunung, kami akhirnya sampai. Dan liburan pun berakhir, akhirnya kami pulang.</p>
+            <p>Selama perjalanan kami bermain dan bersenang-senang, untuk menyambut kalau besok adalah hari kembali bekerja di restoran. Maksudku mereka yang bersenang-senang, sedangkan aku sangat mengantuk, tapi aku terpaksa ikut bermain. Aku tak sabar memulai hari baru, bekerja sebagai penyebar kebahagiaan bersama dengan orang-orang pilihan ini. Aku juga mendapat pacar pertamaku, aku bersyukur kalau itu adalah sahabat baikku. Seandainya ini tak pernah berakhir, pikirku. Namun kenyataannya berbeda.</p>
+            <p>Tiba-tiba, mobil kami tertabrak oleh mobil mini bus dari arah kanan. Mobil kami tergelincir dan akhirnya terjatuh ke jurang.</p>
+            <p>Aku terbangun dengan kepala yang terasa sangat teramat sakit, semuanya pingsan dan berdarah. Aku mencoba membangunkan mereka tapi tak berhasil. Deona yang berada di sebelahku mengeluarkan banyak darah, begitu juga dengan Siska, Bos, dan yang lain. Aku tak bisa berbuat apapun, tubuhku lemas karena terlalu banyak mengeluarkan darah. Dan akhirnya aku pingsan.</p>
+            <p><em>"Seandainya aku menunda kepulangan kami walau hanya sebentar saja, ini semua pasti tidak akan terjadi."</em></p>
+        </div>
+        <div id="Chapter5.5" class="chapter hidden">
+            <h2>Chapter 5.5</h2>
+            <p>Aku tak begitu mengingat kejadian waktu itu. Sudah lama aku berusaha mencoba mengingatnya. Namun, semakin keras usahaku mengingatnya, semakin aku melupakannya.</p>
+            <p>Aku menyukai senyuman itu, penuh warna bagai senja hangat di pagi hari. Aku menyukai senyuman.., siapa?</p>
+            <p><strong>FORGOTTEN</strong></p>
+            <p>"Apa ini?", "Oh yaa, ingatan waktu itu kah"</p>
+            <p>"Aku tak terlalu ingat kejadian waktu itu", "Ingatanku sudah mulai terkikis secara perlahan". "Katanya, aku akan mengingatnya suatu saat nanti. Meskipun, aku tak yakin".</p>
+            <p>Sakit. Rasa sakit yang kurasakan ini, entah berasal dari mana. Kepalaku? Tubuhku? atau Hatiku? Entahlah, aku tidak bisa memastikannya.</p>
+            <p>Saat terbangun, aku sudah berada di rumah sakit. Aku menoleh ke arah kanan, hanya ada seseorang yang tak sadarkan diri. Dokter datang,</p>
+            <p>"Maaf kami tidak bisa menolong teman-teman anda yang lain" ucap dokter itu samar kudengar.</p>
+            <p>"Teman?"</p>
+            <p>"Oh yaa, dan sepertinya anda mengalami hilang ingatan. Ini mungkin dikarenakan benturan yang sangat keras saat kecelakaan. Tapi dalam beberapa hari anda kemungkinan akan mengingatnya kembali, tapi jangan terlalu memaksakan diri untuk mengingat. Hal yang sama juga terjadi dengan teman anda di sana, namun dia hilang ingatan permanen"</p>
+            <p>Aku menoleh ke arah gadis itu, aku masih belum mengenalinya. Mungkin dia orang yang penting bagiku. Aku menyukai rambut pendek sebahu berwarna coklat kemerahan miliknya.</p>
+            <p>Seseorang sedang bersamanya, aku berpikir mungkin itu orang tuanya.</p>
+            <p>Aku bertanya-tanya, siapa teman-temanku itu? Apakah aku mengenal mereka? Apakah mereka dekat denganku? Memikirkan itu, kepalaku terasa sangat sakit. Jadi aku putuskan untuk tak memikirkannya sekarang.</p>
+            <p>Tak banyak yang aku ingat, atau bagaimana aku bisa berakhir di tempat ini. Apa yang harus kulakukan setelah keluar dari sini, atau siapa aku.</p>
+            <p>Setelah beberapa hari menjalani rehabilitasi, aku mulai mengingat namaku. Dan aku mengingat kecelakaan itu, membuatku merasa ketakutan. Kejadian itu juga menghantuiku hingga ke mimpi.</p>
+            <p>-------------------------------------------------------------------------------------------------------</p>
+            <p>Dua minggu setelahnya gadis yang dirawat bersamaku akhirnya siuman, dia menangis begitu terbangun dari koma. Dia juga mengalami hilang ingatan, tapi berbeda denganku dia mengalami hilang ingatan permanen, kah?. Aku memanggil dokter. Setelah dia tenang, aku duduk di sebelahnya mencoba menenangkannya.</p>
+            <p>"Kamu siapa?" tanyanya bingung.</p>
+            <p>"Aku Rama"</p>
+            <p>"Rama?" tanyanya, mencoba mengingat kembali.</p>
+            <p>"Iyaa"</p>
+            <p>"Aku siapa?" tentu saja ia melupakan namanya.</p>
+            <p>"Kamu..."</p>
+            <p>Aku juga awalnya tidak mengingat namanya, tapi aku berusaha mengingat satu nama dan berpikir kalau itu miliknya. Dan memberikan nama itu padanya.</p>
+            <p>"Kamu Deona"</p>
+            <p>"Deona? Aku Deona" ucapnya. Kemudian dia mengusap air matanya.</p>
+            <p>"Itu siapa?" ucapnya.</p>
+            <p>Di belakangku ada seorang wanita yang merupakan ibunya, "Itu mama kamu"</p>
+            <p>Wanita itu, memeluk Deona "Kamu, akhirnya siuman" ucapnya menangis.</p>
+            <p>"Mama" ucapnya tersenyum.</p>
+            <p>Tapi akhirnya wanita itu pamit, "Mama pergi dulu ya, sayang" ucapnya tanpa memberitahu akan ke mana.</p>
+            <p>"Emm, hati-hati, Ma" ucap Deona tersenyum.</p>
+            <p>Dia fokus ke arahku, "Apa hubungan kita?" itu pertanyaan yang aku sendiri tidak bisa memastikannya. Tapi yang kuingat, kami sangat dekat.</p>
+            <p>"Aku pacar kamu. Kamu ga inget, kita baru aja pacaran?" ucapku mengelus kepalanya.</p>
+            <p>"Aku lupa, tapi aku seneng" ucapnya tersenyum.</p>
+            <p>Dia mencoba bangun, tentu aku membantunya. Dia memelukku dan tersenyum.</p>
+            <p>"Emm, aku inget perasaan ini. Kehangatan ini, hangat" ucapnya.</p>
+            <p>Entah kenapa aku merasa senang, tapi juga merasa sangat sedih.</p>
+            <p>Aku merasa sangat senang kekasihku sudah tersadar dari komanya yang sangat lama. Tapi aku juga merasa sedih, aku tak begitu mengerti apa yang membuatku merasa sedih. Hatiku terasa sangat sakit, tapi apa ini perasaan bahagia?</p>
+            <p>Aku merawat Deona untuk beberapa hari ke depan, kami menghabiskan waktu bersama di rumah sakit. Aku menceritakan banyak hal yang mungkin bisa memulihkan ingatannya, aku tak mengingat pernah bercerita untuknya, sebaliknya dia yang selalu bercerita untukku. Tapi aku juga senang dia menyukainya. Aku menceritakan pengalaman kami berkemah di gunung, yang ditemani dengan pemandangan kembang api yang sangat indah. Kami yang berbagi tenda,</p>
+            <p>"Kita berbagi tenda?" tanyanya.</p>
+            <p>"Iyaa, waktu itu katanya kamu ga bisa tidur. Makanya kamu dateng ke tendaku"</p>
+            <p>Aku tak mengingat kejadian itu, yang kuingat kami berkemah bersama dengan orang-orang yang dekat dengan kami berdua.</p>
+            <p>"Hee, aku iri sama aku yang waktu itu. Aku ga inget sama sekali lho" keluhnya.</p>
+            <p>"Ga apa-apa, nanti kita kemah lagi. Kita satu tenda biar kamu inget. Makanya kamu cepet sembuh"</p>
+            <p>"Emm, aku jadi ga sabar" ucapnya gembira.</p>
+            <p>Aku merasa sangat senang, akhirnya Deona sudah mulai mengingat siapa diriku, aku merasa tak ingin hal ini berakhir selamanya. Jadi aku ingin,</p>
+            <p>"Aku berharap ini tak pernah berakhir".-</p>
+            <p>______________________________________________________________</p>
+            <p><strong>EPILOGUE</strong></p>
+            <p>Aku tak begitu mengingat kejadian waktu itu. Apakah dia pernah tersenyum padaku?</p>
+            <p>Tapi aku tetap menyukai senyuman itu. Aku tak begitu mengingat wajah dari senyuman itu, atau milik siapa senyuman itu.</p>
+            <p>Aku merasakan kehilangan yang sangat menyakitkan, yang membuatku tak bisa berpikir jernih. Membuat setiap hariku terasa sangat kosong dan pudar. Namun, melupakan siapa orang itu lebih menyakitkan. Melupakannya sangat menyakiti hatiku.</p>
+            <p>Aku tak mengingat namanya, senyuman itu. Aku bahkan tak yakin cerita ini pernah kualami, atau benar-benar ada. Tapi, rasa sakit ini terus ada bersamaku.</p>
+
+        </div>
+        <div id="Chapter6" class="chapter hidden">
+            <h2>Chapter 6 - Another Story</h2>
+            <p><strong>AWAL PERTEMUAN</strong></p>
+            <p>Setelah lulus dari sekolah, aku memutuskan untuk bekerja bersama temanku, Angga. Meskipun terpaut usia 15 tahun, kami adalah sahabat baik. Angga adalah pemilik sebuah restoran, tempat yang akan menjadi awal perjalananku di dunia kerja. Banyak hal yang harus kupelajari, dan aku sering meminta saran darinya. Angga selalu dengan sabar memberikan masukan yang berharga.</p>
+            <p>Hari pertama bekerja, aku bertemu dengan Deona. Pertemuan kami bermula saat aku menjatuhkan sebuah piring, mungkin karena gugup dan belum terbiasa. Dia mendekatiku dengan senyum ramah dan berkata, "Kamu nggak apa-apa?"</p>
+            <p>Aku, yang saat itu masih canggung, menjawab dingin, "Nggak apa-apa."</p>
+            <p>Namun, dia tidak menyerah. Dengan lembut, dia menambahkan, "Ini hal biasa, kok, terutama untuk kita yang baru pertama kali bekerja di sini. Kamu harus lihat waktu aku baru mulai kerja di sini."</p>
+            <p>Aku penasaran, "Kamu juga pernah?"</p>
+            <p>Dia tertawa kecil mengingat masa lalunya. "Oh, sering banget. Aku sering dimarahi bos. Tapi, meskipun dia kelihatannya galak, sebenarnya dia orang yang baik."</p>
+            <p>Kata-katanya membuatku merasa lebih tenang. Aku tersenyum kecil, dan untuk pertama kalinya, aku memperhatikan senyumnya. Senyum itu, entah bagaimana, selalu berhasil membuatku ikut tersenyum.</p>
+            <p>Deona adalah sosok yang baik hati, meskipun sering kikuk. Bahkan setelah lama bekerja di restoran, dia masih sering tidak sengaja memecahkan piring atau gelas. Anehnya, aku tidak keberatan membantu membersihkannya. Ada sesuatu tentang dirinya yang membuatku ingin selalu ada di dekatnya.</p>
+            <p>Hubungan kami perlahan berkembang. Aku mulai terbiasa dengan keberadaannya yang selalu ceria. Di setiap hal yang dia lakukan, senyumnya selalu ada, dan itu membuatku menyukainya lebih dalam.</p>
+            <p>Suatu hari, aku memberanikan diri berkata, "Aku suka senyuman kamu."</p>
+            <p>Dia tampak terkejut. "Oh ya? Kok bisa?"</p>
+            <p>"Entahlah. Pokoknya aku suka. Kamu mau nggak selalu tersenyum buatku?"</p>
+            <p>Dia tertawa kecil sebelum menjawab, "Aku mau, tapi kamu juga harus senyum buat aku. Tapi cuma buat aku ya!"</p>
+            <p>Aku tersenyum, menatapnya. "Iya, senyumku cuma buat kamu."</p>
+            <p>Itulah awal hubungan kami. Meski aku merasa ucapanku sudah seperti pernyataan cinta, mungkin dia tidak menyadarinya. Beberapa waktu kemudian, dia menyatakan perasaannya kepadaku.</p>
+            <p>"Ram, aku suka sama kamu," katanya malu-malu.</p>
+            <p>Aku tersenyum lebar. "Aku juga suka sama kamu."</p>
+            <p><em>Padahal aku sudah menyatakan cintaku lebih dulu, dan dia sudah menerimanya</em></p>
+            <p>Dia mendekat dan memelukku. Momen itu begitu hangat, begitu nyata. Kata-kata apa pun yang dia ucapkan setelahnya terasa seperti angin lembut di telingaku. Yang penting, dia menjadi milikku, dan aku menjadi miliknya.</p>
+            <p>Hingga kini, hubungan kami masih terjalin erat. Deona tetap sama seperti dulu, selalu lengket dan menyayangiku. Aku mencintainya lebih dari apa pun. Senyumnya yang dulu membuatku jatuh hati, kini menjadi bagian tak terpisahkan dari hidupku. Aku tak akan pernah melupakannya, tak akan pernah. Dia adalah cahaya dalam hidupku, dan aku akan selalu menjaga cinta ini.</p>
+            <p>____________________________________________________________</p>
+            <p><strong>KESEHARIAN DI KAFE</strong></p>
+            <p>Keseharian kami di restoran berjalan penuh warna. Setiap pagi, aku dan Deona datang lebih awal untuk membantu menyiapkan bahan-bahan. Dia sibuk memotong sayuran sementara aku mengatur meja dan memeriksa daftar menu hari itu. Terkadang, kami bercanda di sela-sela pekerjaan, membuat suasana menjadi lebih menyenangkan.</p>
+            <p>"Ram, lihat ini," katanya sambil memegang wortel yang dia bentuk menyerupai wajah tersenyum.</p>
+            <p>Aku tertawa melihatnya. "Kamu ini, ada-ada saja. Tapi, jujur, itu lucu banget."</p>
+            <p>Saat restoran mulai ramai, kami saling membantu di dapur dan melayani pelanggan. Ada kalanya kami harus bekerja dengan cepat karena banyak pesanan masuk sekaligus. Namun, meskipun sibuk, Deona selalu memastikan aku tidak merasa kewalahan.</p>
+            <p>"Kamu oke, Ram? Kalau capek, bilang ya," ucapnya lembut.</p>
+            <p>"Aku baik-baik saja, Deon. Kamu juga jangan terlalu memaksakan diri," balasku sambil tersenyum.</p>
+            <p>Di akhir hari, setelah semua pelanggan pulang, kami biasanya duduk di meja belakang sambil menikmati segelas teh hangat. Ini adalah momen favoritku, di mana kami bisa berbicara tentang apa saja tanpa gangguan.</p>
+            <p>"Hari ini lumayan melelahkan ya," katanya sambil menyandarkan kepala di bahuku.</p>
+            <p>Aku mengangguk. "Iya, tapi aku senang bisa melalui semuanya bersamamu."</p>
+            <p>Dia tersenyum manis. "Aku juga, Ram. Kalau nggak ada kamu, mungkin aku bakal lebih sering ceroboh."</p>
+            <p>Setiap hari yang kami lewati bersama memperkuat hubungan kami. Meskipun kadang ada tantangan, seperti pelanggan yang rewel atau hari yang sangat sibuk, kami selalu menghadapi semuanya dengan senyuman. Aku merasa bersyukur memiliki Deona di hidupku. Dia bukan hanya rekanku di restoran, tapi juga belahan jiwaku yang membuat setiap hari terasa istimewa.</p>
+            <p>____________________________________________________________</p>
+            <p><strong>TAMAN BERMAIN</strong></p>
+            <p>Di luar jam kerja, kami sering menghabiskan waktu bersama. Suatu sore, setelah selesai bekerja, aku mengajaknya berjalan-jalan ke taman dekat rumah. Angin sore yang sejuk dan suasana hijau membuat kami merasa rileks.</p>
+            <p>"Ram, lihat anak-anak itu main layangan," kata Deona sambil menunjuk ke arah sekumpulan anak kecil yang berlarian di lapangan.</p>
+            <p>Aku tersenyum. "Mau coba main juga?"</p>
+            <p>Dia menggeleng sambil tertawa. "Aku nggak pandai main layangan. Kalau aku coba, pasti benangnya kusut."</p>
+            <p>Aku menggodanya. "Kamu nggak pandai main layangan, tapi pandai bikin hati orang kusut."</p>
+            <p>Dia memukul lenganku pelan. "Kamu ini, suka banget ngeledek."</p>
+            <p>Selain berjalan-jalan di taman, kami juga pernah pergi ke Dufan bersama. Hari itu penuh dengan tawa dan teriakan seru. Deona ternyata cukup pemberani, tidak ragu mencoba wahana ekstrem seperti Hysteria dan Halilintar.</p>
+            <p>"Ram, ayo naik lagi," katanya dengan semangat setelah kami turun dari Tornado.</p>
+            <p>Aku menggeleng sambil memegangi perut. "Kamu aja, Deon. Aku butuh istirahat dulu."</p>
+            <p>Dia tertawa. "Lemah banget, sih. Tapi nggak apa-apa, aku tungguin kamu di sini."</p>
+            <p>Hari itu menjadi salah satu kenangan terindah kami. Saat matahari mulai terbenam, kami duduk di bangku taman di dalam Dufan sambil menikmati es krim.</p>
+            <p>"Ram, aku senang banget hari ini. Kamu tahu nggak? Kamu selalu berhasil bikin hariku jadi spesial," katanya sambil menatapku.</p>
+            <p>Aku tersenyum lembut. "Aku juga merasa begitu, Deon. Kamu adalah alasan kenapa hidupku selalu penuh warna."</p>
+            <p>Kami menghabiskan waktu dengan berbagi cerita hingga malam menjelang. Hari-hari bersama Deona, baik di restoran maupun di luar, selalu dipenuhi dengan kebahagiaan yang membuatku bersyukur memiliki dia di sisiku.</p>
+            <p>____________________________________________________________</p>
+            <p><strong>DUFAN</strong></p>
+            <p>Suatu sore setelah selesai bekerja, aku mendekati Rama dengan senyum yang kupastikan paling manis yang kuberikan hanya untuknya. "Ram, kamu lagi ada rencana nggak minggu ini?" tanyaku, mencoba terdengar santai meski sebenarnya aku sudah tak sabar.</p>
+            <p>Dia menatapku, terlihat sedikit penasaran. "Belum sih, kenapa?"</p>
+            <p>Aku menggenggam tangannya dengan antusias. "Aku pengen ngajak kamu ke Dufan. Aku udah lama banget nggak ke sana, dan aku pikir seru kalau kita pergi bareng. Gimana, mau?"</p>
+            <p>Wajahnya sedikit berubah, seperti ada sesuatu yang ingin dia protes. Tapi akhirnya dia tersenyum kecil. "Tentu saja mau. Kalau sama kamu, ke mana pun pasti seru."</p>
+            <p>Ketika hati itu tiba, kami benar-benar pergi ke Dufan. Begitu tiba, aku tidak bisa menahan rasa antusias. Aku merasa seperti anak kecil yang akan pergi ke taman bermain untuk pertama kalinya. Tanganku langsung menggenggam tangan Rama dan menariknya menuju Halilintar, wahana favoritku. Aku menoleh ke arahnya sambil tersenyum lebar.</p>
+            <p>"Ram, ini harus jadi wahana pertama kita!" kataku penuh semangat.</p>
+            <p>Dia mengangguk pelan, senyum kecilnya tampak dipaksakan. Aku bisa melihat kegugupan di matanya, tapi aku memutuskan untuk tidak mengomentarinya. Aku terlalu bersemangat untuk memikirkan hal lain. Saat kami duduk di kursi wahana, aku bisa merasakan jantungku berdebar cepat, bukan karena takut, tapi karena aku sangat menantikan momen ini.</p>
+            <p>"Ram, kamu siap?" tanyaku dengan nada menantang, berharap bisa membuatnya lebih bersemangat.</p>
+            <p>Dia tertawa kecil, meskipun aku bisa melihat raut gugup di wajahnya yang membuatku tersenyum. "Siap nggak siap, aku ikut aja."</p>
+            <p>Saat wahana meluncur dengan kecepatan tinggi, aku berteriak sekencang-kencangnya, tawa lepas mengiringi teriakan itu. Aku sempat melirik Rama yang tampak berusaha keras menikmati perjalanan ini. Dia memegang palang pengaman dengan erat, ekspresinya campuran antara takut dan bingung. Aku tidak bisa menahan tawa melihat wajahnya yang seperti itu.</p>
+            <p>Setelah turun, aku memegang lengannya sambil tertawa terbahak-bahak. "Ram, aku nggak nyangka kamu juga berani naik ini," kataku sambil mengusap mataku yang berair karena terlalu banyak tertawa.</p>
+            <p>Dia tersenyum kaku. "Kalau nggak berani, aku pasti udah turun tadi," balasnya, mencoba terlihat santai.</p>
+            <p>Aku tertawa lagi, lalu mengajaknya ke wahana lain. Tornado, Kicir-Kicir, bahkan Bianglala, semuanya terasa sangat menyenangkan. Aku benar-benar menikmati setiap momen, meskipun aku menyadari bahwa Rama mulai terlihat lelah. Namun, dia tetap mengikuti ke mana pun aku mengajaknya, dan itu membuatku semakin bahagia.</p>
+            <p>Ketika kami masuk ke Istana Boneka, aku merasa seperti kembali ke masa kecil. Melihat boneka-boneka bergerak sambil bernyanyi membuatku tersenyum lebar. Aku sempat menoleh ke arah Rama, yang tampak lebih tenang di wahana ini. Aku tersenyum kecil, merasa senang dia akhirnya bisa sedikit rileks.</p>
+            <p>Sore menjelang, kami duduk di bangku taman dalam Dufan. Aku membeli dua es krim dan memberikan satu kepadanya. "Hari ini seru banget, ya?" tanyaku sambil tersenyum.</p>
+            <p>Dia mengambil es krim itu, tersenyum kecil. "Iya, seru," jawabnya pelan.</p>
+            <p>Aku menatapnya dengan penuh rasa sayang. "Ram, aku senang banget kamu mau ikut. Aku tahu kamu mungkin nggak terlalu suka taman bermain, tapi kamu tetap datang untuk aku. Itu berarti banget buat aku."</p>
+            <p>Dia terdiam sejenak, lalu menatapku dengan lembut. "Deon, aku mungkin nggak terlalu menikmati wahana-wahana tadi, tapi aku senang melihat kamu bahagia. Itu sudah cukup buatku."</p>
+            <p>Kata-katanya membuatku merasa hangat. Aku menggenggam tangannya erat, merasa sangat bersyukur memiliki dia di sisiku. "Kamu tahu nggak, Ram? Aku selalu merasa lebih bahagia setiap kali kita bersama."</p>
+            <p>Dia tersenyum kecil, lalu menjawab dengan nada yang tenang. "Aku juga, Deon. Mungkin bukan karena tempatnya, tapi karena kamu."</p>
+            <p>Hari itu aku sangat menikmati berbagai wahana, mulai dari Tornado hingga Istana Boneka. Meskipun Rama terlihat gugup di beberapa wahana, aku tahu dia berusaha keras untuk membuatku senang. Dan aku sangat menghargai itu.</p>
+            <p>Matahari perlahan tenggelam di ufuk barat, mewarnai langit dengan semburat oranye yang indah. Kami duduk dalam diam, menikmati suasana yang tenang. Hari itu di Dufan akan selalu menjadi kenangan yang tidak akan pernah kulupakan, bukan hanya karena keseruannya, tapi karena aku berbagi momen itu dengan orang yang paling berarti dalam hidupku.</p>
+            <p><em>"Aku merasa beruntung, karena telah memilih orang ini"</em></p>
+            <p><strong>DUFAN - DARI PERSPEKTIVe RAMA</strong></p>
+            <p>Suatu sore setelah selesai bekerja, Deona mendekatiku dengan senyum yang sangat khas, senyum yang selalu bisa membuatku sulit berkata tidak. "Ram, kamu lagi ada rencana nggak minggu ini?"</p>
+            <p>Aku menatapnya, merasa sedikit curiga dengan semangatnya yang luar biasa. "Belum sih, kenapa?"</p>
+            <p>Dia menggenggam tanganku dengan antusias, matanya berbinar penuh semangat. "Aku pengen ngajak kamu ke Dufan. Aku udah lama banget nggak ke sana, dan aku pikir seru kalau kita pergi bareng. Gimana, mau?"</p>
+            <p>Aku terdiam sejenak. Dufan? Tempat menyenangkan yang penuh dengan wahana mengguncang, memutar, dan meluncur cepat itu, kah? Bukannya aku takut, tapi... yah, mungkin sedikit. Namun, melihat wajahnya yang penuh harap, aku akhirnya tersenyum kecil. "Tentu saja mau. Kalau sama kamu, ke mana pun pasti seru."</p>
+            <p>Deona terlihat sangat senang mendengar jawabanku, tapi di dalam hati, aku merasa sedikit cemas. Aku tidak terlalu suka wahana di taman bermain. Bukan karena takut, tapi keramaian dan kegembiraan yang membludak sering membuatku merasa lelah. Sebagian besar karena takut sih. Namun, melihat Deona yang begitu bersemangat, aku tahu aku tidak bisa menolak.</p>
+            <p>Minggu itu tiba, kami pergi ke Dufan. Begitu sampai, Deona langsung menarik tanganku menuju Halilintar. Matanya berbinar seperti anak kecil yang mendapatkan permen favoritnya.</p>
+            <p>"Ram, ini harus jadi wahana pertama kita!" katanya dengan nada penuh antusias.</p>
+            <p>Aku memaksakan senyum, mencoba menutupi ketidaknyamananku. "Oke, kalau itu yang kamu mau."</p>
+            <p>Melihatnya saja sudah membuatku merinding, melihat jalur yang berputar-putar. <em>"Keretanya ga bakalan lewat sana kan?", ucapku dalam hati.</em></p>
+            <p>Saat kami duduk di kursi wahana, aku bisa merasakan degup jantungku yang tidak nyaman. Deona menoleh ke arahku, wajahnya memancarkan kegembiraan. Dia menanti dengan senyuman lebarnya</p>
+            <p><em>"Sial, aku tak bisa menolak senyuman itu"</em></p>
+            <p>"Ram, kamu siap?" tanyanya dengan nada menantang.</p>
+            <p>Aku mencoba tertawa kecil menanggapinya. "Siap nggak siap, aku ikut aja."</p>
+            <p><em>"Mulut sialan!"</em></p>
+            <p>Ketika wahana mulai meluncur dengan kecepatan tinggi, aku berusaha menahan ekspresi takut yang mungkin terlihat. <em>"AAAAAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa".</em> Di sampingku, Deona berteriak sekencang-kencangnya, suaranya bercampur dengan tawa yang begitu lepas. Aku meliriknya, dan meskipun aku merasa seperti ingin turun secepat mungkin, melihat dia begitu bahagia membuatku sedikit lebih tenang.</p>
+            <p>Ketika akhirnya kami turun, kakiku terasa sedikit lemas. Namun, aku tetap mencoba tersenyum. Deona memegang lenganku sambil tertawa terbahak-bahak.</p>
+            <p><em>"Sialan, dia mencoba membunuhku"</em></p>
+            <p>"Ram, aku nggak nyangka kamu juga berani naik ini," katanya sambil tertawa, matanya berair karena terlalu banyak tertawa.</p>
+            <p>Aku mengangkat bahu, mencoba terlihat santai, memaksakan senyum lagi. "Kalau nggak berani, aku pasti udah turun tadi," balasku, mencoba terdengar santai.</p>
+            <p><em>"Rasanya pengen muntah",</em> perutku mulai terasa tidak nyaman.</p>
+            <p>Namun, hari itu belum berakhir. Tornado, Drop Zone, Kicir-Kicir, semua wahana mengerikan itu dinaikinya. Dan yang jadi masalah, <em>"Aku harus ikut dengannya"</em></p>
+            <p>Kami melanjutkan perjalanan ke wahana berikutnya. Deona terus menarikku ke berbagai wahana yang membuatku merasa semakin lelah. Dari Tornado, <em>"AAAAAAAAAAAAAAAAAAAAAAAAAAaaaaaaaaaaaaAAAAAAAAaaaaaaaaaaaaaa!!!!!!!!",</em> Drop Zone, <em>"AAAAAAAAAAAAAAAAAAAAAAA!!!!!!!!!!!!!",</em> hingga di Bianglala, aku hanya bisa mengikuti dengan senyum yang mulai terasa kaku. Namun, aku tetap bertahan, karena aku tahu ini adalah hari yang penting baginya. Biang lala adalah yang paling aman, meskipun aku sangat membenci ketinggian. Itu sedikit membuatku khawatir.</p>
+            <p><em>"Rasanya, pengen berdiam diri di Bianglala"</em></p>
+            <p>Ketika kami masuk ke Istana Boneka, aku merasa sedikit lega. Di dalam, suasana lebih tenang, dan aku bisa melihat Deona menikmati setiap detail boneka yang bergerak sambil bernyanyi. Aku menyadari bahwa meskipun aku tidak terlalu menikmati tempat ini, melihatnya bahagia adalah hal yang membuatku tetap bertahan.</p>
+            <p>Sore hari, kami duduk di bangku taman dalam Dufan. Deona memegang dua es krim dan memberikan satu kepadaku. "Hari ini seru banget, ya?" katanya sambil tersenyum lebar.</p>
+            <p>Aku mengambil es krim itu, tersenyum kecil. "Iya, seru," jawabku sambil mengangguk pelan. Dalam hati, aku merasa lega akhirnya bisa duduk dan menikmati momen yang lebih tenang.</p>
+            <p><em>"Akan kubalas"</em></p>
+            <p>Dia menatapku dengan penuh rasa sayang. "Ram, aku senang banget kamu mau ikut. Aku tahu kamu mungkin nggak terlalu suka taman bermain, tapi kamu tetap datang untuk aku. Itu berarti banget buat aku."</p>
+            <p>Aku terdiam sejenak, menatap wajahnya yang cerah. "Deon, aku mungkin nggak terlalu menikmati wahana-wahana tadi, tapi aku senang melihat kamu bahagia. Itu sudah cukup buatku."</p>
+            <p>Dia menggenggam tanganku erat, matanya sedikit berkaca-kaca. "Kamu tahu nggak, Ram? Aku selalu merasa lebih bahagia setiap kali kita bersama."</p>
+            <p>Aku tersenyum kecil, mencoba menghilangkan rasa lelah yang masih tersisa. "Aku juga, Deon. Mungkin bukan karena tempatnya, tapi karena kamu."</p>
+            <p>Matahari perlahan tenggelam di ufuk barat, mewarnai langit dengan semburat oranye yang indah. Kami duduk dalam diam, menikmati suasana yang tenang. Aku merasa lega akhirnya hari itu berakhir, tapi di sisi lain, aku juga merasa bersyukur bisa menghabiskan waktu dengan Deona. Bagaimanapun juga, kebahagiaannya adalah kebahagiaanku. Hari itu di Dufan, meski melelahkan, akan selalu menjadi kenangan berharga di antara kami.</p>
+            <p><em>"Akan kubalas suatu hari nanti"</em></p>
+            <p>-------------------------------------------------------------------------------------------------------</p>
+            <p><strong>HARI PEMBALASAN - RAMA</strong></p>
+            <p>Beberapa hari kemudian, aku memutuskan untuk membalas dendam kecil atas semua wahana ekstrem yang dia paksa aku naiki. "Deon, aku ada ide buat kencan kita minggu ini," kataku dengan nada santai sambil mencoba menyembunyikan niat asliku.</p>
+            <p>"Oh? Apa itu?" tanyanya dengan penuh semangat.</p>
+            <p>Aku tersenyum kecil. "Gimana kalau kita coba wahana Rumah Hantu? Aku dengar tempat itu baru direnovasi dan sekarang lebih seru."</p>
+            <p>Dia mengerutkan kening sejenak, lalu mengangguk antusias. "Boleh juga! Aku belum pernah ke sana," jawabnya dengan nada penuh rasa ingin tahu.</p>
+            <p>Ketika hari yang ditentukan tiba, aku menuntunnya ke wahana tersebut. Dalam hati, aku merasa sedikit puas. <em>"Akhirnya aku bisa membuat dia merasakan ketakutan seperti yang aku rasakan waktu itu, rasakan pembalasanku".</em></p>
+            <p>Begitu kami masuk, suasana gelap langsung menyelimuti kami. Suara jeritan, tawa menyeramkan, dan musik horor mulai terdengar dari segala arah. Aku melirik Deona, berharap melihat ekspresi takut di wajahnya. Namun, yang kulihat adalah senyum lebar dan mata yang penuh rasa ingin tahu.</p>
+            <p><em>"Dia kenapa dah?" Malah seneng</em></p>
+            <p>"Wah, keren banget efeknya!" katanya dengan nada kagum, membuatku semakin gugup. Di depan, <strong>"Gruaawwwwaawaaaaa"</strong>, sosok hantu tiba-tiba muncul dengan suara menggelegar. Aku terkejut dan spontan melangkah mundur, hampir menabrak dinding.</p>
+            <p><em>"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"</em></p>
+            <p>Deona malah tertawa menikmatinya. "Ram, itu cuma aktor! Tenang aja, nggak usah panik," katanya sambil menepuk bahuku.</p>
+            <p>Aku mencoba menenangkan diri, tapi setiap kali ada sesuatu yang muncul secara tiba-tiba, aku selalu tersentak. Dalam hati, aku mulai menyesali idenya.</p>
+            <p><em>"Sial, kenapa malah aku yang takut? Bukannya dia yang harus takut?"</em></p>
+            <p>Sementara itu, Deona terus menikmati wahana dengan santai. Bahkan, dia sempat melambaikan tangan pada salah satu Hantu yang mendekati kami. Aku hanya bisa terdiam, berusaha keras menutupi ketakutanku yang semakin nyata. <em>"Gawat ni orang</em>"</p>
+            <p>Dan kami sampai di sebuah lorong yang sangat panjang, aku merasakan aura mengerikan sedang mengintai. Dan benar saja tiba-tiba semua hantu yang sudah kami lewati mengejar kami.</p>
+            <p>"H-Hahaha, Ram lariii, kita dikejar" ucap Deona tertawa menikmatinya.</p>
+            <p><em>"Sialan, kenapa aku melakuakn ini. Tolooooooooooooooooooooooooooong!!!!!!!!!!!!"</em></p>
+            <p>Aku merasa balas dendam ini percuma.</p>
+            <p><em>"Tolong, tolong hentikaann!!!!!"</em></p>
+            <p>Ketika akhirnya kami keluar, Deona tertawa terbahak-bahak. "Ram, aku nggak nyangka kamu malah yang kelihatan takut di sana. Padahal kamu yang ngajak, lho!"</p>
+            <p><em>"Sialan"</em></p>
+            <p>Aku menggaruk kepala sambil tersenyum kaku. "Ya... aku cuma mau bikin kamu takut. Tapi ternyata malah kebalik, ya."</p>
+            <p>Deona bersandar dibahuku, mengusap lenganku dengan lembut. "Tenang aja, aku nggak bakal cerita ke siapa-siapa kok," katanya sambil tersenyum penuh arti.</p>
+            <p>"Tolong, pokonya jangan" balasku.</p>
+            <p>Dia memelukku, mencoba menenangkanku. Yaa, itu berhasil. Kehangantannya menenangkanku. Pelukan adalah hal yang paling aku sukai darinya.</p>
+            <p>Meskipun terkadang menyebalkan dan membuatku hampir mati, tapi aku sangat senang bisa menghabiskan waktu bersamanya. <em>"Tapi tolong, bukan yang seperti ini lagi"</em></p>
+            <p>Dalam hati, aku menghela napas panjang. Catatan penting: jangan pernah meremehkan keberanian Deona lagi. Tapi melihat dia begitu bahagia, aku akhirnya hanya bisa tertawa bersama, menerima kenyataan bahwa balas dendamku tidak berjalan sesuai rencana.</p>
+            <p>-------------------------------------------------------------------------------------------------------</p>
+            <p><strong>PERSPEKTIVE DEONA</strong></p>
+            <p>Beberapa hari setelah mengunjungi Dufan, Rama mengajakku kencan lagi. Kali ini dia yang punya ide. "Gimana kalau kita coba wahana Rumah Hantu? Aku dengar tempat itu baru direnovasi dan sekarang lebih seru," katanya dengan nada misterius.</p>
+            <p>Aku langsung mengangguk. "Boleh juga! Aku belum pernah ke sana," jawabku dengan penuh semangat. Aku penasaran apa yang membuatnya memilih wahana ini.</p>
+            <p>Ketika kami masuk, suasana gelap dan efek suara menyeramkan langsung menyelimuti kami. Aku melihat Rama melirik ke sekeliling dengan ekspresi yang sulit dibaca. Aku, di sisi lain, merasa sangat tertarik. "Wah, keren banget efeknya!" seruku dengan nada kagum.</p>
+            <p>Di depan, sosok hantu tiba-tiba muncul. "Kyaaa!!", Aku merasa sedikit terkejut, tapi aku mulai terbiasa. Aku tersenyum kecil, menyadari bahwa itu hanya aktor dengan kostum dan riasan yang menarik. Namun, aku mendengar suara pelan di sebelahku. Ketika aku menoleh, Rama tampak mundur sedikit, seperti terkejut.</p>
+            <p>Aku tertawa kecil dan menepuk bahunya. "Ram, itu cuma aktor! Tenang aja, nggak usah panik," kataku, mencoba menenangkannya.</p>
+            <p>Seiring kami melanjutkan perjalanan, aku semakin menikmati wahana ini. Para aktor yang memainkan peran sebagai hantu sangat berbakat, dan aku bahkan sempat melambaikan tangan pada salah satu dari mereka. Namun, Rama terlihat semakin gugup. Aku mencoba menahan tawa setiap kali dia tersentak karena sesuatu yang muncul tiba-tiba.</p>
+            <p>Ketika akhirnya kami keluar, aku tidak bisa menahan tawa lagi. "Ram, aku nggak nyangka kamu malah yang kelihatan takut di sana. Padahal kamu yang ngajak, lho!" kataku sambil memegang perutku yang sakit karena terlalu banyak tertawa.</p>
+            <p>Dia menggaruk kepala dengan senyum kaku. "Ya... aku cuma mau bikin kamu takut. Tapi ternyata malah kebalik, ya."</p>
+            <p>Aku bersandar dibahunya yang lebar, mengusap lengannya dengan lembut. "Tenang aja, aku nggak bakal cerita ke siapa-siapa kok," kataku sambil tersenyum penuh arti. Dalam hati, aku merasa sangat bahagia. Hari itu bukan hanya menyenangkan, tapi juga menunjukkan sisi lain Rama yang jarang aku lihat. Dan aku menyukainya.</p>
+            <p>"Tolong, pokonya jangan" balasnya.</p>
+            <p>Aku tertawa kecil dalam hati, melihat tingkahnya yang lucu ini. Sifatnya ini, hanya untukku.</p>
+            <p>Aku memeluknya, agar dia merasa sedikit tenang. Dia sudah berjuang melewati rintangan oenuh hantu tadi, aku merasa ingin terus memeluknya. </p>
+            <p><em>"Astaga, aku lupa. Kenapa tadi ngga pura-pura takut aja yaa, biar bisa peluk-pelukkan. AAaa, mmm, mungkin lain kali aja yaa"</em></p>
+
+        </div>
+        <div id="Chapter7" class="chapter hidden">
+            <h2>Chapter 7 - Aku dan Depna</h2>
+            <p>Setelah Deona pulih, aku menemaninya selama beberapa hari ke depan. Orang tuanya memintaku membantu Deona mengingat semua yang sudah ia lupakan, termasuk mereka. Aku tahu ini bukan hal yang mudah bagi orang tuanya, karena kehilangan ingatan Deona berarti kehilangan bagian penting dari kenangan yang pernah mereka bagikan. Meski berat, mereka tetap berharap.</p>
+            <p>Deona masih dirawat di rumah sakit yang sama untuk mengawasi perkembangan ingatannya. Prosesnya lambat, seperti memunguti pecahan kaca yang tersebar di lantai. Namun, semua orang mencoba sabar, termasuk aku.</p>
+            <p>Hari ini adalah kunjunganku yang kesekian kalinya. Aku selalu menyempatkan diri untuk melihatnya. Ketika aku membuka pintu kamarnya, Deona sedang bersama ibunya, Bu Risa. Beliau sedang berusaha untuk membuat Deona mengingat dirinya.</p>
+            <p>"Deona!" seruku, sambil melambaikan tangan.</p>
+            <p>Dia langsung menoleh dan tersenyum lebar. Dengan mulut yang masih penuh makanan, dia berlari kecil ke arahku, memelukku erat tanpa rasa sungkan.</p>
+            <p>"Emm, mmm," gumamnya sambil menepuk-nepuk punggungku. "Aku kangen banget sama kamu!"</p>
+            <p>Aku tersenyum, merasa hangat oleh antusiasmenya. "Aku juga kangen sama kamu," balasku tulus.</p>
+            <p>Bu Risa bangkit dari duduknya, "Ram, tolong kamu gantikan ibu ya," ucap Bu Risa, menyerahkan piring yang baru saja ia pegang.</p>
+            <p>"Oh, iya, Bu." Aku meraih piring itu dan meletakkannya di meja kecil di samping tempat tidur Deona, akupun duduk dikursi yang sebelumnya diduduki Bu Risa.</p>
+            <p>"Deona, Mama pergi dulu, ya. Kamu yang baik sama Rama," ucap Bu Risa, mencium kening Deona dengan penuh kasih sayang.</p>
+            <p>"Iya, Ma. Hati-hati ya," jawab Deona sambil tersenyum manis.</p>
+            <p>Bu Risa melambaikan tangan sebelum akhirnya pintu tertutup perlahan di belakangnya. Kini hanya ada aku dan Deona di dalam kamar. Dia tiba-tiba memberikan isyarat ingin dipeluk lagi, tangannya terentang seperti anak kecil yang meminta gendongan.</p>
+            <p>Dalam hati aku berkata, <em>"Hmm, dia ini memang lucu sekali".</em> Aku pun memeluknya lagi, kali ini lebih erat. Rasanya seperti memberikan kehangatan yang ia butuhkan. Ternyata kami memiliki kesamaan. Dia sangat menyukai pelukan, sama sepertiku.</p>
+            <p>"Aku sayang kamu, aku sayang kamu... aku sayang kamu," ucapnya berulang-ulang dengan nada seperti anak kecil yang ceria.</p>
+            <p>Aku tersenyum sambil membalas lembut, "Iya, Yon, aku juga sayang kamu."</p>
+            <p>Setelah beberapa saat, aku bertanya, "Kalo nanti kamu sudah sembuh, kamu mau ke mana?"</p>
+            <p>Dia menatapku dengan mata berbinar. "Beneran aku boleh pilih?" tanyanya penuh antusias.</p>
+            <p>"Iya, bener. Kamu pilih aja," jawabku sambil tersenyum.</p>
+            <p>"Hmm," dia memiringkan kepala, berpikir sejenak. "Dulu kita sering ke mana?"</p>
+            <p>Aku mencoba mengingat. "Kayaknya dulu kita sering ke Dufan deh."</p>
+            <p>"Dufan? Itu apa?" tanyanya penasaran.</p>
+            <p>"Itu tempat wahana bermain. Dulu kita pernah seharian main di sana, saking serunya sampai nggak mau pulang," jelasku sambil tertawa kecil.</p>
+            <p>"Oh ya? Aku pengen banget ke sana lagi!" katanya, matanya berbinar lebih cerah.</p>
+            <p>Aku mengangguk mantap. "Ya udah, kalau nanti kamu sudah sembuh, aku janji akan ajak kamu ke sana lagi."</p>
+            <p>"Yeayyy!" serunya sambil melompat kecil di tempat tidur. Antusiasmenya membuatku tertawa kecil.</p>
+            <p>Kami melanjutkan percakapan ringan, membicarakan hal-hal yang bisa membantunya mengingat. Aku menceritakan kisah-kisah kecil tentang kebiasaan kami dulu, makanan favoritnya, dan momen-momen lucu yang pernah kami alami bersama. Sesekali dia mengangguk, seolah mencoba mengaitkan potongan-potongan cerita dengan sesuatu yang samar dalam pikirannya.</p>
+            <p>Namun tiba-tiba, dia menatapku serius. "Ram, aku takut," katanya dengan suara kecil. Entah apa yang ada dalam pikirannya.</p>
+            <p>Aku terdiam sejenak, lalu bertanya pelan, "Takut apa, Yon?"</p>
+            <p>"Takut kalau aku nggak bisa ingat semuanya. Aku nggak mau lupa sama kamu, sama ibu, sama semuanya..." ucapnya, air mata mulai menggenang di matanya. "Aku takut nanti kalian nyerah, dan ninggalin aku!!"</p>
+            <p>Aku mendekat, memegang kedua tangannya. "Dengerin aku, Yon. Nggak peduli kamu ingat atau nggak, yang penting kita tetap di sini untuk kamu. Aku, ibu, ayah, semuanya. Kita nggak akan pernah ninggalin kamu."</p>
+            <p>Dia menatapku, seolah mencari keyakinan di mataku. Lalu dia tersenyum kecil, air matanya mengalir pelan. "Kamu janji ya?"</p>
+            <p>"Aku janji," jawabku dengan suara penuh keyakinan.</p>
+            <p>Hari itu, meskipun tak ada kenangan yang benar-benar kembali padanya, aku tahu sesuatu telah berubah. Aku bisa merasakan, sedikit demi sedikit, Deona mulai percaya bahwa dia tidak sendiri.</p>
+            <p>____________________________________________________________</p>
+            <p>Hari-hari berlalu, dan Deona perlahan pulih secara fisik. Namun, kenyataan pahitnya, ingatannya tidak kembali, dan dokter memastikan bahwa kemungkinannya sangat kecil untuk itu terjadi. Meskipun begitu, dia tetap berusaha untuk menjalani hidup dengan penuh semangat.</p>
+            <p>Akhirnya, setelah semua izin dan persiapan selesai, aku memenuhi janjiku. Hari itu, aku menjemputnya di rumahnya. Deona tampak cantik dengan gaun kasual dan topi lebar yang melindunginya dari terik matahari.</p>
+            <p>"Siap pergi ke Dufan?" tanyaku sambil tersenyum.</p>
+            <p>"Siap banget!" jawabnya antusias.</p>
+            <p>-------------------------------------------------------------------------------------------------------</p>
+            <p>Kami tiba di Dufan saat pagi, ketika tempat itu masih belum terlalu ramai. Awalnya, aku mengajaknya mencoba wahana yang lebih ringan seperti komidi putar. Dia tampak menikmati setiap putaran, tertawa kecil sambil memegang pegangan dengan erat.</p>
+            <p>"Ini menyenangkan banget, Ram!" serunya sambil melambaikan tangan saat komidi putar mulai melambat.</p>
+            <p>Setelah itu, aku mencoba mengajaknya ke wahana yang sedikit lebih menantang, seperti Halilintar Coaster dan Hysteria. Tapi, reaksinya di luar dugaan.</p>
+            <p>"Ram, aku nggak suka ini. Aku takut banget," katanya sambil memegang tanganku erat saat melihat Hysteria dari kejauhan.</p>
+            <p>Dia sudah melupakan betapa dia sangat menyukai wahana ini dulu, aku juga bersyukur karena tidak harus bertaruh nyawa karena menaikinya.</p>
+            <p>Aku langsung tersenyum menenangkannya. "Nggak apa-apa, Yon. Kita cari wahana yang kamu suka aja."</p>
+            <p>Dia mengangguk lega. "Aku pengen coba itu!" Dia menunjuk ke arah rumah boneka yang terlihat indah dan penuh warna.</p>
+            <p>Kami pun masuk ke rumah boneka. Deona tampak sangat terpukau melihat boneka-boneka yang bernyanyi dan menari mengikuti alunan musik. Senyumnya tidak pernah hilang sepanjang perjalanan di dalam wahana itu.</p>
+            <p>"Ini keren banget, Ram. Aku suka banget sama tempat ini," katanya dengan mata berbinar.</p>
+            <p>Kami juga mencoba Perahu Cinta, yang mengelilingi seluruh area dengan sampan. Terdapat banyak hiasan dan gambar-gambar love, yaah namanya juga Perahu Cinta. <em>"Ini yang paling aman</em>"</p>
+            <p>Setelah itu, dia juga menikmati wahana Kicir-Kicir yang memberikan sensasi seru tanpa terlalu menakutkan. Tawa riangnya terdengar saat angin sepoi-sepoi menerpa wajahnya. Tapi, ini adalah bagian terberatku, "Aku takut ketinggian"</p>
+            <p>Setelah puas bermain, kami memutuskan untuk beristirahat sejenak. Aku membeli dua es krim yang dulu pernah kami beli</p>
+            <p>"Nih, punya kamu" ucapku memberinya es krim.</p>
+            <p>"Makasih, sayang" ucapannya itu membuatku sedikit gugup.</p>
+            <p>Aku hanya mengangguk, "Emm."</p>
+            <p>"Ram, aku nggak tahu dulu aku pernah ke sini atau nggak, tapi aku senang banget hari ini," katanya sambil bersandar dibahuku, menikmati es krim yang kami beli.</p>
+            <p>Aku tersenyum. "Itu yang penting, Yon. Bukan soal mengingat masa lalu, tapi menciptakan kenangan baru."</p>
+            <p>Dia menatapku dan tersenyum hangat. "Aku beruntung punya kamu."</p>
+            <p>Aku mengelus rambut merah kecoklatannya, "Dan aku beruntung punya kamu juga," balasku.</p>
+            <p>Hari itu berakhir dengan kenangan indah yang tidak akan pernah kulupakan. Meski Deona tak bisa mengingat masa lalunya, kami memulai babak baru bersama, penuh dengan harapan dan kenangan baru yang kami ciptakan bersama.</p>
+            <p><em>"Aku berharap ini tak pernah memiliki akhir"</em></p>
+            <p>____________________________________________________________</p>
+            <p><strong>THE TRUTH</strong></p>
+            <p>Itu adalah yang kuharapkan, tapi tak sesuai yang kuinginkan.</p>
+            <p>Deona mengalami hilang ingatan untuk yang kedua kalinya, entah apa yang menyebabkan hal itu terjadi. Dia melupakan siapa aku, dia melupakan semua kenangan yang kita lalui selama beberapa hari kebelakang. Tapi setidaknya, dia mengingaat orang tuanya.</p>
+            <p>Ini memang terasa menyakitkan. Bukan, ini sangat menyakitkan.</p>
+            <p><em>Dia hilang ingatan, atau inngatannya kembali?</em></p>
+            <p>Setelah kejadian itu, aku tak lagi menemui Deona. Matanya ketika melihatku waktu itu, sangat berbeda. Ia seperti melihat orang asing, melihatku dengan ketakutan yang menyakiti ingatannya. Jadi orang tuanya memintaku untuk menjauhinya. Hingga sekarang aku tak pernah lagi tau kabar darinya.</p>
+            <p>Tanpa sadar, aku telah menjadi sosok penjahat di ingatannya. Kurasa sudah saatnya menyerah dan meninggalkannya.</p>
+            <p>Dan kebenaran yang kudapat di akhir, ternyata namanya bukanlah Deona.</p>
+            <p>Aku sendiri tak tau siapa dia sebenarnya. Aku menganggapnya Deona, pasti karena sebuah kesalahan</p>
+            <p><em>Aku harap ini semua segera berakhir...</em></p>
+
+        </div>
+        <div id="Epilogue" class="chapter hidden">
+            <h2>Epilogue</h2>
+            <p><strong>Percuma. Aku tak bisa mengingatnya...</strong></p>
+            <p>Ingatanku tentang gadis itu sudah hilang. Kemungkinan akan terus memudar seiring dengan kembalinya ingatan-ingatan mengerikan yang sudah aku lupakan. Aku berharap kepalaku terbentur sangat keras waktu itu.</p>
+            <p>Aku sudah melupakan seperti apa rupanya? Bagaimana cara dia tersenyum? Suaranya?</p>
+            <p>Semua itu hanya ingatan samar yang terus diputar otakku berulang kali, aku bahkan tak yakin pernah mengalami kejadian itu. Atau apakah cerita ini benar-benar terjadi.</p>
+            <p>Tapi yang jelas, <em>"Ini sangat menyakitiku".</em></p>
+            <p>____________________________________________________________</p>
+            <p><strong>EPILOGUE CHAPTER 3</strong></p>
+            <p>Aku langsung menemui anak itu. Orang yang sudah membuat si adik tenggelam. Aku melakukan hal yang sama dengannya, dengan cara yang tak akan pernah ia lupakan.</p>
+            <p>"Kau harus menebus dosamu"</p>
+            <p>"Sebaiknya kau jangan melupakan wajah orang terakhir yang kau lihat"</p>
+            <p>Aku melakukan hal yang sama seperti yang dia lakukan pada si adik, aku melemparnya dari atas jembatan. Mendengar teriakannya sangat membuatku puas.</p>
+            <p>Aku kembali teringat apa yang telah terjadi padaku. Kakak dari anak yang baru saja kujatuhkan, dulu dia selalu membuliku. Mereka memang tidak ada bedanya. Aku sempat melupakan semuanya, namun karena perbuatan anak ini "aku mengingat segalanya". Dan aku berpikir, ada baiknya aku melakukan hal ini juga padannya.</p>
+            <p><strong>EPILOGUE CHAPTER 3-prt 2</strong></p>
+            <p>Aku mencari tahu tentang ayahnya. Ternyata dia adalah memang benar seorang bajingan. Dia banyak melakukan kejahatan, memperkosa, penjudi, pemabuk. Bahkan istrinya meninggalkannya.</p>
+            <p>Aku sudah mendapat cukup informasi untuk melakukan hal yang pastas dia dapatkan.</p>
+            <p>Saat itu, malam hari, aku menunggunya dijalan yang sepi. Dia biasa nongkrong ditempat itu bersama temannya untuk mabuk-mabukan. Saat situasi sudah menguntungkanku, aku mendatangi mereka.</p>
+            <p>Aku membangunkan bajingan itu, memukul kepalanya dengan botol yang ia bawa. Itu membuat kepalanya berdarah, itu membuatnya berteriak kesakitan. Namun belum cukup, belum cukup untukku. Aku mengikat tangan dan mulutnya, membuka celananya. Aku mengambil pisau disakuku, aku mengiris benda yang bergantung itu, membuat luka yang cukup dalam. Aku mengambil botol minuman keras yang masih berisi, lalu menuangkannya ke luka yang terbuka itu. Belum cukup, aku memukulnya berkali-kali, menendangnya sekuat tenaga. Hingga tubuhnya berlumuran darah, aku memutuskan untuk mematahkan tangan dan giginya. <em>"Kita akan bertemu lagi di Neraka"</em></p>
+            <p>Aku tak terlalu ingat dia berakhir seperti apa, yang jelas dia sangat bersyukur mendapkan balasan atas perbuatannya.</p>
+
+        </div>
+    </div>
+
+</div>
+    <!-- Tombol untuk Novel Villain -->
+<p><button onclick="toggleVillainContent()">VILLAIN</button></p>
+
+<!-- Chapter Content -->
+<div id="villain-section" style="display: none;">
+    <div class="sidebar">
+        <h3>Chapters</h3>
+        <ul class="chapter-list">
+            <li><button onclick="showVillainChapter('villain-prologue')">Prologue</button></li>
+            <li><button onclick="showVillainChapter('villain-chapter1')">Chapter 1</button></li>
+            <li><button onclick="showVillainChapter('villain-chapter2')">Chapter 2</button></li>
+            <li><button onclick="showVillainChapter('villain-chapter3')">Chapter 3</button></li>
+            <li><button onclick="showVillainChapter('villain-chapter4')">Chapter 4</button></li>
+        </ul>
+    </div>
+
+    <!-- Chapter Content -->
+    <div class="chapter-content">
+        <div id="villain-prologue" class="chapter hidden">
+            <h2>Prologue</h2>
+            <p>Will uploaded soon</p>
+        </div>
+        <div id="villain-chapter1" class="chapter">
+            <h2>Chapter 1</h2>
+            <p>Will uploaded soon.</p>
+        </div>
+
+        <div id="villain-chapter2" class="chapter hidden">
+            <h2>Chapter 2</h2>
+            <p>Will uploaded soon.</p>
+        </div>
+
+        <div id="villain-chapter3" class="chapter hidden">
+            <h2>Chapter 3</h2>
+            <p>Ini adalah konten dari Chapter 3 Villain.</p>
+        </div>
+
+        <div id="villain-chapter4" class="chapter hidden">
+            <h2>Chapter 4</h2>
+            <p>Ini adalah konten dari Chapter 4 Villain.</p>
+            <p>
+                In this <strong>important</strong> paragraph, we can use <em>italic</em> for emphasis, 
+                <u>underline</u> for attention, and <s>strikethrough</s> for corrections. 
+                We can also show mathematical formulas like x<sup>2</sup> + y<sup>2</sup> = z<sup>2</sup> 
+                or chemical formulas like H<sub>2</sub>O.
+                <s><u>sencored</u></s>
+            </p>
+        </div>
+       
+    </div>
+</div>
+</section>
+<!--Make title novel buttons round /-->
+<style>button[onclick="toggleAnotherSideContent()"],
+    button[onclick="toggleVillainContent()"] {
+        width: 100px;
+        height: 40px;
+        padding: 0;
+        border-radius: 50%;
+        font-size: 16px;
+        text-align: center;
+        line-height: 40px;
+    }</style>
+<style>
+    .hidden {
+        display: none;
+    }
+    
+    #another-side-section,
+    #villain-section {
+        display: none;
+        gap: 20px;
+        align-items: flex-start;
+    }
+    
+    /* Sidebar untuk tombol chapter */
+    .sidebar {
+        width: 99px;
+        background-color: #f4f4f4;
+        padding: 15px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .sidebar h3 {
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 18px;
+        color: #444;
+    }
+    
+    .chapter-list {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .chapter-list li {
+        margin-bottom: 10px;
+    }
+    
+    .chapter-list button {
+        width: 100%;
+        padding: 10px;
+        background-color: #444;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        text-align: center;
+        border-radius: 7px;
+    }
+    
+    .chapter-list button:hover {
+        background-color: #555;
+    }
+    
+    /* Konten chapter */
+    .chapter-content {
+        flex-grow: 1;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        min-height: 200px;
+    }
+    
+    .chapter h2 {
+        margin-top: 0;
+        color: #444;
+    }
+    
+    .chapter p {
+        line-height: 1.6;
+    }
+    </style>
+    
+    <script>
+    function showChapter(chapterId) {
+        const allChapters = document.querySelectorAll('.chapter');
+        allChapters.forEach(chapter => chapter.classList.add('hidden'));
+    
+        document.getElementById(chapterId).classList.remove('hidden');
+    }
+    
+function toggleAnotherSideContent() {
+    const anotherSideSection = document.getElementById('another-side-section');
+
+        const villainSection = document.getElementById('villain-section');
+    
+        // Menutup Villain jika Another Side dibuka
+        villainSection.style.display = "none";
+    
+        if (anotherSideSection.style.display === "none") {
+            anotherSideSection.style.display = "flex";
+        } else {
+            anotherSideSection.style.display = "none";
+        }
+    }
+    
+    function toggleVillainContent() {
+        const villainSection = document.getElementById('villain-section');
+        const anotherSideSection = document.getElementById('another-side-section');
+    
+        // Menutup Another Side jika VILLAIN dibuka
+        anotherSideSection.style.display = "none";
+    
+        if (villainSection.style.display === "none") {
+            villainSection.style.display = "flex";
+        } else {
+            villainSection.style.display = "none";
+        }
+    }
+    </script>
+
+<style>
+/* Kontainer utama */
+#novelContent {
+    display: flex;
+    gap: 20px; /* Jarak antar elemen */
+    align-items: flex-start; /* Ratakan ke atas */
+}
+
+/* Sidebar untuk tombol chapter */
+.sidebar {
+    width: 99px;
+    background-color: #f4f4f4;
+    padding: 15px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #444;
+}
+
+.chapter-list {
+    list-style: none;
+    padding: 0;
+}
+
+.chapter-list li {
+    margin-bottom: 10px;
+}
+
+.chapter-list button {
+    width: 100%;
+    padding: 10px;
+    background-color: #444;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 7px;
+}
+
+.chapter-list button:hover {
+    background-color: #555;
+}
+
+/* Konten chapter */
+.chapter-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-height: 200px; /* Tinggi minimum */
+}
+
+/* Sembunyikan semua chapter awalnya */
+.hidden {
+    display: none;
+}
+
+.chapter h2 {
+    margin-top: 0;
+    color: #444;
+}
+
+.chapter p {
+    line-height: 1.6;
+}
+</style>
+
+<script>
+function showChapter(chapterId) {
+    // Sembunyikan semua chapter
+    const chapters = document.querySelectorAll('.chapter');
+    chapters.forEach(chapter => chapter.classList.add('hidden'));
+
+    // Tampilkan chapter yang dipilih
+    document.getElementById(chapterId).classList.remove('hidden');
+}
+
+function toggleNovelContent() {
+    const novelContent = document.getElementById('novelContent');
+    novelContent.classList.toggle('hidden');
+}
+</script>
+
+
+<!-- Data code untuk bagian Lyric -->
+        <section id="lyrics" class="hidden">
+            <h2>Lyrics</h2>
+            <p>Explore my collection of lyrics and song inspirations.</p>
+            <p><button>夢の小径</button></p>
+                
+            <!-- Add lyrics content here -->
+        </section>
+
+        <section id="gallery" class="hidden">
+            <h2>Gallery</h2>
+            <p>A showcase of my favorite photos and moments.</p>
+            <!-- Add gallery content here -->
+        </section>
+
+        <section id="contact" class="hidden">
+            <h2>Contact Me</h2>
+            <div class="form-container">
+                <form action="#" method="post">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="about" class="hidden">
+            <h2>About Me</h2>
+            <p>Code Name: AUTHOR KEJAM</p>
+        </section>
+
+        <div class="login">
+            <!-- <a href="#">Login</a> -->
+        </div>
+    </main>
+  <!--CRUEL 4utHoR-->
+    <footer>
+        <p>&copy; 2024 REMIRAINDA Personal Blog. All rights reserved.</p>
+    </footer>
+  
+    <script src="alert.js"></script>
+    <script>
+        function toggleNovelContent() {
+            const novelContent = document.getElementById('novelContent');
+            if (novelContent.classList.contains('hidden')) {
+                novelContent.classList.remove('hidden');
+            } else {
+                novelContent.classList.add('hidden');
+            }
+        }
+    </script>
+
+    <!-- Bagian untuk Another Side-->
+    <script>function toggleAnotherSideContent() {
+        const anotherSideSection = document.getElementById('another-side-section');
+        if (anotherSideSection.style.display === "none") {
+            anotherSideSection.style.display = "flex";
+        } else {
+            anotherSideSection.style.display = "none";
+        }
+    }
+    </script>
+
+    <!--Bagian untuk tombol villain -->
+    <script>function toggleVillainContent() {
+        const villainSection = document.getElementById('villain-section');
+        if (villainSection.style.display === "none") {
+            villainSection.style.display = "flex";
+        } else {
+            villainSection.style.display = "none";
+        }
+    }
+    </script>
+    <script>function showVillainChapter(chapterId) {
+        const chapters = document.querySelectorAll('.chapter');
+        chapters.forEach(chapter => chapter.classList.add('hidden'));
+    
+        document.getElementById(chapterId).classList.remove('hidden');
+    }
+    </script>
+
+
+   
+        
+</body>
+</html>
