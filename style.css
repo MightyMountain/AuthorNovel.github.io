@@ -5,22 +5,6 @@ body {
     background-color: #f5f5f5;
     color: #333;
 }
-
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column; /* Stack navigation items */
-    }
-    main {
-        padding: 10px; /* Reduce padding on smaller screens */
-    }
-    .sidebar {
-        width: 100%; /* Make sidebar full width */
-    }
-    .chapter-content {
-        padding: 10px; /* Reduce padding */
-    }
-}
-
 header {
     background-color: #333;
     color: #fff;
@@ -150,14 +134,46 @@ button[onclick="toggleVillainContent()"] {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     min-height: 200px;
 }
-
-img {
-    max-width: 100%;
-    height: auto; /* Maintain aspect ratio */
-}
-
 #novelContent {
     display: flex;
     gap: 20px;
     align-items: flex-start;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav a {
+        margin: 10px 0;
+    }
+    main {
+        padding: 10px;
+    }
+    .sidebar {
+        width: 100%;
+        box-shadow: none;
+    }
+    .chapter-content {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+    nav a {
+        font-size: 14px;
+    }
+    button {
+        font-size: 14px;
+        padding: 8px;
+    }
+    .chapter-list button {
+        font-size: 12px;
+        padding: 8px;
+    }
 }
