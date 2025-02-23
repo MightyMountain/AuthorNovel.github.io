@@ -1,0 +1,142 @@
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #444;
+    padding: 10px 0;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+section {
+    margin-bottom: 20px;
+}
+h1, h2 {
+    color: #444;
+}
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: #fff;
+}
+.form-container {
+    margin-top: 20px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+input, textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #555;
+}
+.login {
+    text-align: right;
+    margin-top: 10px;
+}
+.hidden {
+    display: none;
+}
+.chapter p {
+    text-align: justify;
+}
+button[onclick="toggleAnotherSideContent()"],
+button[onclick="toggleVillainContent()"] {
+    width: 100px;
+    height: 40px;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 16px;
+    text-align: center;
+    line-height: 40px;
+}
+#another-side-section,
+#villain-section {
+    display: none;
+    gap: 20px;
+    align-items: flex-start;
+}
+.sidebar {
+    width: 99px;
+    background-color: #f4f4f4;
+    padding: 15px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+.sidebar h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #444;
+}
+.chapter-list {
+    list-style: none;
+    padding: 0;
+}
+.chapter-list li {
+    margin-bottom: 10px;
+}
+.chapter-list button {
+    width: 100%;
+    padding: 10px;
+    background-color: #444;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 7px;
+}
+.chapter-list button:hover {
+    background-color: #555;
+}
+.chapter-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-height: 200px;
+}
+#novelContent {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
