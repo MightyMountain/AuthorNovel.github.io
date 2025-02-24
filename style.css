@@ -74,6 +74,8 @@ button:hover {
 }
 .hidden {
     display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 .chapter p {
     text-align: justify;
@@ -95,15 +97,17 @@ button[onclick="toggleVillainContent()"] {
     align-items: flex-start;
 }
 .sidebar {
-    width: 99px;
+    width: 60px; /* Narrow the width */
     background-color: #f4f4f4;
-    padding: 15px;
+    padding: 5px; /* Adjust padding */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 20px; /* Adjust as needed */
 }
 .sidebar h3 {
     text-align: center;
     margin-bottom: 10px;
-    font-size: 18px;
+    font-size: 12px; /* Adjust font size */
     color: #444;
 }
 .chapter-list {
@@ -111,18 +115,18 @@ button[onclick="toggleVillainContent()"] {
     padding: 0;
 }
 .chapter-list li {
-    margin-bottom: 10px;
+    margin-bottom: 5px; /* Adjust margin */
 }
 .chapter-list button {
     width: 100%;
-    padding: 10px;
+    padding: 5px; /* Adjust padding */
     background-color: #444;
     color: white;
     border: none;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 10px; /* Adjust font size */
     text-align: center;
-    border-radius: 7px;
+    border-radius: 3px; /* Adjust border radius */
 }
 .chapter-list button:hover {
     background-color: #555;
@@ -140,14 +144,46 @@ button[onclick="toggleVillainContent()"] {
     align-items: flex-start;
 }
 
-/* Responsive styles */
+.chapter {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    transform: rotateY(180deg);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.chapter:not(.hidden) {
+    opacity: 1;
+    transform: rotateY(0);
+}
+
+/* Font settings for each section */
+#Blog {
+    font-family: inherit;
+}
+#novel {
+    font-family: inherit;
+}
+#cerpen {
+    font-family: inherit;
+}
+#contact {
+    font-family: inherit;
+}
+#about {
+    font-family: inherit;
+}
+
+/* Font settings for each post */
+.blog-entry {
+    font-family: inherit;
+}
+
 @media (max-width: 768px) {
     nav {
-        flex-direction: column;
-        align-items: center;
-    }
-    nav a {
-        margin: 10px 0;
+        gap: 1rem;
+        flex-wrap: nowrap;
+        overflow-x: auto;
     }
     main {
         padding: 10px;
@@ -166,14 +202,14 @@ button[onclick="toggleVillainContent()"] {
         padding: 10px;
     }
     nav a {
-        font-size: 14px;
+        margin: 5px 0;
     }
-    button {
+    button[onclick="toggleAnotherSideContent()"],
+    button[onclick="toggleVillainContent()"] {
+        width: 80px;
+        height: 30px;
         font-size: 14px;
-        padding: 8px;
-    }
-    .chapter-list button {
-        font-size: 12px;
-        padding: 8px;
+        line-height: 30px;
     }
 }
+
