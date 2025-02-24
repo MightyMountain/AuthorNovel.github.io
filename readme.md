@@ -6,7 +6,7 @@ Baca novel Indonesia gratis dari Author (English version soon)
 
 ## Screenshots
 
-![App Screenshot][def]
+![App Screenshot](./image/sss.jpeg)
 
 
 ## Run Locally
@@ -33,4 +33,3 @@ open on web
 
 
 
-[def]: ./image/sss.jpeg
