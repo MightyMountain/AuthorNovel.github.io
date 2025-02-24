@@ -3,7 +3,9 @@ function showChapter(chapterId) {
     chapters.forEach(chapter => {
         chapter.classList.add('hidden');
     });
-    document.getElementById(chapterId).classList.remove('hidden');
+    const chapter = document.getElementById(chapterId);
+    chapter.classList.remove('hidden');
+    chapter.scrollIntoView({ behavior: 'smooth' }); // Scroll to the chapter title
 }
 
 function loadAnotherSideContent() {
@@ -55,6 +57,7 @@ function toggleAnotherSideContent() {
     villainSection.style.display = "none";
     if (anotherSideSection.style.display === "none") {
         anotherSideSection.style.display = "flex";
+        showChapter('prologue'); // Show prologue by default
     } else {
         anotherSideSection.style.display = "none";
     }
