@@ -198,7 +198,7 @@ button[onclick="toggleVillainContent()"] {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 476px) {
     header {
         padding: 10px;
     }
@@ -216,5 +216,25 @@ button[onclick="toggleVillainContent()"] {
         padding: 5px;
         font-size: 12px; /* Adjust font size */
     }
+
+    .chapter-content {
+        flex-grow: 1;
+        padding: 10px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        min-height: 100px;
+    }
+    #novelContent {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+    }
+    .sidebar {
+        width: 60px; /* Narrow the width */
+        background-color: #f4f4f4;
+        padding: 5px; /* Adjust padding */
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 20px; /* Adjust as needed */
 }
 
