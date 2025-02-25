@@ -185,38 +185,61 @@ button[onclick="toggleVillainContent()"] {
     font-family: inherit;
 }
 
-@media (max-width: 480px) {
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-    font-size: 8;
-}
-nav a {
-    margin: 5px 0;
-    gap: 1rem;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-}
-button[onclick="toggleAnotherSideContent()"],
-button[onclick="toggleVillainContent()"] {
-    width: 80px;
-    height: 30px;
-    font-size: 14px;
-    line-height: 30px;
-}
-.chapter-content {
-    padding: 5px;
-     width: 40px;
-     height: 15;
-    font-size: 15;
-}
-}
-.chapter-list button.active::after {
-content: " (Baca)";
-color: rgb(141, 137, 137);
-font-weight: bold;
-font-size: 5;
+@media (max-width: 768px) {
+    nav {
+        gap: 1rem;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+    main {
+        padding: 10px;
+    }
+    .sidebar {
+        width: 100%;
+        box-shadow: none;
+    }
+    .chapter-content {
+        padding: 10px;
+        font-size: 14px; /* Adjust font size */
+    }
 }
 
+@media (max-width: 476px) {
+    header {
+        padding: 10px;
+    }
+    nav a {
+        margin: 5px 0;
+    }
+    button[onclick="toggleAnotherSideContent()"],
+    button[onclick="toggleVillainContent()"] {
+        width: 80px;
+        height: 30px;
+        font-size: 14px;
+        line-height: 30px;
+    }
+    .chapter-content {
+        padding: 5px;
+        font-size: 12px; /* Adjust font size */
+    }
+
+    .chapter-content {
+        flex-grow: 1;
+        padding: 10px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        min-height: 100px;
+    }
+    #novelContent {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+    }
+    .sidebar {
+        width: 60px; /* Narrow the width */
+        background-color: #f4f4f4;
+        padding: 5px; /* Adjust padding */
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 20px; /* Adjust as needed */
+}
