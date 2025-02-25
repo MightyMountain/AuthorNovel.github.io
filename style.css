@@ -238,6 +238,7 @@ button[onclick="toggleVillainContent()"] {
         display: flex;
         gap: 20px;
         align-items: flex-start;
+        background-color: black
     }
     .sidebar {
         width: 60px; /* Narrow the width */
