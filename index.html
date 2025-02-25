@@ -87,11 +87,17 @@
         
 
         .chapter p {text-align: justify;}
-        @media (max-width: 720px) {
+        @media (max-width: 768px) {
             nav {
                 gap: 1rem;
                  flex-wrap: nowrap;
                  overflow-x: auto;
+            }
+            header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
             }
             main {
                 padding: 10px;
@@ -101,8 +107,10 @@
                 box-shadow: none;
             }
             .chapter-content {
-                padding: 10px;
-                font-size: 14; /* Adjust font size */
+                padding: 5px;
+                width: 40px;
+                height: 15;
+                font-size: 15; /* Adjust font size */
             }
         }
 
