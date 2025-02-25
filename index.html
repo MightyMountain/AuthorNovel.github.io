@@ -124,6 +124,11 @@
                 font-size: 15;
             }
         }
+        .chapter-list button.active::after {
+            content: " (You are here)";
+            color: red;
+            font-weight: bold;
+        }
     </style>
     <!-- Bagian tombol pengganti chapter -->
     <meta charset="UTF-8">
@@ -141,6 +146,19 @@
                 chapter.classList.add('hidden');
             });
             document.getElementById(chapterId).classList.remove('hidden');
+            const chapter = document.getElementById(chapterId);
+            chapter.classList.remove('hidden');
+            chapter.scrollIntoView({ behavior: 'smooth' }); // Scroll to the chapter title
+
+            // Update active chapter button
+            const chapterButtons = document.querySelectorAll('.chapter-list button');
+            chapterButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+            const activeButton = document.querySelector(`.chapter-list button[onclick="showChapter('${chapterId}')"]`);
+            if (activeButton) {
+                activeButton.classList.add('active');
+            }
         }
 
         function toggleAnotherSideContent() {
@@ -1438,6 +1456,16 @@
         const chapter = document.getElementById(chapterId);
         chapter.classList.remove('hidden');
         chapter.scrollIntoView({ behavior: 'smooth' }); // Scroll to the chapter title
+
+        // Update active chapter button
+        const chapterButtons = document.querySelectorAll('.chapter-list button');
+        chapterButtons.forEach(button => {
+            button.classList.remove('active');
+        });
+        const activeButton = document.querySelector(`.chapter-list button[onclick="showChapter('${chapterId}')"]`);
+        if (activeButton) {
+            activeButton.classList.add('active');
+        }
     }
     
     function toggleAnotherSideContent() {
@@ -1553,6 +1581,16 @@ function showChapter(chapterId) {
     const chapter = document.getElementById(chapterId);
     chapter.classList.remove('hidden');
     chapter.scrollIntoView({ behavior: 'smooth' }); // Scroll to the chapter title
+
+    // Update active chapter button
+    const chapterButtons = document.querySelectorAll('.chapter-list button');
+    chapterButtons.forEach(button => {
+        button.classList.remove('active');
+    });
+    const activeButton = document.querySelector(`.chapter-list button[onclick="showChapter('${chapterId}')"]`);
+    if (activeButton) {
+        activeButton.classList.add('active');
+    }
 }
 
 function toggleNovelContent() {
