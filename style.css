@@ -131,6 +131,11 @@ button[onclick="toggleVillainContent()"] {
 .chapter-list button:hover {
     background-color: #555;
 }
+.chapter-list button.active::after {
+    content: " (You are here)";
+    color: red;
+    font-weight: bold;
+}
 .chapter-content {
     flex-grow: 1;
     padding: 20px;
