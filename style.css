@@ -247,4 +247,23 @@ button[onclick="toggleVillainContent()"] {
         position: sticky;
         top: 20px; /* Adjust as needed */
     }
+     main {
+        padding: 10px;
+        font-size: 14px; /* Adjust font size */
+    }
+    section {
+        margin-bottom: 10px;
+        font-size: 14px; /* Adjust font size */
+    }
+    .form-container {
+        margin-top: 10px;
+    }
+    input, textarea {
+        padding: 8px;
+        font-size: 14px; /* Adjust font size */
+    }
+    button {
+        padding: 8px;
+        font-size: 14px; /* Adjust font size */
+    }
 }
