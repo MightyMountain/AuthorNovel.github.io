@@ -97,7 +97,7 @@ button[onclick="toggleVillainContent()"] {
     align-items: flex-start;
 }
 .sidebar {
-    width: 40px; /* Narrow the width */
+    width: 60px; /* Narrow the width */
     background-color: #f4f4f4;
     padding: 5px; /* Adjust padding */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
@@ -143,7 +143,6 @@ button[onclick="toggleVillainContent()"] {
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     min-height: 200px;
-    width: calc(100% - 60px); /* Adjust width */
 }
 #novelContent {
     display: flex;
@@ -208,10 +207,6 @@ button[onclick="toggleVillainContent()"] {
 @media (max-width: 476px) {
     header {
         padding: 10px;
-        font-size: 14px; /* Adjust font size */
-    }
-    header h1 {
-        font-size: 18px; /* Adjust font size */
     }
     nav a {
         margin: 5px 0;
@@ -224,12 +219,16 @@ button[onclick="toggleVillainContent()"] {
         line-height: 30px;
     }
     .chapter-content {
+        padding: 5px;
+        font-size: 12px; /* Adjust font size */
+    }
+
+    .chapter-content {
         flex-grow: 1;
         padding: 10px;
         background-color: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         min-height: 100px;
-        width: calc(100% - 50px); /* Adjust width */
     }
     #novelContent {
         display: flex;
@@ -237,30 +236,10 @@ button[onclick="toggleVillainContent()"] {
         align-items: flex-start;
     }
     .sidebar {
-        width: 40px; /* Narrow the width */
+        width: 60px; /* Narrow the width */
         background-color: #f4f4f4;
         padding: 5px; /* Adjust padding */
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
         position: sticky;
         top: 20px; /* Adjust as needed */
-    }
-    main {
-        padding: 10px;
-        font-size: 14px; /* Adjust font size */
-    }
-    section {
-        margin-bottom: 10px;
-        font-size: 14px; /* Adjust font size */
-    }
-    .form-container {
-        margin-top: 10px;
-    }
-    input, textarea {
-        padding: 8px;
-        font-size: 14px; /* Adjust font size */
-    }
-    button {
-        padding: 8px;
-        font-size: 14px; /* Adjust font size */
-    }
 }
