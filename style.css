@@ -223,22 +223,22 @@ button[onclick="toggleVillainContent()"] {
         line-height: 30px;
     }
     .chapter-content {
-        padding: 5px;
+        padding: 20px;
         font-size: 12px; /* Adjust font size */
     }
 
     .chapter-content {
         flex-grow: 1;
-        padding: 10px;
+        padding: 5px;
         background-color: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         min-height: 100px;
+        background-color: black
     }
     #novelContent {
         display: flex;
         gap: 20px;
         align-items: flex-start;
-        background-color: black
     }
     .sidebar {
         width: 60px; /* Narrow the width */
