@@ -132,10 +132,10 @@ button[onclick="toggleVillainContent()"] {
     background-color: #555;
 }
 .chapter-list button.active::after {
-    content: " (You are here)";
+    content: " (Baca)";
     color: rgb(141, 137, 137);
     font-weight: bold;
-    font-size: 7;
+    font-size: 5;
 }
 .chapter-content {
     flex-grow: 1;
