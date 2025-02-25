@@ -194,6 +194,7 @@ button[onclick="toggleVillainContent()"] {
     }
     .chapter-content {
         padding: 10px;
+        font-size: 14px; /* Adjust font size */
     }
 }
 
@@ -210,6 +211,10 @@ button[onclick="toggleVillainContent()"] {
         height: 30px;
         font-size: 14px;
         line-height: 30px;
+    }
+    .chapter-content {
+        padding: 5px;
+        font-size: 12px; /* Adjust font size */
     }
 }
 
