@@ -206,7 +206,6 @@
             chapters.forEach(chapter => {
                 chapter.classList.add('hidden');
             });
-            document.getElementById(chapterId).classList.remove('hidden');
             const chapter = document.getElementById(chapterId);
             chapter.classList.remove('hidden');
             chapter.scrollIntoView({ behavior: 'smooth' }); // Scroll to the chapter title
@@ -246,16 +245,24 @@
             }
         }
 
-        function showChapter(chapterId) {
+        function showVillainChapter(chapterId) {
             const chapters = document.querySelectorAll('.chapter');
-            chapters.forEach(chapter => {
-                chapter.classList.add('hidden');
-            });
+            chapters.forEach(chapter => chapter.classList.add('hidden'));
+
             const chapter = document.getElementById(chapterId);
             chapter.classList.remove('hidden');
             chapter.scrollIntoView({ behavior: 'smooth' }); // Scroll to the chapter title
+
+            // Update active chapter button
+            const chapterButtons = document.querySelectorAll('.chapter-list button');
+            chapterButtons.forEach(button => {
+                button.classList.remove('active'); 
+            });
+            const activeButton = document.querySelector(`.chapter-list button[onclick="showVillainChapter('${chapterId}')"]`);
+            if (activeButton) {
+                activeButton.classList.add('active');
+            }
         }
-    </script>
  <!-- Batas bagian tombol pengganti,atas-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
