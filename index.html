@@ -84,76 +84,88 @@
         }
         
         .chapter p {text-align: justify;}
-        @media (max-width: 768px) {
-            nav {
-                gap: 1rem;
-                 flex-wrap: nowrap;
-                 overflow-x: auto;
-            }
-            header {
-            background-color: #333;
-            color: #fff;
+            @media (max-width: 1024px) {
+        nav {
+            gap: 1rem;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+        }
+        main {
+            padding: 15px;
+        }
+        .chapter-content {
+            padding: 20px;
+            font-size: 16px;
+        }
+        .sidebar {
+            width: 250px;
             padding: 10px;
-            text-align: center;
-            }
-            main {
-                padding: 10px;
-            }
-            .sidebar {
-                width: 100%;
-                box-shadow: none;
-            }
-            .chapter-content {
-                padding: 5px;
-                width: 40px;
-                height: 15;
-                font-size: 15; /* Adjust font size */
-            }
+        }
+    }
+
+    /* Untuk tablet dan perangkat menengah (<= 768px) */
+    @media (max-width: 768px) {
+        main {
+            padding: 10px;
+        }
+        .sidebar {
+            width: 100%;
+            padding: 5px 10px;
+            box-shadow: none;
+        }
+        .chapter-content {
+            padding: 15px;
+            font-size: 14px;
+        }
+        .chapter-menu {
+            padding: 5px 10px;
+        }
+    }
+
+    /* Untuk ponsel ukuran sedang (<= 476px) */
+    @media (max-width: 476px) {
+        header {
+            padding: 10px;
+            font-size: 14px;
+        }
+        header h1 {
+            font-size: 18px;
+        }
+        nav a {
+            margin: 5px 0;
+        }
+        .chapter-content {
+            flex-grow: 1;
+            padding: 20px;
+            font-size: 12px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            min-height: 100px;
+        }
+        .sidebar {
+            width: 40px;
+            background-color: #f4f4f4;
+            padding: 5px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 20px;
+        }
         }
 
-        @media (max-width: 476px) {
-            header {
-                padding: 10px;
-                font-size: 14px; /* Adjust font size */
-            }
-            header h1 {
-                font-size: 18px; /* Adjust font size */
-            }
-            nav a {
-                margin: 5px 0;
-            }
-            button[onclick="toggleAnotherSideContent()"],
-            button[onclick="toggleVillainContent()"] {
-                width: 80px;
-                height: 30px;
-                font-size: 14px;
-                line-height: 30px;
-            }
-            .chapter-content {
-                padding: 5px;
-                font-size: 12px; /* Adjust font size */
-            }
-            .chapter-content {
-                flex-grow: 1;
-                padding: 10px;
-                background-color: #fff;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                min-height: 100px;
-            }
-            #novelContent {
-                display: flex;
-                gap: 20px;
-                align-items: flex-start;
-            }
-            .sidebar {
-                width: 40px; /* Narrow the width */
-                background-color: #f4f4f4;
-                padding: 5px; /* Adjust padding */
-                box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-                position: sticky;
-                top: 20px; /* Adjust as needed */
-            }
-            }
+    /* Untuk ponsel kecil (<= 320px) */
+    @media (max-width: 320px) {
+        body {
+            font-size: 12px;
+        }
+        .chapter-content {
+            padding: 10px;
+            font-size: 11px;
+        }
+        .sidebar {
+            width: 35px;
+            padding: 3px;
+        }
+    }
             .chapter-list button.active::after {
             content: " (Baca)";
             color: rgb(137, 133, 133);
