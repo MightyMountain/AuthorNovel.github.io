@@ -111,9 +111,13 @@
             }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 476px) {
             header {
                 padding: 10px;
+                font-size: 14px; /* Adjust font size */
+            }
+            header h1 {
+                font-size: 18px; /* Adjust font size */
             }
             nav a {
                 margin: 5px 0;
@@ -127,17 +131,53 @@
             }
             .chapter-content {
                 padding: 5px;
-                 width: 40px;
-                 height: 15;
-                font-size: 15;
+                font-size: 12px; /* Adjust font size */
             }
-        }
-        .chapter-list button.active::after {
+            .chapter-content {
+                flex-grow: 1;
+                padding: 10px;
+                background-color: #fff;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                min-height: 100px;
+            }
+            #novelContent {
+                display: flex;
+                gap: 20px;
+                align-items: flex-start;
+            }
+            .sidebar {
+                width: 40px; /* Narrow the width */
+                background-color: #f4f4f4;
+                padding: 5px; /* Adjust padding */
+                box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+                position: sticky;
+                top: 20px; /* Adjust as needed */
+            }
+            }
+            .chapter-list button.active::after {
             content: " (Baca)";
-            color: rgb(176, 173, 173);
+            color: rgb(137, 133, 133);
             font-weight: bold;
-            font-size: 5;
-        }
+            }
+            main {
+                padding: 10px;
+                font-size: 14px; /* Adjust font size */
+            }
+            section {
+                margin-bottom: 10px;
+                font-size: 14px; /* Adjust font size */
+            }
+            .form-container {
+                margin-top: 10px;
+            }
+            input, textarea {
+                padding: 8px;
+                font-size: 14px; /* Adjust font size */
+            }
+            button {
+                padding: 8px;
+                font-size: 14px; /* Adjust font size */
+            }
     </style>
     <!-- Bagian tombol pengganti chapter -->
     <meta charset="UTF-8">
@@ -1625,9 +1665,9 @@ function toggleNovelContent() {
             <h2>Contact</h2>
             <div class="form-container">
                 <form action="https://formspree.io/f/xvgzjewg" method="post">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" rows="5" placeholder="Tell me what don you vancy" required></textarea>
+                    <input type="text" name="name" placeholder="Your Name" required autocomplete="name">
+                    <input type="email" name="email" placeholder="Your Email" required autocomplete="email">
+                    <textarea name="message" rows="5" placeholder="Tell me what don you vancy" required autocomplete="message"></textarea>
                     <button type="submit">Send Message</button>
                 </form>
             </div>
