@@ -6,7 +6,7 @@ Baca novel Indonesia gratis dari Author (English version soon)
 
 ## Screenshots
 
-![App Screenshot](./image/sss.jpeg)
+![App Screenshot](../image/sss.jpeg)
 
 
 ## Run Locally
