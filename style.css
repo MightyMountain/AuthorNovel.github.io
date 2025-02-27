@@ -97,7 +97,7 @@ button[onclick="toggleVillainContent()"] {
     align-items: flex-start;
 }
 .sidebar {
-    width: 60px; /* Narrow the width */
+    width: 40px; /* Narrow the width */
     background-color: #f4f4f4;
     padding: 5px; /* Adjust padding */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
@@ -185,12 +185,28 @@ button[onclick="toggleVillainContent()"] {
     font-family: inherit;
 }
 
-@media (max-width: 768px) {
+/* Untuk tablet dan laptop kecil (<= 1024px) */
+@media (max-width: 1024px) {
     nav {
         gap: 1rem;
         flex-wrap: nowrap;
         overflow-x: auto;
     }
+    main {
+        padding: 15px;
+    }
+    .chapter-content {
+        padding: 25px;
+        font-size: 16px;
+    }
+    .sidebar {
+        width: 250px;
+        padding: 10px;
+    }
+}
+
+/* Untuk tablet dan perangkat menengah (<= 768px) */
+@media (max-width: 768px) {
     main {
         padding: 10px;
     }
@@ -199,23 +215,24 @@ button[onclick="toggleVillainContent()"] {
         box-shadow: none;
     }
     .chapter-content {
-        padding: 10px;
-        font-size: 14px; /* Adjust font size */
+        padding: 20px;
+        font-size: 14px;
     }
 }
 
+/* Untuk ponsel ukuran sedang (<= 476px) */
 @media (max-width: 476px) {
     header {
         padding: 10px;
-        font-size: 14px; /* Adjust font size */
+        font-size: 14px;
     }
     header h1 {
-        font-size: 18px; /* Adjust font size */
+        font-size: 18px;
     }
     nav a {
         margin: 5px 0;
     }
-    .main {
+    main {
         padding: 5px;
         margin: auto;
     }
@@ -227,16 +244,15 @@ button[onclick="toggleVillainContent()"] {
         line-height: 30px;
     }
     .chapter-content {
-        padding: 10px;
-        font-size: 12px; /* Adjust font size */
-    }
-
-    .chapter-content {
         flex-grow: 1;
-        padding: 10px;
+        padding: 20px;
+        font-size: 12px;
         background-color: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         min-height: 100px;
+    }
+    .chapter-menu {
+        padding: 5px 10px;
     }
     #novelContent {
         display: flex;
@@ -244,11 +260,58 @@ button[onclick="toggleVillainContent()"] {
         align-items: flex-start;
     }
     .sidebar {
-        width: 40px; /* Narrow the width */
+        width: 30px;
         background-color: #f4f4f4;
-        padding: 5px; /* Adjust padding */
+        padding: 5px;
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
         position: sticky;
-        top: 20px; /* Adjust as needed */
+        top: 20px;
     }
 }
+
+/* Untuk ponsel kecil (<= 320px) */
+@media (max-width: 320px) {
+    body {
+        font-size: 11px;
+    }
+    .chapter-content {
+        padding: 10px;
+        font-size: 11px;
+    }
+    .sidebar {
+        width: 25px;
+        padding: 3px;
+    }
+}
+
+/* Elemen tambahan */
+.chapter-list button.active::after {
+    content: " (Baca)";
+    color: rgb(137, 133, 133);
+    font-weight: bold;
+}
+
+main {
+    padding: 10px;
+    font-size: 14px;
+}
+
+section {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.form-container {
+    margin-top: 10px;
+}
+
+input, textarea {
+    padding: 8px;
+    font-size: 14px;
+}
+
+button {
+    padding: 8px;
+    font-size: 14px;
+}
+
