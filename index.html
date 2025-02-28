@@ -262,6 +262,15 @@
         function toggleVillainContent() {
             toggleContent('villain-section', 'villain-prologue');
         }
+        //tutup semua konten ketika beralih Navigasi
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById(sectionId).classList.remove('hidden');
+            closeAllNovelContent();
+        }
     </script>
  <!-- Batas bagian tombol pengganti,atas-->
     <meta charset="UTF-8">
@@ -291,6 +300,7 @@
                 section.classList.add('hidden');
             });
             document.getElementById(sectionId).classList.remove('hidden');
+            closeAllNovelContent();
         }
     </script>
 </head>
