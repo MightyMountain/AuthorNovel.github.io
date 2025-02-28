@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Author Novel</title>
+    <title>Personal Blog</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
         body {
             font-family: 'Georgia', serif;
             margin: 0;
@@ -31,7 +32,8 @@
             font-weight: bold;
         }
         nav a:hover {
-            text-decoration: underline;
+            text-decoration: underline overline line-through;
+            text-decoration-style: solid;
         }
         main {
             max-width: 800px;
@@ -84,7 +86,8 @@
         }
         
         .chapter p {text-align: justify;}
-            @media (max-width: 1024px) {
+        /* Untuk tablet dan laptop kecil (<= 1024px) */
+    @media (max-width: 1024px) {
         nav {
             gap: 1rem;
             flex-wrap: nowrap;
@@ -94,7 +97,7 @@
             padding: 15px;
         }
         .chapter-content {
-            padding: 20px;
+            padding: 25px;
             font-size: 16px;
         }
         .sidebar {
@@ -110,15 +113,11 @@
         }
         .sidebar {
             width: 100%;
-            padding: 5px 10px;
             box-shadow: none;
         }
         .chapter-content {
-            padding: 15px;
+            padding: 20px;
             font-size: 14px;
-        }
-        .chapter-menu {
-            padding: 5px 10px;
         }
     }
 
@@ -134,6 +133,17 @@
         nav a {
             margin: 5px 0;
         }
+        main {
+            padding: 5px;
+            margin: auto;
+        }
+        button[onclick="toggleAnotherSideContent()"],
+        button[onclick="toggleVillainContent()"] {
+            width: 80px;
+            height: 30px;
+            font-size: 14px;
+            line-height: 30px;
+        }
         .chapter-content {
             flex-grow: 1;
             padding: 20px;
@@ -142,31 +152,39 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             min-height: 100px;
         }
+        .chapter-menu {
+            padding: 5px 10px;
+        }
+        #novelContent {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
         .sidebar {
-            width: 40px;
+            width: 30px;
             background-color: #f4f4f4;
             padding: 5px;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 20px;
         }
-        }
+    }
 
     /* Untuk ponsel kecil (<= 320px) */
     @media (max-width: 320px) {
         body {
-            font-size: 12px;
+            font-size: 11px;
         }
         .chapter-content {
             padding: 10px;
             font-size: 11px;
         }
         .sidebar {
-            width: 35px;
+            width: 25px;
             padding: 3px;
         }
     }
-            .chapter-list button.active::after {
+        .chapter-list button.active::after {
             content: " (Baca)";
             color: rgb(137, 133, 133);
             font-weight: bold;
@@ -190,6 +208,9 @@
                 padding: 8px;
                 font-size: 14px; /* Adjust font size */
             }
+        .chapter-content {
+            font-family: 'Inter', ; /* Change font to Inter */
+        }
     </style>
     <!-- Bagian tombol pengganti chapter -->
     <meta charset="UTF-8">
@@ -221,48 +242,27 @@
             }
         }
 
-        function toggleAnotherSideContent() {
-            const anotherSideSection = document.getElementById('anotherSide-section');
-            const villainSection = document.getElementById('villain-section');
-            villainSection.style.display = "none";
-            if (anotherSideSection.style.display === "none") {
-                anotherSideSection.style.display = "flex";
-                showChapter('prologue'); // Show prologue by default
+        function toggleContent(sectionId, defaultChapterId) {
+            const section = document.getElementById(sectionId);
+            const otherSection = sectionId === 'anotherSide-section' ? 'villain-section' : 'anotherSide-section';
+            document.getElementById(otherSection).style.display = "none";
+
+            if (section.style.display === "none") {
+                section.style.display = "flex";
+                showChapter(defaultChapterId);
             } else {
-                anotherSideSection.style.display = "none";
+                section.style.display = "none";
             }
+        }
+
+        function toggleAnotherSideContent() {
+            toggleContent('anotherSide-section', 'prologue');
         }
 
         function toggleVillainContent() {
-            const villainSection = document.getElementById('villain-section');
-            const anotherSideSection = document.getElementById('anotherSide-section');
-            anotherSideSection.style.display = "none";
-            if (villainSection.style.display === "none") {
-                villainSection.style.display = "flex";
-                showVillainChapter('villain-prologue'); // Show prologue by default
-            } else {
-                villainSection.style.display = "none";
-            }
+            toggleContent('villain-section', 'villain-prologue');
         }
-
-        function showVillainChapter(chapterId) {
-            const chapters = document.querySelectorAll('.chapter');
-            chapters.forEach(chapter => chapter.classList.add('hidden'));
-
-            const chapter = document.getElementById(chapterId);
-            chapter.classList.remove('hidden');
-            chapter.scrollIntoView({ behavior: 'smooth' }); // Scroll to the chapter title
-
-            // Update active chapter button
-            const chapterButtons = document.querySelectorAll('.chapter-list button');
-            chapterButtons.forEach(button => {
-                button.classList.remove('active'); 
-            });
-            const activeButton = document.querySelector(`.chapter-list button[onclick="showVillainChapter('${chapterId}')"]`);
-            if (activeButton) {
-                activeButton.classList.add('active');
-            }
-        }
+    </script>
  <!-- Batas bagian tombol pengganti,atas-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -296,7 +296,7 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to Author Novel personal bloG</h1>
+        <h1>Welcome to REMIRAINDA personal bloG</h1>
     </header>
     <nav>
         <a href="#" onclick="showSection('Blog')">Blog</a>
@@ -314,20 +314,11 @@
                 <h1><p><strong>Uji Coba</strong></p></h1>
             </div>
             <div class="blog-entry">
-                <p>Novel pertama "<strong>Another Side</strong>" telah ditambahkan, pada tanggal <strong>3 January</strong>. <strong>[Karakter hanyalah perspective]</strong></p>
+                <p>Novel pertama "<strong>Another Side</strong>" telah ditambahkan. <strong>[Karakter hanyalah perspective]</strong></p>
             <P><strong>Note</strong>: Apabila genre yang ada tidak sesuai dengan minat, silahkan hubungi Author untuk menambahkan genre yang beragam.</P>
             </div>
             <div class="blog-entry">
                 <p><strong>Note</strong>: Website masih dalam tahap pengembangan dan kemungkinan hanya berjalan di prangkat Desktop, jika susunan UI tidak rapi gunakan mode Desktop untuk ponsel. Atau jika berkenan, gunakan rotasi layar Landscape pada ponsel anda.</p>
-            </div>
-
-            <div>
-               <div class="blog-entry">
-                <p>Informasi <strong>penting dan petunjuk</strong> akan ditandai secara khusus. 
-                    Untuk <em>"monologue, berpikir dan berbicara dalam hati karakter"</em> akan digunakan italic. 
-                    Garis pemotong akan digunakan sebagai <s>sensor</s>.
-                </p>
-            </div>
             </div>
 
             <!-- Add Blog entries here -->
@@ -1396,7 +1387,6 @@
             </div>
         </div>
     </div>
-    
 
     <!-- Tombol untuk Novel Villain -->
     <p><button onclick="toggleVillainContent()">VILLAIN</button></p>
@@ -1406,19 +1396,19 @@
         <div class="sidebar">
             <h3>Chapters</h3>
             <ul class="chapter-list">
-                <li><button onclick="showVillainChapter('villain-prologue')">Prologue</button></li>
-                <li><button onclick="showVillainChapter('villain-chapter1')">Chapter 1</button></li>
-                <li><button onclick="showVillainChapter('villain-chapter2')">Chapter 2</button></li>
-                <li><button onclick="showVillainChapter('villain-chapter3')">Chapter 3</button></li>
-                <li><button onclick="showVillainChapter('villain-chapter4')">Chapter 4</button></li>
+                <li><button onclick="showChapter('villain-prologue')">Prologue</button></li>
+                <li><button onclick="showChapter('villain-chapter1')">Chapt 1</button></li>
+                <li><button onclick="showChapter('villain-chapter2')">Chapt 2</button></li>
+                <li><button onclick="showChapter('villain-chapter3')">Chapt 3</button></li>
+                <li><button onclick="showChapter('villain-chapter4')">Chapt 4</button></li>
             </ul>
         </div>
 
         <!-- Chapter Content -->
         <div class="chapter-content">
             <div id="villain-prologue" class="chapter hidden">
-                <h2>Prologue</h2>
-                <p>Uploaded soon</p>
+                <div>
+                    
             </div>
             <div id="villain-chapter1" class="chapter">
                 <h2>Chapter 1</h2>
@@ -1439,14 +1429,6 @@
                 <h2>Chapter 4</h2>
                 <p>Bruh, be patient.</p>
             </div>
-            <div id="villain-chapter5" class="chapter hidden">
-                <h2>Chapter 5</h2>
-                <p>In this <strong>important</strong> paragraph, we can use <em>italic</em> for emphasis, 
-                <u>underline</u> for attention, and <s>strikethrough</s> for corrections. 
-                We can also show mathematical formulas like x<sup>2</sup> + y<sup>2</sup> = z<sup>2</sup> 
-                or chemical formulas like H<sub>2</sub>O.
-                <s><u>sencored</u></s>
-                </p>
         
         </div>
     </div>
@@ -1559,33 +1541,11 @@
     }
     
     function toggleAnotherSideContent() {
-        const anotherSideSection = document.getElementById('anotherSide-section');
-        const villainSection = document.getElementById('villain-section');
-    
-        // Menutup Villain jika Another Side dibuka
-        villainSection.style.display = "none";
-    
-        if (anotherSideSection.style.display === "none") {
-            anotherSideSection.style.display = "flex";
-            showChapter('prologue'); // Show prologue by default
-        } else {
-            anotherSideSection.style.display = "none";
-        }
+        toggleContent('anotherSide-section', 'prologue');
     }
     
     function toggleVillainContent() {
-        const villainSection = document.getElementById('villain-section');
-        const anotherSideSection = document.getElementById('anotherSide-section');
-    
-        // Menutup Another Side jika VILLAIN dibuka
-        anotherSideSection.style.display = "none";
-    
-        if (villainSection.style.display === "none") {
-            villainSection.style.display = "flex";
-            showVillainChapter('villain-prologue'); // Show prologue by default
-        } else {
-            villainSection.style.display = "none";
-        }
+        toggleContent('villain-section', 'villain-prologue');
     }
     </script>
 
@@ -1700,10 +1660,10 @@ function toggleNovelContent() {
         <section id="contact" class="hidden">
             <h2>Contact</h2>
             <div class="form-container">
-                <form action="https://formspree.io/f/xvgzjewg" method="post">
+                <form action="https://formspree.io/f/{your_form_id}" method="post">
                     <input type="text" name="name" placeholder="Your Name" required autocomplete="name">
                     <input type="email" name="email" placeholder="Your Email" required autocomplete="email">
-                    <textarea name="message" rows="5" placeholder="Tell me what don you vancy" required autocomplete="message"></textarea>
+                    <textarea name="message" rows="5" placeholder="Tell me what don you want" required autocomplete="message"></textarea>
                     <button type="submit">Send Message</button>
                 </form>
             </div>
@@ -1716,19 +1676,18 @@ function toggleNovelContent() {
                 <p>Codename: AUTHOR KEJAM/CRUEL AUTHOR</p>
             </div>
             
-            <div class="blog-entry">
-                <h3><p>Drawn to the enigmatic veil of mysticism, the cold touch of death, the scars of revenge, and the quiet sadness of a tragic ending</p></h3>
-            </div>
+            <!--  <div class="blog-entry">
+                <p>Drawn to the enigmatic veil of mysticism, the cold touch of death, the scars of revenge, and the quiet sadness of a tragic ending</p>
+            </div>--->
            
-            <!--<div class="blog-entry">
+            <div class="blog-entry">
                 <h3>My projects</h3>
-                <img src="image/282.png" alt="About Me Image" style="width: 100%; max-width: 800px; height: auto;">
-            </div>-->
+                <img src="image/276.png" alt="About Me Image" style="width: 100%; max-width: 800px; height: auto;">
+            </div>
 
             <div class="blog-entry">
                 <p><h3>Dilarang untuk memberitahu, menyebarkan, menyebut, mengumbar ke orang lain mengenai profile Author.</h3>
             </div>
-            
     
 
         </section>
@@ -1746,7 +1705,7 @@ function toggleNovelContent() {
     </main>
   <!--CRUEL 4utHoR-->
     <footer>
-        <p>&copy; 2025 Cruel Author Personal Blog. All rights reserved.</p>
+        <p>&copy; 2025 REMIRAINDA🐼 Personal Blog. All rights reserved.</p>
     </footer>
   
     <script src="alert.js"></script>
@@ -1764,25 +1723,13 @@ function toggleNovelContent() {
 
     <!-- Bagian untuk Another Side-->
     <script>function toggleAnotherSideContent() {
-        const anotherSideSection = document.getElementById('anotherSide-section');
-        if (anotherSideSection.style.display === "none") {
-            anotherSideSection.style.display = "flex";
-            showChapter('prologue'); // Show prologue by default
-        } else {
-            anotherSideSection.style.display = "none";
-        }
+        toggleContent('anotherSide-section', 'prologue');
     }
     </script>
 
     <!--Bagian untuk tombol villain -->
     <script>function toggleVillainContent() {
-        const villainSection = document.getElementById('villain-section');
-        if (villainSection.style.display === "none") {
-            villainSection.style.display = "flex";
-            showVillainChapter('villain-prologue'); // Show prologue by default
-        } else {
-            villainSection.style.display = "none";
-        }
+        toggleContent('villain-section', 'villain-prologue');
     }
     </script>
     <script>function showVillainChapter(chapterId) {
@@ -1796,10 +1743,11 @@ function toggleNovelContent() {
     <style>
     /* Font settings for each section */
     #Blog {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana;
+    font-family: inherit;
+    font-size: 17px;
     }
     #novel {
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana;
+        font-family: Arial, Helvetica, sans-serif;
     }
     #cerpen {
         font-family: inherit;
