@@ -1672,7 +1672,48 @@ function toggleNovelContent() {
         <section id="cerpen" class="hidden">
             <h2>Cerpen</h2>
             <p>Explore my collection of short stories.</p>
-            <!-- Add cerpen content here -->
+            <!-- Tombol untuk Cerpen Sebuah Kisah -->
+            <main>
+                <p><button onclick="toggleKisahContent()">Sebuah Kisah</button></p>
+                <!-- Chapter Content -->
+                <div id="kisah-section" style="display: none;">
+                    <div class="sidebar">
+                        <h3>Chapters</h3>
+                        <ul class="chapter-list">
+                            <li><button onclick="showChapter('kisah-chapter1')">Chapt 1</button></li>
+                            <li><button onclick="showChapter('kisah-chapter2')">Chapt 2</button></li>
+                            <li><button onclick="showChapter('kisah-chapter3')">Chapt 3</button></li>
+                            <li><button onclick="showChapter('kisah-chapter4')">Chapt 4</button></li>
+                        </ul>
+                    </div>
+                    <!-- Chapter Content -->
+                    <div class="chapter-content">
+                        <div id="kisah-chapter1" class="chapter hidden">
+                            <h2>Chapter 1 - Dermaga Harapan</h2>
+                            <p>Uploaded soon.</p>
+                        </div>
+                        <div id="kisah-chapter2" class="chapter hidden">
+                            <h2>Chapter 2 - Sakura</h2>
+                            <p>Will be uploaded soon.</p>
+                        </div>
+                        <div id="kisah-chapter3" class="chapter hidden">
+                            <h2>Chapter 3 - Restoran Milik Kita</h2>
+                            <p>I said will be uploaded soon.</p>
+                        </div>
+                        <div id="kisah-chapter4" class="chapter hidden">
+                            <h2>Chapter 4</h2>
+                            <p>Uploaded soon.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </section>
+
+        <script>
+            function toggleKisahContent() {
+                toggleContent('kisah-section', 'kisah-prologue');
+            }
+        </script>
         </section>
         
         <!-- <section id="contact" class="hidden">
