@@ -102,7 +102,10 @@ function closeAllNovelContent() {
     document.getElementById('another-side-section').style.display = "none";
     document.getElementById('villain-section').style.display = "none";
     document.getElementById('helloWorld-section').style.display = "none";
-    closeAllCerpenContent(); // Close all short stories as well
+}
+function closeAllCerpenContent() {
+    document.getElementById('kisah-section').style.display = "none";
+    document.getElementById('bunga-section').style.display = "none";
 }
 
 function toggleKisahContent() {
