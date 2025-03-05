@@ -57,7 +57,7 @@ function toggleAnotherSideContent() {
     villainSection.style.display = "none";
     if (anotherSideSection.style.display === "none") {
         anotherSideSection.style.display = "flex";
-        showNovelChapter('prologue'); // Show prologue by default
+        showChapter('prologue'); // Show prologue by default
     } else {
         anotherSideSection.style.display = "none";
     }
@@ -99,7 +99,6 @@ function showSection(sectionId) {
     document.getElementById(sectionId).classList.remove('hidden');
 }
 
-// Fungsi untuk menutup semua Cerpen
 function closeAllCerpenContent() {
     document.getElementById('kisah-section').style.display = "none";
     document.getElementById('bunga-section').style.display = "none";
@@ -110,7 +109,7 @@ function toggleKisahContent() {
     if (kisahSection.style.display === "none") {
         closeAllCerpenContent();
         kisahSection.style.display = "flex";
-        showCerpenChapter('kisah-chapter1');
+        showChapter('kisah-chapter1');
     } else {
         kisahSection.style.display = "none";
     }
@@ -121,20 +120,8 @@ function toggleBungaContent() {
     if (bungaSection.style.display === "none") {
         closeAllCerpenContent();
         bungaSection.style.display = "flex";
-        showCerpenChapter('bunga-chapter1');
+        showChapter('bunga-chapter1');
     } else {
         bungaSection.style.display = "none";
     }
-}
-
-function showNovelChapter(chapterId) {
-    const chapters = document.querySelectorAll('#novel .chapter');
-    chapters.forEach(chapter => chapter.classList.add('hidden'));
-    document.getElementById(chapterId).classList.remove('hidden');
-}
-
-function showCerpenChapter(chapterId) {
-    const chapters = document.querySelectorAll('#cerpen .chapter');
-    chapters.forEach(chapter => chapter.classList.add('hidden'));
-    document.getElementById(chapterId).classList.remove('hidden');
 }
