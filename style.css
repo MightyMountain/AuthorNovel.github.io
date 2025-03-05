@@ -81,7 +81,8 @@ button:hover {
     text-align: justify;
 }
 button[onclick="toggleAnotherSideContent()"],
-button[onclick="toggleVillainContent()"] {
+button[onclick="toggleVillainContent()"],
+button[onclick="toggleValContent()"] {
     width: 100px;
     height: 40px;
     padding: 0;
@@ -92,6 +93,7 @@ button[onclick="toggleVillainContent()"] {
 }
 #another-side-section,
 #villain-section,
+#val-section,
 #kisah-section,
 #bunga-section {
     display: none;
@@ -311,3 +313,13 @@ button {
     padding: 8px;
     font-size: 14px;
 }
+
+/* Ensure sticky sidebar for all sections */
+#another-side-section .sidebar,
+#villain-section .sidebar,
+#kisah-section .sidebar,
+#bunga-section .sidebar {
+    position: sticky;
+    top: 20px;
+}
+
