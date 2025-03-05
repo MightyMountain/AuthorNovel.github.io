@@ -105,9 +105,9 @@ function closeAllCerpenContent() {
 }
 
 function toggleKisahContent() {
-    closeAllCerpenContent();
     const kisahSection = document.getElementById('kisah-section');
     if (kisahSection.style.display === "none") {
+        closeAllCerpenContent();
         kisahSection.style.display = "flex";
         showChapter('kisah-chapter1');
     } else {
@@ -116,9 +116,9 @@ function toggleKisahContent() {
 }
 
 function toggleBungaContent() {
-    closeAllCerpenContent();
     const bungaSection = document.getElementById('bunga-section');
     if (bungaSection.style.display === "none") {
+        closeAllCerpenContent();
         bungaSection.style.display = "flex";
         showChapter('bunga-chapter1');
     } else {
