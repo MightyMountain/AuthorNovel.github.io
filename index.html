@@ -311,7 +311,18 @@
                 section.classList.add('hidden');
             });
             document.getElementById(sectionId).classList.remove('hidden');
+            closeAllCerpenContent();
             closeAllNovelContent();
+        }
+
+        function closeAllCerpenContent() {
+            document.getElementById('kisah-section').style.display = "none";
+            document.getElementById('bunga-section').style.display = "none";
+        }
+
+        function closeAllNovelContent() {
+            document.getElementById('anotherSide-section').style.display = "none";
+            document.getElementById('villain-section').style.display = "none";
         }
     </script>
 </head>
