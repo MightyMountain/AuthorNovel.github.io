@@ -49,6 +49,7 @@ function showSection(sectionId) {
         section.classList.add('hidden');
     });
     document.getElementById(sectionId).classList.remove('hidden');
+    closeAllNovelContent();
 }
 
 function toggleAnotherSideContent() {
@@ -91,18 +92,17 @@ function toggleNovelContent() {
     novelContent.classList.toggle('hidden');
 }
 
-function showSection(sectionId) {
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        section.classList.add('hidden');
-    });
-    document.getElementById(sectionId).classList.remove('hidden');
-}
-
 // Fungsi untuk menutup semua Cerpen
 function closeAllCerpenContent() {
     document.getElementById('kisah-section').style.display = "none";
     document.getElementById('bunga-section').style.display = "none";
+}
+
+function closeAllNovelContent() {
+    document.getElementById('another-side-section').style.display = "none";
+    document.getElementById('villain-section').style.display = "none";
+    document.getElementById('helloWorld-section').style.display = "none";
+    closeAllCerpenContent(); // Close all short stories as well
 }
 
 function toggleKisahContent() {
