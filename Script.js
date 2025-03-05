@@ -98,3 +98,30 @@ function showSection(sectionId) {
     });
     document.getElementById(sectionId).classList.remove('hidden');
 }
+
+function closeAllCerpenContent() {
+    document.getElementById('kisah-section').style.display = "none";
+    document.getElementById('bunga-section').style.display = "none";
+}
+
+function toggleKisahContent() {
+    closeAllCerpenContent();
+    const kisahSection = document.getElementById('kisah-section');
+    if (kisahSection.style.display === "none") {
+        kisahSection.style.display = "flex";
+        showChapter('kisah-chapter1');
+    } else {
+        kisahSection.style.display = "none";
+    }
+}
+
+function toggleBungaContent() {
+    closeAllCerpenContent();
+    const bungaSection = document.getElementById('bunga-section');
+    if (bungaSection.style.display === "none") {
+        bungaSection.style.display = "flex";
+        showChapter('bunga-chapter1');
+    } else {
+        bungaSection.style.display = "none";
+    }
+}
