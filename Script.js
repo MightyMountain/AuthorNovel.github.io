@@ -98,3 +98,24 @@ function showSection(sectionId) {
     });
     document.getElementById(sectionId).classList.remove('hidden');
 }
+
+function toggleKisahContent() {
+    toggleContent('kisah-section', 'kisah-prologue');
+}
+
+function toggleBungaContent() {
+    toggleContent('bunga-section', 'bunga-chapter1');
+}
+
+function toggleContent(sectionId, defaultChapterId) {
+    const section = document.getElementById(sectionId);
+    const otherSections = ['anotherSide-section', 'villain-section', 'val-section', 'kisah-section', 'bunga-section'].filter(id => id !== sectionId);
+    otherSections.forEach(id => document.getElementById(id).style.display = "none");
+
+    if (section.style.display === "none") {
+        section.style.display = "flex";
+        showChapter(defaultChapterId);
+    } else {
+        section.style.display = "none";
+    }
+}
