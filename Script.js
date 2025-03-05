@@ -99,6 +99,7 @@ function showSection(sectionId) {
     document.getElementById(sectionId).classList.remove('hidden');
 }
 
+// Fungsi untuk menutup semua Cerpen
 function closeAllCerpenContent() {
     document.getElementById('kisah-section').style.display = "none";
     document.getElementById('bunga-section').style.display = "none";
@@ -106,10 +107,11 @@ function closeAllCerpenContent() {
 
 function toggleKisahContent() {
     const kisahSection = document.getElementById('kisah-section');
+    const bungaSection = document.getElementById('bunga-section');
+    bungaSection.style.display = "none";
     if (kisahSection.style.display === "none") {
-        closeAllCerpenContent();
         kisahSection.style.display = "flex";
-        showChapter('kisah-chapter1');
+        showChapter('kisah-chapter1'); // Show chapter 1 by default
     } else {
         kisahSection.style.display = "none";
     }
@@ -117,10 +119,12 @@ function toggleKisahContent() {
 
 function toggleBungaContent() {
     const bungaSection = document.getElementById('bunga-section');
+    const kisahSection = document.getElementById('kisah-section');
+    kisahSection.style.display = "none";
     if (bungaSection.style.display === "none") {
         closeAllCerpenContent();
         bungaSection.style.display = "flex";
-        showChapter('bunga-chapter1');
+        showChapter('bunga-chapter1'); // Show chapter 1 by default
     } else {
         bungaSection.style.display = "none";
     }
