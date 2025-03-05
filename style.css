@@ -91,7 +91,9 @@ button[onclick="toggleVillainContent()"] {
     line-height: 40px;
 }
 #another-side-section,
-#villain-section {
+#villain-section,
+#kisah-section,
+#bunga-section {
     display: none;
     gap: 20px;
     align-items: flex-start;
