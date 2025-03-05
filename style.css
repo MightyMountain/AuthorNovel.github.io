@@ -81,7 +81,8 @@ button:hover {
     text-align: justify;
 }
 button[onclick="toggleAnotherSideContent()"],
-button[onclick="toggleVillainContent()"] {
+button[onclick="toggleVillainContent()"],
+button[onclick="toggleValContent()"] {
     width: 100px;
     height: 40px;
     padding: 0;
@@ -91,7 +92,8 @@ button[onclick="toggleVillainContent()"] {
     line-height: 40px;
 }
 #another-side-section,
-#villain-section {
+#villain-section,
+#val-section {
     display: none;
     gap: 20px;
     align-items: flex-start;
@@ -104,6 +106,21 @@ button[onclick="toggleVillainContent()"] {
     position: sticky;
     top: 20px; /* Adjust as needed */
 }
+
+/* Make novel sidebar sticky */
+#another-side-section .sidebar,
+#villain-section .sidebar {
+    position: sticky;
+    top: 20px;
+}
+
+/* Make cerpen sidebar sticky */
+#kisah-section .sidebar,
+#bunga-section .sidebar {
+    position: sticky;
+    top: 20px;
+}
+
 .sidebar h3 {
     text-align: center;
     margin-bottom: 10px;
