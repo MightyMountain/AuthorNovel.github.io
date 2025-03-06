@@ -133,3 +133,15 @@ function toggleBungaContent() {
         bungaSection.style.display = "none";
     }
 }
+
+function updateVisitorCount() {
+    const visitorCountElement = document.getElementById('visitor-count');
+    if (visitorCountElement) {
+        let count = localStorage.getItem('visitorCount') || 0;
+        count++;
+        localStorage.setItem('visitorCount', count);
+        visitorCountElement.textContent = `Visitors: ${count}`;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', updateVisitorCount);
