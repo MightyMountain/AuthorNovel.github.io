@@ -144,4 +144,6 @@ function updateVisitorCount() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', updateVisitorCount);
+document.addEventListener('DOMContentLoaded', () => {
+    updateVisitorCount();
+});
