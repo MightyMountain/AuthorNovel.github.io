@@ -323,3 +323,13 @@ button {
     top: 20px;
 }
 
+#visitor-count {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: #333;
+    color: #4c4949;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
